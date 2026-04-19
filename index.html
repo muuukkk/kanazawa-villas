@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="ja" data-theme="sumi" data-heading="serif">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kanazawa Villas — 金沢ヴィラズ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* 金沢ヴィラズ — 共通スタイル */
+
+:root {
+  --ink: #1a1815;
+  --ink-soft: #2a2722;
+  --paper: #f4f1ea;
+  --paper-warm: #ebe5d9;
+  --paper-deep: #d9d2c2;
+  --line: rgba(26, 24, 21, 0.14);
+  --line-strong: rgba(26, 24, 21, 0.28);
+  --muted: #7a756c;
+  --muted-soft: #a39e92;
+  --accent: #7a5c3a;
+  --accent-deep: #5a3f22;
+  --accent-cool: #3a4a52;
+  --highlight: #c2a878;
+
+  --f-display: "Cormorant Garamond", "Shippori Mincho", serif;
+  --f-jp-display: "Shippori Mincho", "Noto Serif JP", serif;
+  --f-body: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --page-x: clamp(20px, 4vw, 64px);
+  --section-y: clamp(80px, 10vw, 160px);
+}
+
+html[data-theme="sumi"] { --ink:#1a1815; --paper:#f4f1ea; --paper-warm:#ebe5d9; --paper-deep:#d9d2c2; --accent:#7a5c3a; --accent-cool:#3a4a52; --highlight:#c2a878; }
+html[data-theme="ai"] { --ink:#14202a; --ink-soft:#1f2e3a; --paper:#eef1f2; --paper-warm:#dfe5e7; --paper-deep:#c8d1d4; --line:rgba(20,32,42,0.14); --line-strong:rgba(20,32,42,0.30); --muted:#5e6e78; --muted-soft:#8c9aa3; --accent:#2f4a5c; --accent-cool:#1a3240; --highlight:#8aa5b3; }
+html[data-theme="tsuchi"] { --ink:#2a1f18; --ink-soft:#3a2d24; --paper:#f1e9dc; --paper-warm:#e3d6c0; --paper-deep:#c9b89a; --line:rgba(42,31,24,0.14); --line-strong:rgba(42,31,24,0.30); --muted:#7a6850; --muted-soft:#a89680; --accent:#8a5a2c; --accent-cool:#6a4a2a; --highlight:#c9a572; }
+html[data-theme="koke"] { --ink:#1a1f17; --ink-soft:#262c22; --paper:#eceee4; --paper-warm:#dde0d2; --paper-deep:#c1c6b2; --line:rgba(26,31,23,0.14); --line-strong:rgba(26,31,23,0.30); --muted:#676c5c; --muted-soft:#969b87; --accent:#4a5a32; --accent-cool:#364224; --highlight:#9cae78; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-feature-settings: "palt"; font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; padding: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; letter-spacing: 0.01em; }
+p { margin: 0; }
+
+html[data-heading="mincho"] .display { font-family: var(--f-jp-display); }
+html[data-heading="serif"] .display { font-family: var(--f-display); }
+
+.display { font-family: var(--f-display); font-weight: 300; letter-spacing: -0.01em; line-height: 1.05; }
+.jp-display { font-family: var(--f-jp-display); font-weight: 400; letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 18px var(--page-x); display: flex; align-items: center; justify-content: space-between; background: color-mix(in oklab, var(--paper) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.site-header .brand { display: flex; align-items: baseline; gap: 10px; }
+.site-header .brand-mark { font-family: var(--f-jp-display); font-size: 18px; letter-spacing: 0.18em; }
+.site-header .brand-sub { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em; color: var(--muted); text-transform: uppercase; }
+.site-nav { display: flex; gap: 28px; align-items: center; }
+.site-nav a { font-size: 12px; letter-spacing: 0.12em; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
+.site-nav a:hover { opacity: 1; }
+.lang-switch { display: flex; gap: 2px; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; }
+.lang-switch button { padding: 4px 10px; border-radius: 999px; opacity: 0.55; transition: all 0.2s; }
+.lang-switch button.active { background: var(--ink); color: var(--paper); opacity: 1; }
+
+.btn-book { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px 11px 22px; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 12px; letter-spacing: 0.14em; transition: transform 0.2s, background 0.2s; }
+.btn-book:hover { background: var(--accent-deep, var(--ink-soft)); transform: translateY(-1px); }
+.btn-book .arrow { width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center; }
+.btn-book .arrow svg { width: 100%; height: 100%; }
+
+.btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; border: 1px solid var(--ink); border-radius: 999px; font-size: 12px; letter-spacing: 0.14em; color: var(--ink); transition: all 0.2s; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+.ph { position: relative; background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--paper-deep) 80%, transparent) 0 12px, color-mix(in oklab, var(--paper-warm) 80%, transparent) 12px 24px), var(--paper-warm); overflow: hidden; }
+.ph::after { content: attr(data-label); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); opacity: 0.55; text-align: center; padding: 20px; }
+.ph.dark { background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--ink) 90%, transparent) 0 12px, color-mix(in oklab, var(--ink-soft, var(--ink)) 85%, transparent) 12px 24px), var(--ink); }
+.ph.dark::after { color: var(--paper); opacity: 0.6; }
+
+.hero { position: relative; min-height: 100vh; padding: 0 var(--page-x); padding-top: 120px; padding-bottom: 60px; display: flex; flex-direction: column; justify-content: flex-end; }
+.hero-media { position: absolute; inset: 0; z-index: 0; }
+.hero-media .ph { width: 100%; height: 100%; }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, color-mix(in oklab, var(--paper) 30%, transparent) 0%, transparent 30%, transparent 55%, color-mix(in oklab, var(--ink) 40%, transparent) 100%); }
+.hero-inner { position: relative; z-index: 1; color: var(--paper); max-width: 1400px; }
+.hero-eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.85; margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--highlight); }
+.hero-title { font-family: var(--f-display); font-weight: 300; font-size: clamp(52px, 9vw, 148px); line-height: 0.96; letter-spacing: -0.02em; margin-bottom: 24px; }
+.hero-title em { font-style: italic; font-family: var(--f-display); color: var(--highlight); font-weight: 300; }
+.hero-sub { font-family: var(--f-jp-display); font-size: clamp(14px, 1.4vw, 20px); letter-spacing: 0.2em; opacity: 0.85; max-width: 640px; line-height: 1.9; margin-bottom: 48px; }
+.hero-meta { display: flex; gap: 48px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.75; padding-top: 32px; border-top: 1px solid rgba(244,241,234,0.2); }
+.hero-meta > div span { display: block; opacity: 0.6; margin-bottom: 4px; }
+
+.section { padding: var(--section-y) var(--page-x); position: relative; }
+.section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; margin-bottom: 80px; align-items: end; }
+@media (max-width: 860px) { .section-head { grid-template-columns: 1fr; gap: 24px; } }
+.section-label { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
+.section-label .num { display: inline-block; color: var(--accent); margin-right: 12px; }
+.section-title { font-family: var(--f-display); font-weight: 300; font-size: clamp(38px, 5.5vw, 80px); line-height: 1.05; letter-spacing: -0.015em; }
+.section-title em { font-style: italic; color: var(--accent); }
+.section-lede { font-family: var(--f-jp-display); font-size: 15px; line-height: 2; letter-spacing: 0.1em; color: var(--ink-soft, var(--ink)); max-width: 520px; margin-top: 20px; }
+
+.villa-list { display: flex; flex-direction: column; gap: 120px; }
+.villa-card { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.villa-card.reverse { direction: rtl; }
+.villa-card.reverse > * { direction: ltr; }
+@media (max-width: 860px) { .villa-card, .villa-card.reverse { grid-template-columns: 1fr; gap: 32px; direction: ltr; } }
+.villa-card .media { position: relative; aspect-ratio: 4/5; }
+.villa-card .media .ph { position: absolute; inset: 0; }
+.villa-card .media .tag { position: absolute; top: 20px; left: 20px; background: var(--paper); color: var(--ink); font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 12px; z-index: 2; }
+.villa-card .info .idx { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 24px; }
+.villa-card .info h3 { font-family: var(--f-display); font-size: clamp(42px, 4.5vw, 72px); font-weight: 300; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
+.villa-card .info .jp-name { font-family: var(--f-jp-display); font-size: 14px; letter-spacing: 0.3em; color: var(--muted); margin-bottom: 28px; }
+.villa-card .info .desc { font-size: 14px; line-height: 1.9; color: var(--ink-soft, var(--ink)); max-width: 480px; margin-bottom: 32px; }
+.villa-card .info .specs { display: flex; gap: 40px; margin-bottom: 40px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.villa-card .info .specs > div span { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+.villa-card .info .specs > div strong { font-family: var(--f-display); font-size: 22px; font-weight: 300; letter-spacing: 0.02em; }
+
+.concept { background: var(--paper-warm); }
+.concept-body { max-width: 780px; margin: 0 auto; text-align: center; }
+.concept-body p { font-family: var(--f-jp-display); font-size: clamp(17px, 1.6vw, 22px); line-height: 2.2; letter-spacing: 0.14em; margin-bottom: 28px; }
+.concept-body p.en { font-family: var(--f-display); font-style: italic; font-weight: 300; font-size: clamp(20px, 2vw, 28px); letter-spacing: 0.02em; color: var(--accent); margin-top: 40px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 60px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat .num { font-family: var(--f-display); font-size: clamp(38px, 4.5vw, 64px); font-weight: 300; line-height: 1; letter-spacing: -0.02em; }
+.stat .num .unit { font-size: 0.4em; margin-left: 6px; color: var(--muted); }
+.stat .label { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+
+.reviews { background: var(--ink); color: var(--paper); }
+.reviews .section-label { color: var(--muted-soft); }
+.reviews .section-title { color: var(--paper); }
+.reviews .section-title em { color: var(--highlight); }
+.reviews .section-lede { color: color-mix(in oklab, var(--paper) 80%, transparent); }
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+@media (max-width: 860px) { .review-grid { grid-template-columns: 1fr; } }
+.review { padding: 40px 0; border-top: 1px solid rgba(244,241,234,0.14); }
+.review .rating { font-family: var(--f-display); font-size: 36px; font-weight: 300; margin-bottom: 16px; }
+.review .rating em { font-size: 14px; font-style: normal; color: var(--muted-soft); margin-left: 8px; }
+.review blockquote { font-family: var(--f-display); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0 0 24px; font-weight: 300; }
+.review .who { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-soft); }
+
+.location-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; }
+@media (max-width: 860px) { .location-grid { grid-template-columns: 1fr; } }
+.map-wrap { position: relative; aspect-ratio: 4/3; background: var(--paper-warm); border: 1px solid var(--line); overflow: hidden; }
+.map-svg { width: 100%; height: 100%; display: block; }
+.location-list { display: flex; flex-direction: column; }
+.location-list .item { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: baseline; }
+.location-list .item:last-child { border-bottom: 1px solid var(--line); }
+.location-list .item .pin { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); min-width: 32px; }
+.location-list .item h4 { font-family: var(--f-display); font-size: 22px; font-weight: 300; margin-bottom: 4px; }
+.location-list .item .meta { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+.location-list .item .dist { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); }
+
+.neighborhood { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+@media (max-width: 960px) { .neighborhood { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .neighborhood { grid-template-columns: 1fr; } }
+.nbh-card .media { aspect-ratio: 3/4; position: relative; margin-bottom: 16px; }
+.nbh-card .media .ph { position: absolute; inset: 0; }
+.nbh-card .num { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 6px; }
+.nbh-card h4 { font-family: var(--f-display); font-size: 22px; font-weight: 300; letter-spacing: -0.01em; margin-bottom: 4px; }
+.nbh-card .sub { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+.nbh-card .desc { font-size: 13px; line-height: 1.7; color: var(--ink-soft, var(--ink)); }
+
+.faq-list { max-width: 960px; margin: 0 auto; }
+.faq-item { border-top: 1px solid var(--line); padding: 28px 0; display: grid; grid-template-columns: 60px 1fr 40px; gap: 24px; align-items: start; cursor: pointer; transition: opacity 0.2s; }
+.faq-list .faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-item .num { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent); padding-top: 4px; }
+.faq-item .q { font-family: var(--f-jp-display); font-size: 18px; letter-spacing: 0.05em; line-height: 1.6; }
+.faq-item .a { grid-column: 2; font-size: 14px; line-height: 1.9; color: var(--ink-soft, var(--ink)); opacity: 0.75; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, margin-top 0.3s ease; }
+.faq-item.open .a { max-height: 500px; margin-top: 16px; }
+.faq-item .toggle { width: 32px; height: 32px; border: 1px solid var(--line-strong); border-radius: 50%; display: flex; align-items: center; justify-content: center; justify-self: end; position: relative; transition: background 0.2s; }
+.faq-item .toggle::before, .faq-item .toggle::after { content: ""; position: absolute; background: var(--ink); transition: transform 0.3s; }
+.faq-item .toggle::before { width: 12px; height: 1px; }
+.faq-item .toggle::after { width: 1px; height: 12px; }
+.faq-item.open .toggle::after { transform: rotate(90deg); }
+
+.site-footer { background: var(--ink); color: var(--paper); padding: 100px var(--page-x) 40px; }
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 60px; border-bottom: 1px solid rgba(244,241,234,0.14); }
+@media (max-width: 860px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+.footer-top h5 { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-soft); margin-bottom: 20px; font-weight: 400; }
+.footer-brand-mark { font-family: var(--f-display); font-size: 44px; font-weight: 300; line-height: 1; letter-spacing: -0.02em; margin-bottom: 14px; }
+.footer-brand-tag { font-family: var(--f-jp-display); font-size: 13px; letter-spacing: 0.22em; opacity: 0.7; margin-bottom: 20px; }
+.footer-top ul { list-style: none; padding: 0; margin: 0; }
+.footer-top ul li { margin-bottom: 12px; font-size: 13px; opacity: 0.8; }
+.footer-top ul li a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; flex-wrap: wrap; gap: 12px; }
+
+.sticky-book { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 40; background: var(--ink); color: var(--paper); border-radius: 999px; padding: 10px 10px 10px 28px; display: flex; align-items: center; gap: 24px; box-shadow: 0 20px 50px -20px rgba(0,0,0,0.4); font-size: 12px; letter-spacing: 0.1em; max-width: calc(100vw - 40px); }
+.sticky-book .prices { display: flex; gap: 16px; align-items: baseline; }
+.sticky-book .prices strong { font-family: var(--f-display); font-weight: 400; font-size: 18px; letter-spacing: 0; }
+.sticky-book .btn-book { background: var(--paper); color: var(--ink); }
+
+.tweaks-panel { position: fixed; right: 24px; bottom: 24px; width: 320px; background: var(--paper); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 18px; padding: 22px; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.25); z-index: 60; display: none; font-family: var(--f-body); }
+.tweaks-panel.active { display: block; }
+.tweaks-panel h4 { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; color: var(--muted); }
+.tweak-group { margin-bottom: 18px; }
+.tweak-group label { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.tweak-options { display: flex; gap: 6px; flex-wrap: wrap; }
+.tweak-opt { padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 11px; letter-spacing: 0.06em; transition: all 0.15s; }
+.tweak-opt.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tweak-swatches { display: flex; gap: 8px; }
+.tweak-sw { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: transform 0.15s; }
+.tweak-sw:hover { transform: scale(1.08); }
+.tweak-sw.active { border-color: var(--ink); }
+.tweak-sw.sumi { background: #1a1815; }
+.tweak-sw.ai { background: #14202a; }
+.tweak-sw.tsuchi { background: #8a5a2c; }
+.tweak-sw.koke { background: #4a5a32; }
+</style>
+<script>
+const TWEAK_DEFAULTS = {"theme":"sumi","heading":"serif"};
+document.documentElement.dataset.theme = TWEAK_DEFAULTS.theme;
+document.documentElement.dataset.heading = TWEAK_DEFAULTS.heading;
+
+// ── data.js (inlined) ──────────────────────────────────────────────
+window.VILLAS = [
+  {
+    id: "nomachi", name: "Nomachi", fullName: "Nomachi Villa", jpName: "野町邸",
+    area: "金沢市野町", areaRoman: "Nomachi, Kanazawa",
+    tagline: "A modern interpretation of Japanese quietude",
+    jpTagline: "和モダンが佇む、大人数のための一棟",
+    opened: "2024.11", size: 77, capacity: 6, type: "一棟貸し戸建て", typeEn: "Whole house",
+    rating: 4.96, galleryPrefix: "NOMA",
+    concept: "築年数を重ねた住宅を、和モダンの感覚で静かに整えた一棟。長い廊下、障子越しのやわらかな光、木と土の気配。金沢に暮らすように過ごす、6名までのための住まい。",
+    conceptEn: "A quietly composed townhouse, reframed in a modern Japanese sensibility. For up to six — an address to live from, not merely to stay.",
+    features: [
+      { t: "和モダンな室礼", d: "障子・畳・無垢材を基調に、現代的な間接照明と家具を合わせた落ち着いた内装。" },
+      { t: "最大6名まで", d: "家族旅行やグループでの滞在に。リビングを中心に複数のベッドルームが連なる。" },
+      { t: "フルキッチン", d: "IHコンロ、冷蔵庫、食器類一式。地元の食材を持ち帰って気兼ねなく料理ができる。" },
+      { t: "繁華街まで徒歩10分", d: "片町の飲食店街へは歩いて約10分。帰路も静けさへと戻る。" },
+    ],
+    specs: [{ k: "面積", v: "77 m²" },{ k: "定員", v: "6 名" },{ k: "寝室", v: "2 室" },{ k: "タイプ", v: "一棟貸し" }],
+  },
+  {
+    id: "shiragiku", name: "Shiragiku", fullName: "Shiragiku Villa", jpName: "白菊町邸",
+    area: "金沢市白菊町", areaRoman: "Shiragiku, Kanazawa",
+    tagline: "Taishō-era quietude with a private garden",
+    jpTagline: "大正の面影と、紅葉を望む庭のある家",
+    opened: "2025.8", size: 56, capacity: 5, type: "一棟貸し戸建て", typeEn: "Whole house",
+    rating: 4.96, galleryPrefix: "SHIR",
+    concept: "大正時代の趣を手仕事で残しながら、現代の快適さを織り込んだ一棟。リビングから望むのは、紅葉、松、南天の庭。窓を開け放てば、季節そのものが部屋に入り込む。",
+    conceptEn: "A Taishō-era residence, carefully restored. From the living room, a garden of maple, pine, and nandina — the seasons, rendered in daylight.",
+    features: [
+      { t: "大正の意匠を今に", d: "建具、欄間、タイルなどの意匠を活かしつつ、水回りや空調は現代仕様に。" },
+      { t: "日本庭園付き", d: "紅葉・松・南天を配した小庭。リビングの大開口から四季が見える。" },
+      { t: "最大5名まで", d: "少人数のファミリーや友人同士での滞在に最適な間取り。" },
+      { t: "フルキッチン", d: "家庭的なキッチン設備を完備。近江町市場の食材で一夜を。" },
+    ],
+    specs: [{ k: "面積", v: "56 m²" },{ k: "定員", v: "5 名" },{ k: "特徴", v: "日本庭園" },{ k: "タイプ", v: "一棟貸し" }],
+  },
+  {
+    id: "horikawa", name: "Horikawa", fullName: "Horikawa Villa", jpName: "堀川町邸",
+    area: "金沢市堀川町", areaRoman: "Horikawa, Kanazawa",
+    tagline: "Three rooms, three ways to stay — 7 min from the station",
+    jpTagline: "金沢駅徒歩7分、三つの異なる畳の間",
+    opened: "2026.7 開業予定", type: "マンション / 3部屋", typeEn: "Three apartments",
+    galleryPrefix: "HORI",
+    concept: "金沢駅から徒歩7分。マンションの2階を、三つのまったく異なる「日本」として再構築する。畳、障子、押入れ。古いものが、まだ知らない使われ方をする場所。",
+    conceptEn: "Seven minutes from Kanazawa Station. One floor, three distinct rooms — tatami, shōji, and closet-turned-nooks that recast the familiar.",
+    features: [
+      { t: "Room 201｜座禅の部屋", d: "押入れをデジタルデトックスのための座禅スペースに。21㎡・最大3名。" },
+      { t: "Room 202｜文化体験の部屋", d: "押入れに金沢・北陸の歴史資料を配した、読むための部屋。21㎡・最大3名。" },
+      { t: "Room 205｜グループの部屋", d: "デザイン性の高い家具を配した44㎡のゆとりある空間。最大5名。" },
+      { t: "共用ランドリー無料", d: "101号室を宿泊者専用ランドリーとして開放。長期滞在に。" },
+    ],
+    specs: [{ k: "駅徒歩", v: "7 分" },{ k: "部屋数", v: "3 室" },{ k: "最大", v: "11 名" },{ k: "開業", v: "2026.7" }],
+  },
+];
+
+window.NBH = [
+  { num: "01", name: "Kenrokuen Garden", jp: "兼六園", sub: "15 min by bus", desc: "日本三名園のひとつ。早朝、無料開園の時間にぜひ。" },
+  { num: "02", name: "Higashi Chaya", jp: "ひがし茶屋街", sub: "20 min on foot", desc: "格子戸の町並み。夕刻、提灯が灯る頃が最も美しい。" },
+  { num: "03", name: "Omicho Market", jp: "近江町市場", sub: "15 min on foot", desc: "加賀野菜、日本海の鮮魚。宿のキッチンのための買い出しに。" },
+  { num: "04", name: "21st Century Museum", jp: "21世紀美術館", sub: "18 min on foot", desc: "現代アートと、日常のあわいを歩く体験。" },
+  { num: "05", name: "Nishi Chaya", jp: "にし茶屋街", sub: "8 min on foot", desc: "Nomachi・Shiragikuから最も近い茶屋街。静けさが残る。" },
+  { num: "06", name: "Myoryuji (Ninja Temple)", jp: "妙立寺", sub: "5 min on foot", desc: "仕掛けだらけの寺院。徒歩圏に隠れた名所。" },
+  { num: "07", name: "Kanazawa Station", jp: "金沢駅・鼓門", sub: "7 min from Horikawa", desc: "到着の瞬間から、旅の意匠は始まっている。" },
+  { num: "08", name: "Kazuemachi Chaya", jp: "主計町茶屋街", sub: "18 min on foot", desc: "浅野川沿いの、もっとも静かな茶屋街。" },
+];
+
+window.FAQS = [
+  { q: "チェックイン・チェックアウトの時間は？", a: "チェックインは16:00〜、チェックアウトは10:00です。アーリーチェックイン・レイトチェックアウトはご相談ください（空室状況による）。" },
+  { q: "鍵の受け渡しは？", a: "すべての宿はセルフチェックイン方式です。ご予約後に、暗証番号式キーボックスの番号とアクセス方法をメールでご案内します。" },
+  { q: "どの言語で対応可能ですか？", a: "日本語・英語を中心に、中国語・韓国語・フランス語など主要言語にAI翻訳で対応しています。" },
+  { q: "公式サイトから予約するメリットは？", a: "当サイト経由のご予約は、各OTA（Airbnb等）より手数料分を差し引いた価格でご提供しています。長期滞在割引もこちらからのみ適用可能です。" },
+  { q: "駐車場はありますか？", a: "Nomachi・Shiragikuは敷地内1台無料、Horikawaは徒歩3分のコインパーキング（実費）をご利用ください。" },
+  { q: "小さな子ども連れでも滞在できますか？", a: "はい、ベビーベッド・ベビーチェアの無料貸し出しがございます（事前にお知らせください）。" },
+  { q: "長期滞在・ワーケーションには対応していますか？", a: "全棟でWi-Fi完備、7泊以上で割引、28泊以上で月割料金をご用意しています。" },
+];
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+// ── components.jsx + home-sections.jsx + App (all inlined) ────────
+const { useState, useEffect } = React;
+
+const ArrowSVG = () => (<svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/></svg>);
+
+// ── SHARED COMPONENTS ─────────────────────────────────────────────
+
+function Header() {
+  const [lang, setLang] = useState("JP");
+  return (
+    <header className="site-header">
+      <a href="#" className="brand">
+        <span className="brand-mark">金沢ヴィラズ</span>
+        <span className="brand-sub">Kanazawa · Est. 2024</span>
+      </a>
+      <nav className="site-nav">
+        <a href="#villas">Villas</a>
+        <a href="#concept">Concept</a>
+        <a href="#neighborhood">Neighborhood</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+        <div className="lang-switch">
+          {["JP","EN","中"].map(l => <button key={l} className={lang===l?"active":""} onClick={()=>setLang(l)}>{l}</button>)}
+        </div>
+        <a href="#book" className="btn-book"><span>Book Direct</span><span className="arrow"><ArrowSVG/></span></a>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="footer-top">
+        <div>
+          <div className="footer-brand-mark">Kanazawa Villas</div>
+          <div className="footer-brand-tag">金沢ヴィラズ ／ 三つの住まい</div>
+          <p style={{ fontSize:13, opacity:0.7, lineHeight:1.8, maxWidth:320 }}>金沢の野町・白菊町・堀川町に構える、三つの直営民泊。<br/>一棟ごとに異なる、日本の住まいの体験を。</p>
+        </div>
+        <div><h5>Villas</h5><ul><li><a href="#">Nomachi Villa</a></li><li><a href="#">Shiragiku Villa</a></li><li><a href="#">Horikawa Villa</a></li></ul></div>
+        <div><h5>Stay</h5><ul><li><a href="#neighborhood">Neighborhood</a></li><li><a href="#faq">FAQ</a></li><li><a href="#book">Book Direct</a></li></ul></div>
+        <div><h5>Contact</h5><ul><li>hello@kanazawa-villas.jp</li><li>石川県金沢市</li><li>住宅宿泊事業<br/>届出番号 M19******</li></ul></div>
+      </div>
+      <div className="footer-bottom"><div>© 2026 Kanazawa Villas.</div><div>Booking powered by Beds24</div></div>
+    </footer>
+  );
+}
+
+function FAQSection() {
+  const [open, setOpen] = useState(0);
+  const data = window.FAQS || [];
+  return (
+    <section id="faq" className="section">
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">07</span>FAQ</div></div>
+        <div>
+          <h2 className="section-title display">Questions,<br/><em>answered.</em></h2>
+          <p className="section-lede">滞在前にお寄せいただくことの多いご質問。ここにないことは、お気軽にメッセージでお尋ねください。</p>
+        </div>
+      </div>
+      <div className="faq-list">
+        {data.map((item, i) => (
+          <div key={i} className={`faq-item ${open===i?"open":""}`} onClick={()=>setOpen(open===i?-1:i)}>
+            <div className="num">Q.{String(i+1).padStart(2,"0")}</div>
+            <div><div className="q">{item.q}</div><div className="a">{item.a}</div></div>
+            <div className="toggle"/>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TweaksPanel() {
+  const [active, setActive] = useState(false);
+  const [theme, setTheme] = useState(document.documentElement.dataset.theme || "sumi");
+  const [heading, setHeading] = useState(document.documentElement.dataset.heading || "serif");
+  useEffect(() => {
+    const onMsg = (e) => {
+      if (e.data?.type === "__activate_edit_mode") setActive(true);
+      if (e.data?.type === "__deactivate_edit_mode") setActive(false);
+    };
+    window.addEventListener("message", onMsg);
+    window.parent.postMessage({ type: "__edit_mode_available" }, "*");
+    return () => window.removeEventListener("message", onMsg);
+  }, []);
+  const apply = (k, v) => {
+    document.documentElement.dataset[k] = v;
+    window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { [k]: v } }, "*");
+  };
+  return (
+    <div className={`tweaks-panel ${active?"active":""}`}>
+      <h4>Tweaks</h4>
+      <div className="tweak-group">
+        <label>Color theme</label>
+        <div className="tweak-swatches">
+          {["sumi","ai","tsuchi","koke"].map(t => (
+            <button key={t} className={`tweak-sw ${t} ${theme===t?"active":""}`} onClick={()=>{setTheme(t); apply("theme", t);}} title={t}/>
+          ))}
+        </div>
+        <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.14em", color:"var(--muted)", marginTop:10 }}>
+          {{sumi:"墨 · INK & PAPER", ai:"藍 · AIZUMI", tsuchi:"土 · EARTH", koke:"苔 · MOSS"}[theme]}
+        </div>
+      </div>
+      <div className="tweak-group">
+        <label>Display font</label>
+        <div className="tweak-options">
+          <button className={`tweak-opt ${heading==="serif"?"active":""}`} onClick={()=>{setHeading("serif"); apply("heading","serif");}}>Cormorant</button>
+          <button className={`tweak-opt ${heading==="mincho"?"active":""}`} onClick={()=>{setHeading("mincho"); apply("heading","mincho");}}>しっぽり明朝</button>
+        </div>
+      </div>
+      <div className="tweak-group">
+        <label>Language preview</label>
+        <div className="tweak-options">
+          <button className="tweak-opt active">JP</button><button className="tweak-opt">EN</button>
+          <button className="tweak-opt">中</button><button className="tweak-opt">FR</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BookingPreview() {
+  const [sel, setSel] = useState(null);
+  const today = new Date(); const cal = [];
+  for (let i=0;i<14;i++){ const d=new Date(today); d.setDate(d.getDate()+i); cal.push(d); }
+  return (
+    <section id="book" className="section" style={{ background:"var(--paper-warm)" }}>
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">08</span>BOOK DIRECT</div></div>
+        <div>
+          <h2 className="section-title display">Reserve<br/><em>directly.</em></h2>
+          <p className="section-lede">当サイト経由のご予約は、OTA手数料分を差し引いたダイレクト料金。お支払い・確認メールはBeds24を通じて安全に。</p>
+        </div>
+      </div>
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60, maxWidth:1400 }}>
+        <div>
+          <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:14 }}>Select villa</div>
+          <div style={{ border:"1px solid var(--line)", marginBottom:32 }}>
+            {window.VILLAS.map((v,i)=>(
+              <button key={v.id} onClick={()=>setSel(v.id)} style={{ width:"100%", padding:"18px 20px", borderBottom:i<2?"1px solid var(--line)":"none", background:sel===v.id?"var(--ink)":"transparent", color:sel===v.id?"var(--paper)":"var(--ink)", textAlign:"left", display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                <div>
+                  <div style={{ fontFamily:"var(--f-display)", fontSize:22, fontWeight:300 }}>{v.fullName}</div>
+                  <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.18em", opacity:0.6, marginTop:4, textTransform:"uppercase" }}>{v.area} · max {v.capacity || 11}</div>
+                </div>
+                <div style={{ fontFamily:"var(--f-mono)", fontSize:11, letterSpacing:"0.14em" }}>{sel===v.id?"— selected":"→"}</div>
+              </button>
+            ))}
+          </div>
+          <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:14 }}>Dates</div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(7, 1fr)", gap:2 }}>
+            {cal.map((d,i)=>{ const busy=[2,7,8].includes(i); return (
+              <div key={i} style={{ aspectRatio:"1", border:"1px solid var(--line)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", opacity:busy?0.3:1, background:busy?"var(--paper-deep)":"transparent", fontFamily:"var(--f-mono)" }}>
+                <div style={{ fontSize:9, letterSpacing:"0.1em", color:"var(--muted)" }}>{["SUN","MON","TUE","WED","THU","FRI","SAT"][d.getDay()]}</div>
+                <div style={{ fontSize:14 }}>{d.getDate()}</div>
+              </div>
+            );})}
+          </div>
+        </div>
+        <div style={{ background:"var(--paper)", padding:40, border:"1px solid var(--line)", display:"flex", flexDirection:"column", justifyContent:"space-between", minHeight:400 }}>
+          <div>
+            <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:20 }}>Your stay</div>
+            <div style={{ fontFamily:"var(--f-display)", fontSize:34, fontWeight:300, lineHeight:1.15, marginBottom:20 }}>{sel ? window.VILLAS.find(v=>v.id===sel).fullName : "Select a villa —"}</div>
+            <div style={{ fontFamily:"var(--f-jp-display)", fontSize:14, letterSpacing:"0.14em", color:"var(--muted)", marginBottom:30 }}>Beds24の予約エンジンに接続し、日付・人数・お支払いまでを安全に進めていただけます。</div>
+            {[["Direct rate","— 8% vs OTA"],["Long stay (7+ nights)","— 10%"],["Monthly (28+ nights)","— 25%"]].map(([k,v],i)=>(
+              <div key={i} style={{ padding:"20px 0", borderTop:i===0?"1px solid var(--line)":"none", borderBottom:"1px solid var(--line)", display:"flex", justifyContent:"space-between", fontFamily:"var(--f-mono)", fontSize:11, letterSpacing:"0.14em", textTransform:"uppercase" }}><span>{k}</span><span>{v}</span></div>
+            ))}
+          </div>
+          <a href="#" className="btn-book" style={{ justifyContent:"space-between", width:"100%", marginTop:24, padding:"18px 28px" }}><span>Continue on Beds24</span><span className="arrow"><ArrowSVG/></span></a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── HOME SECTIONS ─────────────────────────────────────────────────
+
+function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero-media"><div className="ph dark" data-label="PH-HERO · Cinematic still — Nomachi shōji at golden hour"/></div>
+      <div className="hero-inner">
+        <div className="hero-eyebrow"><span className="dot"/><span>Kanazawa · Ishikawa · Three Villas</span></div>
+        <h1 className="hero-title">Stay like<br/>a resident<br/>of <em>Kanazawa.</em></h1>
+        <p className="hero-sub">野町、白菊町、堀川町。金沢に暮らすための、三つの住まい。<br/>一棟ごとに異なる日本の気配を、静かに。</p>
+        <div style={{ display:"flex", gap:16, flexWrap:"wrap" }}>
+          <a href="#villas" className="btn-book" style={{ background:"var(--paper)", color:"var(--ink)" }}><span>Explore the Villas</span><span className="arrow"><ArrowSVG/></span></a>
+          <a href="#book" style={{ display:"inline-flex", alignItems:"center", gap:10, padding:"11px 22px", border:"1px solid rgba(244,241,234,0.4)", borderRadius:999, fontSize:12, letterSpacing:"0.14em", color:"var(--paper)" }}>Book Direct</a>
+        </div>
+        <div className="hero-meta">
+          <div><span>Locations</span>Nomachi · Shiragiku · Horikawa</div>
+          <div><span>Rooms</span>5 total — up to 22 guests</div>
+          <div><span>Direct rate</span>— 8% vs OTA</div>
+          <div><span>Rating</span>4.96 ★ Airbnb</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Concept() {
+  return (
+    <section id="concept" className="section concept">
+      <div className="section-head" style={{ maxWidth:1200, margin:"0 auto 60px" }}>
+        <div><div className="section-label"><span className="num">01</span>CONCEPT</div></div>
+        <div><h2 className="section-title display">Three houses,<br/><em>one idea —</em><br/>to inhabit Kanazawa.</h2></div>
+      </div>
+      <div className="concept-body">
+        <p>ホテルでもなく、観光のための箱でもない。<br/>金沢という街を、住まいの目線で歩くための場所。</p>
+        <p>築年数を重ねた戸建てを、静かに整えた<span style={{ fontFamily:"var(--f-display)", fontStyle:"italic" }}>Nomachi</span>。<br/>大正の趣と日本庭園の<span style={{ fontFamily:"var(--f-display)", fontStyle:"italic" }}>Shiragiku</span>。<br/>駅から徒歩7分、畳と障子で再構築した<span style={{ fontFamily:"var(--f-display)", fontStyle:"italic" }}>Horikawa</span>。</p>
+        <p className="en">Stay quietly. Cook for yourself.<br/>Leave the door, and the city is waiting.</p>
+      </div>
+      <div className="stats" style={{ maxWidth:1200, margin:"80px auto 0" }}>
+        <div className="stat"><div className="num">3<span className="unit">villas</span></div><div className="label">Nomachi · Shiragiku · Horikawa</div></div>
+        <div className="stat"><div className="num">5<span className="unit">rooms</span></div><div className="label">One-house & apartment stays</div></div>
+        <div className="stat"><div className="num">4.96<span className="unit">★</span></div><div className="label">Average rating on Airbnb</div></div>
+        <div className="stat"><div className="num">129<span className="unit">reviews</span></div><div className="label">Across all listings</div></div>
+      </div>
+    </section>
+  );
+}
+
+function VillasList() {
+  return (
+    <section id="villas" className="section">
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">02</span>THE VILLAS</div></div>
+        <div><h2 className="section-title display">Three ways<br/>to <em>stay.</em></h2>
+        <p className="section-lede">それぞれ異なる個性をもつ、金沢の住まい。旅の目的と人数に合わせて選べます。</p></div>
+      </div>
+      <div className="villa-list">
+        {window.VILLAS.map((v,i)=>(
+          <article key={v.id} className={`villa-card ${i%2===1?"reverse":""}`}>
+            <div className="media">
+              <div className="tag">{String(i+1).padStart(2,"0")} / {v.area.replace("金沢市","")}</div>
+              <div className="ph" data-label={`PH-${v.galleryPrefix}-01 · ${v.name} hero`}/>
+            </div>
+            <div className="info">
+              <div className="idx">VILLA NO.{String(i+1).padStart(2,"0")} — {v.opened}</div>
+              <h3>{v.fullName}</h3>
+              <div className="jp-name">{v.jpName} ／ {v.areaRoman}</div>
+              <div className="desc">{v.concept}</div>
+              <div className="specs">{v.specs.map(s=>(<div key={s.k}><span>{s.k}</span><strong>{s.v}</strong></div>))}</div>
+              <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
+                <a href="#" className="btn-ghost"><span>View villa</span><span className="arrow"><ArrowSVG/></span></a>
+                <a href="#book" className="btn-book"><span>Check dates</span></a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Neighborhood() {
+  return (
+    <section id="neighborhood" className="section" style={{ background:"var(--paper-warm)" }}>
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">03</span>NEIGHBORHOOD</div></div>
+        <div><h2 className="section-title display">The city,<br/><em>close enough</em><br/>to walk.</h2>
+        <p className="section-lede">兼六園、茶屋街、21世紀美術館。金沢を象徴する場所のほとんどが、ヴィラから徒歩か短い移動の範囲にあります。</p></div>
+      </div>
+      <div className="neighborhood">
+        {window.NBH.map(n=>(
+          <div key={n.num} className="nbh-card">
+            <div className="media"><div className="ph" data-label={`PH · ${n.name}`}/></div>
+            <div className="num">{n.num}</div>
+            <h4>{n.name}</h4>
+            <div className="sub">{n.jp} · {n.sub}</div>
+            <p className="desc">{n.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Reviews() {
+  const rv = [
+    { r:"4.98", q:"まるで金沢の古い友人の家に招かれたような、静かで豊かな時間でした。キッチンで朝食を作って庭を眺める、それだけで旅の目的になる。", who:"MEGUMI · FAMILY OF 4 · NOMACHI" },
+    { r:"5.00", q:"The garden changed with the morning light. We cooked from the Omicho market haul and didn't want to leave.", who:"JAMES · COUPLE · SHIRAGIKU" },
+    { r:"4.92", q:"ホストの対応がとても丁寧で、英語でのやりとりもスムーズ。ワーケーションで1週間滞在しましたが、仕事がはかどりました。", who:"DANIEL · LONG STAY · NOMACHI" },
+  ];
+  return (
+    <section id="reviews" className="section reviews">
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">04</span>GUEST VOICES</div></div>
+        <div><h2 className="section-title display"><em>4.96</em> average,<br/>across every stay.</h2>
+        <p className="section-lede">Airbnbに寄せられた実際のゲストからのレビュー。</p></div>
+      </div>
+      <div className="review-grid">
+        {rv.map((r,i)=>(<div key={i} className="review"><div className="rating">{r.r}<em>/ 5.00</em></div><blockquote>"{r.q}"</blockquote><div className="who">{r.who}</div></div>))}
+      </div>
+    </section>
+  );
+}
+
+function Location() {
+  return (
+    <section id="location" className="section">
+      <div className="section-head">
+        <div><div className="section-label"><span className="num">05</span>LOCATION</div></div>
+        <div><h2 className="section-title display">Three addresses,<br/><em>one city.</em></h2>
+        <p className="section-lede">金沢駅、繁華街、観光エリア。それぞれのヴィラがもつ距離感を、一枚の地図に。</p></div>
+      </div>
+      <div className="location-grid">
+        <div className="map-wrap">
+          <svg className="map-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="var(--paper-warm)"/>
+            <path d="M 30 40 Q 80 80 110 120 Q 130 160 160 200 Q 180 240 220 270" stroke="var(--accent-cool)" strokeWidth="2" fill="none" opacity="0.35"/>
+            <path d="M 60 80 Q 130 130 180 180 Q 220 210 280 250" stroke="var(--accent-cool)" strokeWidth="2" fill="none" opacity="0.35"/>
+            <g stroke="var(--line-strong)" strokeWidth="0.8" fill="none">
+              <path d="M 0 140 L 400 140"/><path d="M 140 0 L 140 300"/><path d="M 240 0 L 240 300"/>
+              <path d="M 0 80 L 400 80"/><path d="M 0 220 L 400 220"/><path d="M 70 0 L 350 300" opacity="0.4"/>
+            </g>
+            <g fill="var(--paper-deep)" opacity="0.4">
+              <rect x="160" y="100" width="60" height="30"/><rect x="260" y="160" width="50" height="40"/>
+              <rect x="80" y="180" width="40" height="30"/><rect x="200" y="60" width="30" height="18"/>
+            </g>
+            <g><circle cx="290" cy="100" r="6" fill="var(--accent)"/><text x="300" y="97" fontFamily="monospace" fontSize="9" fill="var(--ink)">HORIKAWA</text><text x="300" y="108" fontFamily="monospace" fontSize="7" fill="var(--muted)">7min from stn.</text></g>
+            <g><circle cx="130" cy="220" r="6" fill="var(--ink)"/><text x="142" y="217" fontFamily="monospace" fontSize="9" fill="var(--ink)">NOMACHI</text><text x="142" y="228" fontFamily="monospace" fontSize="7" fill="var(--muted)">10min to downtown</text></g>
+            <g><circle cx="100" cy="160" r="6" fill="var(--accent-cool)"/><text x="112" y="157" fontFamily="monospace" fontSize="9" fill="var(--ink)">SHIRAGIKU</text><text x="112" y="168" fontFamily="monospace" fontSize="7" fill="var(--muted)">garden house</text></g>
+            <g><rect x="210" y="110" width="22" height="14" fill="none" stroke="var(--muted)" strokeWidth="0.6" strokeDasharray="2 2"/><text x="222" y="105" fontFamily="monospace" fontSize="6.5" fill="var(--muted)" textAnchor="middle">KENROKUEN</text></g>
+            <g><rect x="310" y="90" width="18" height="10" fill="none" stroke="var(--muted)" strokeWidth="0.6"/><text x="319" y="86" fontFamily="monospace" fontSize="6" fill="var(--muted)" textAnchor="middle">STATION</text></g>
+            <g transform="translate(360, 260)"><circle r="14" fill="none" stroke="var(--ink)" strokeWidth="0.8"/><path d="M 0 -10 L 3 0 L 0 10 L -3 0 Z" fill="var(--ink)"/><text y="-16" textAnchor="middle" fontFamily="monospace" fontSize="7" fill="var(--muted)">N</text></g>
+          </svg>
+        </div>
+        <div className="location-list">
+          {window.VILLAS.map((v,i)=>(
+            <div key={v.id} className="item">
+              <div className="pin">0{i+1}</div>
+              <div><h4>{v.fullName}</h4><div className="meta">{v.areaRoman} · {v.typeEn}</div></div>
+              <div className="dist">{v.type}</div>
+            </div>
+          ))}
+          <div style={{ marginTop:40, padding:24, background:"var(--paper-warm)", fontFamily:"var(--f-jp-display)", fontSize:14, letterSpacing:"0.12em", lineHeight:2 }}>
+            <div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:14 }}>Access from Kanazawa Station</div>
+            Horikawa 徒歩7分 ／ Nomachi・Shiragiku 路線バス15分＋徒歩<br/>小松空港から直行バス40分、JR大阪2h30m・東京2h30m。
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Host() {
+  return (
+    <section id="host" className="section" style={{ background:"var(--paper-warm)" }}>
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1.3fr", gap:80, alignItems:"center", maxWidth:1400, margin:"0 auto" }}>
+        <div className="ph" data-label="PH-HOST · Host portrait, natural light" style={{ aspectRatio:"3/4" }}/>
+        <div>
+          <div className="section-label" style={{ marginBottom:24 }}><span className="num">06</span>HOST</div>
+          <h2 className="section-title display" style={{ marginBottom:30 }}>Hosted by<br/><em>people who live</em><br/>in Kanazawa.</h2>
+          <p style={{ fontFamily:"var(--f-jp-display)", fontSize:16, lineHeight:2, letterSpacing:"0.08em", marginBottom:20 }}>私たちは金沢に暮らしながら、古い住宅を少しずつ整え、滞在の場として開いています。</p>
+          <p style={{ fontSize:14, lineHeight:1.9, color:"var(--ink-soft, var(--ink))", marginBottom:32, maxWidth:520 }}>チェックインから滞在中のご案内、近隣のおすすめまで、メッセージでやり取りします。日本語・英語のほか、AI翻訳を介してほとんどの言語でご対応可能です。</p>
+          <div style={{ display:"flex", gap:40, padding:"24px 0", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)", flexWrap:"wrap" }}>
+            <div><div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:6 }}>Response</div><div style={{ fontFamily:"var(--f-display)", fontSize:24, fontWeight:300 }}>&lt; 1 hr</div></div>
+            <div><div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:6 }}>Languages</div><div style={{ fontFamily:"var(--f-display)", fontSize:24, fontWeight:300 }}>All (AI)</div></div>
+            <div><div style={{ fontFamily:"var(--f-mono)", fontSize:10, letterSpacing:"0.2em", color:"var(--muted)", textTransform:"uppercase", marginBottom:6 }}>Hosting since</div><div style={{ fontFamily:"var(--f-display)", fontSize:24, fontWeight:300 }}>2024</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── APP ───────────────────────────────────────────────────────────
+
+function App(){
+  return (<>
+    <Header/>
+    <Hero/>
+    <Concept/>
+    <VillasList/>
+    <Neighborhood/>
+    <Reviews/>
+    <Location/>
+    <Host/>
+    <FAQSection/>
+    <BookingPreview/>
+    <Footer/>
+    <TweaksPanel/>
+  </>);
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
