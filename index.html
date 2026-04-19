@@ -480,7 +480,7 @@ function BookingPreview() {
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero-media"><div className="ph dark" data-label="PH-HERO · Cinematic still — Nomachi shōji at golden hour"/></div>
+      <div className="hero-media"><img src="images/nomachi-hero.jpg" alt="Nomachi Villa — tatami bedroom" style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center" }}/></div>
       <div className="hero-inner">
         <div className="hero-eyebrow"><span className="dot"/><span>Kanazawa · Ishikawa · Three Villas</span></div>
         <h1 className="hero-title">Stay like<br/>a resident<br/>of <em>Kanazawa.</em></h1>
@@ -535,7 +535,7 @@ function VillasList() {
           <article key={v.id} className={`villa-card ${i%2===1?"reverse":""}`}>
             <div className="media">
               <div className="tag">{String(i+1).padStart(2,"0")} / {v.area.replace("金沢市","")}</div>
-              <div className="ph" data-label={`PH-${v.galleryPrefix}-01 · ${v.name} hero`}/>
+              <img src="images/nomachi-01.jpg" alt="Nomachi Villa interior" style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover" }}/>
             </div>
             <div className="info">
               <div className="idx">VILLA NO.{String(i+1).padStart(2,"0")} — {v.opened}</div>
