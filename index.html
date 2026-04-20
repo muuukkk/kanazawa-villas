@@ -324,7 +324,7 @@ function Header() {
         <div className="lang-switch">
           {["JP","EN","中"].map(l => <button key={l} className={lang===l?"active":""} onClick={()=>setLang(l)}>{l}</button>)}
         </div>
-        <a href="#book" className="btn-book"><span>Book Direct</span><span className="arrow"><ArrowSVG/></span></a>
+        <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" className="btn-book"><span>Book Direct</span><span className="arrow"><ArrowSVG/></span></a>
       </div>
     </header>
   );
@@ -340,7 +340,7 @@ function Footer() {
           <p style={{ fontSize:13, opacity:0.7, lineHeight:1.8, maxWidth:320 }}>金沢の野町・白菊町・堀川町に構える、三つの直営民泊。<br/>一棟ごとに異なる、日本の住まいの体験を。</p>
         </div>
         <div><h5>Villas</h5><ul><li><a href="#">Nomachi Villa</a></li><li><a href="#">Shiragiku Villa</a></li><li><a href="#">Horikawa Villa</a></li></ul></div>
-        <div><h5>Stay</h5><ul><li><a href="#neighborhood">Neighborhood</a></li><li><a href="#faq">FAQ</a></li><li><a href="#book">Book Direct</a></li></ul></div>
+        <div><h5>Stay</h5><ul><li><a href="#neighborhood">Neighborhood</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank">Book Direct</a></li></ul></div>
         <div><h5>Contact</h5><ul><li>hello@kanazawa-villas.jp</li><li>石川県金沢市</li><li>住宅宿泊事業<br/>届出番号 M19******</li></ul></div>
       </div>
       <div className="footer-bottom"><div>© 2026 Kanazawa Villas.</div><div>Booking powered by Beds24</div></div>
@@ -487,7 +487,7 @@ function Hero() {
         <p className="hero-sub">野町、白菊町、堀川町。金沢に暮らすための、三つの住まい。<br/>一棟ごとに異なる日本の気配を、静かに。</p>
         <div style={{ display:"flex", gap:16, flexWrap:"wrap" }}>
           <a href="#villas" className="btn-book" style={{ background:"var(--paper)", color:"var(--ink)" }}><span>Explore the Villas</span><span className="arrow"><ArrowSVG/></span></a>
-          <a href="#book" style={{ display:"inline-flex", alignItems:"center", gap:10, padding:"11px 22px", border:"1px solid rgba(244,241,234,0.4)", borderRadius:999, fontSize:12, letterSpacing:"0.14em", color:"var(--paper)" }}>Book Direct</a>
+          <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" style={{ display:"inline-flex", alignItems:"center", gap:10, padding:"11px 22px", border:"1px solid rgba(244,241,234,0.4)", borderRadius:999, fontSize:12, letterSpacing:"0.14em", color:"var(--paper)" }}>Book Direct</a>
         </div>
         <div className="hero-meta">
           <div><span>Locations</span>Nomachi · Shiragiku · Horikawa</div>
@@ -551,7 +551,7 @@ function VillasList() {
               <div className="specs">{v.specs.map(s=>(<div key={s.k}><span>{s.k}</span><strong>{s.v}</strong></div>))}</div>
               <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
                 <a href="#" className="btn-ghost"><span>View villa</span><span className="arrow"><ArrowSVG/></span></a>
-                <a href="#book" className="btn-book"><span>Check dates</span></a>
+                <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" className="btn-book"><span>Check dates</span></a>
               </div>
             </div>
           </article>
