@@ -33,25 +33,32 @@
     <span class="brand-mark">金沢ヴィラズ</span>
     <span class="brand-sub">Kanazawa · Est. 2024</span>
   </a>
-  <nav class="site-nav">
-    <a href="#villas">Villas</a>
-    <a href="#concept">Concept</a>
-    <a href="#neighborhood">Neighborhood</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <div style="display:flex; gap:14px; align-items:center;">
+
+  <div class="header-drawer" data-component="header-drawer">
+    <nav class="site-nav">
+      <a href="#villas">Villas</a>
+      <a href="#concept">Concept</a>
+      <a href="#neighborhood">Neighborhood</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
     <div class="lang-switch" data-component="lang-switch">
       <button class="active" data-lang="JP">JP</button>
       <button data-lang="EN">EN</button>
       <button data-lang="ZH">中</button>
     </div>
+  </div>
+
+  <div class="header-cta">
     <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
       <span>Book Direct</span>
       <span class="arrow">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
     </a>
+    <button class="menu-toggle" data-component="menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </div>
 </header>
 

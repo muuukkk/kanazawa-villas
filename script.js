@@ -18,6 +18,33 @@
     });
   }
 
+  // ── 1b. Mobile menu toggle ───────────────────────────────────
+  const menuToggle = document.querySelector('[data-component="menu-toggle"]');
+  const drawer = document.querySelector('[data-component="header-drawer"]');
+  if (menuToggle && drawer) {
+    const closeMenu = () => {
+      drawer.removeAttribute('data-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    };
+    menuToggle.addEventListener('click', () => {
+      const isOpen = drawer.getAttribute('data-open') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        drawer.setAttribute('data-open', 'true');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
+      }
+    });
+    // close drawer when nav link is tapped
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    // close on viewport resize back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) closeMenu();
+    });
+  }
+
   // ── 2. FAQ accordion ─────────────────────────────────────────
   const faqList = document.querySelector('[data-component="faq"]');
   if (faqList) {
