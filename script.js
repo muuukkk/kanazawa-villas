@@ -132,4 +132,57 @@
     cal.innerHTML = html;
   }
 
+  // ── 5. House rules language toggle (JP / EN) ─────────────────
+  const houseLangToggle = document.querySelector('[data-component="house-lang-toggle"]');
+  if (houseLangToggle) {
+    const buttons = houseLangToggle.querySelectorAll('button');
+    const sections = document.querySelectorAll('[data-lang-section]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        sections.forEach(s => {
+          s.classList.toggle('active', s.dataset.langSection === target);
+        });
+      });
+    });
+  }
+
+  // ── 6. Contact form (Formspree submission) ───────────────────
+  const contactForm = document.querySelector('[data-component="contact-form"]');
+  const formStatus = document.querySelector('[data-component="form-status"]');
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Sending — 送信中...</span>';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' },
+        });
+        if (response.ok) {
+          formStatus.className = 'form-status success';
+          formStatus.innerHTML = 'お問い合わせを受け付けました。24時間以内にご返信いたします。<br/>Your message has been received. We will respond within 24 hours.';
+          contactForm.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        formStatus.className = 'form-status error';
+        formStatus.innerHTML = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。<br/>Failed to send. Please try again later.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+      }
+    });
+  }
+
 })();
