@@ -147,7 +147,14 @@ p { margin: 0; }
 
 /* Mobile header */
 @media (max-width: 860px) {
-  .site-header { padding: 12px 18px; }
+  /* Remove backdrop-filter on mobile — it traps child fixed-position
+     elements (the drawer) inside the header on iOS Safari. */
+  .site-header {
+    padding: 12px 18px;
+    background: #f4f1ea;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .site-header .brand-sub { display: none; }
   .header-cta .btn-book { display: none; }
   .menu-toggle { display: block; position: relative; z-index: 60; }
@@ -155,13 +162,19 @@ p { margin: 0; }
   /* When menu is open, hamburger needs to stay tappable above drawer.
      Give it solid bg so the cross is clearly visible. */
   .menu-toggle[aria-expanded="true"] {
-    background: var(--paper);
+    background: #f4f1ea;
     border-color: var(--ink);
   }
 
   .header-drawer {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     background: #f4f1ea;            /* solid paper, no transparency */
     flex-direction: column;
     justify-content: center;
@@ -172,8 +185,12 @@ p { margin: 0; }
     padding: 80px 24px 32px;
     z-index: 55;                    /* below toggle (60), above page */
     opacity: 1;
+    visibility: hidden;
   }
-  .header-drawer[data-open="true"] { transform: translateX(0); }
+  .header-drawer[data-open="true"] {
+    transform: translateX(0);
+    visibility: visible;
+  }
 
   .site-nav {
     flex-direction: column;
