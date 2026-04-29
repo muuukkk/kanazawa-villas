@@ -6,6 +6,19 @@
 (function () {
   'use strict';
 
+  // ── 0. Force scroll to top on fresh load ─────────────────────
+  // iOS Safari sometimes restores a stale scroll position or treats
+  // a bare "#" href as a fragment. Reset position on initial load
+  // (but only when there's no real anchor like #villas).
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', () => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  });
+
   // ── 1. Language switch (UI toggle only, no actual i18n yet) ──
   const langSwitch = document.querySelector('[data-component="lang-switch"]');
   if (langSwitch) {

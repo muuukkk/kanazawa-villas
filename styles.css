@@ -269,6 +269,7 @@ p { margin: 0; }
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 0 var(--page-x);
   padding-top: 120px;
   padding-bottom: 60px;
