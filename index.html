@@ -1,25 +1,48 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="金沢ヴィラズ — 野町・白菊町・堀川町に三つの直営民泊。一棟貸し戸建てとマンション。Beds24で直接予約。">
-  <title>Kanazawa Villas — 金沢ヴィラズ</title>
+  <meta name="description" content="Three quietly designed houses in Kanazawa — Nomachi, Shiragiku, Horikawa. Whole-house stays for families and small groups, ten minutes from the old town. Book direct."/>
+  <title>Kanazawa Villas — Three houses, one Kanazawa.</title>
 
   <!-- OGP / Twitter -->
-  <meta property="og:title" content="Kanazawa Villas — 金沢ヴィラズ">
-  <meta property="og:description" content="野町・白菊町・堀川町に佇む、金沢の直営民泊。一棟ごとに異なる日本の住まいの体験を。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://muuukkk.github.io/kanazawa-villas/">
-  <meta property="og:image" content="https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Kanazawa Villas — Three houses, one Kanazawa."/>
+  <meta property="og:description" content="Whole-house stays in Kanazawa, designed for residents — not tourists."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://muuukkk.github.io/kanazawa-villas/"/>
+  <meta property="og:image" content="https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Schema.org structured data — helps AI search & SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Kanazawa Villas",
+    "alternateName": "金沢ヴィラズ",
+    "description": "Three privately operated whole-house stays in Kanazawa, Japan.",
+    "url": "https://muuukkk.github.io/kanazawa-villas/",
+    "image": "https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kanazawa",
+      "addressRegion": "Ishikawa",
+      "addressCountry": "JP"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.96",
+      "reviewCount": "171"
+    }
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Shippori+Mincho:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500&amp;family=Inter:wght@300;400;500&amp;family=Noto+Sans+JP:wght@300;400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,8 +53,8 @@
      ============================================================ -->
 <header class="site-header">
   <a href="./" class="brand">
-    <span class="brand-mark">金沢ヴィラズ</span>
-    <span class="brand-sub">Kanazawa · Est. 2024</span>
+    <span class="brand-mark">Kanazawa Villas</span>
+    <span class="brand-sub">Est. 2024 · Ishikawa</span>
   </a>
 
   <div class="header-drawer" data-component="header-drawer">
@@ -42,11 +65,6 @@
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="lang-switch" data-component="lang-switch">
-      <button class="active" data-lang="JP">JP</button>
-      <button data-lang="EN">EN</button>
-      <button data-lang="ZH">中</button>
-    </div>
   </div>
 
   <div class="header-cta">
@@ -67,7 +85,7 @@
      ============================================================ -->
 <section class="hero">
   <div class="hero-media">
-    <img src="images/nomachi-hero.jpg" alt="Nomachi Villa — tatami bedroom"/>
+    <img src="images/nomachi-hero.jpg" alt="Tatami bedroom interior, Nomachi Villa"/>
   </div>
   <div class="hero-inner">
     <div class="hero-eyebrow">
@@ -75,19 +93,19 @@
       <span>Kanazawa · Ishikawa · Three Villas</span>
     </div>
     <h1 class="hero-title">Stay like<br/>a resident<br/>of <em>Kanazawa.</em></h1>
-    <p class="hero-sub">野町、白菊町、堀川町。金沢に暮らすための、三つの住まい。<br/>一棟ごとに異なる日本の気配を、静かに。</p>
+    <p class="hero-sub">Three houses, walking distance from the old town.<br/>Designed for families and small groups who want to live here, briefly.</p>
     <div class="hero-actions">
       <a href="#villas" class="btn-book">
-        <span>Explore the Villas</span>
+        <span>Explore the villas</span>
         <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-paper-ghost">Book Direct</a>
+      <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-paper-ghost">Book direct</a>
     </div>
     <div class="hero-meta">
       <div><span>Locations</span>Nomachi · Shiragiku · Horikawa</div>
-      <div><span>Rooms</span>5 total — up to 22 guests</div>
+      <div><span>Capacity</span>Up to 22 guests across 5 rooms</div>
       <div><span>Direct rate</span>— 8% vs OTA</div>
-      <div><span>Rating</span>4.96 ★ Airbnb</div>
+      <div><span>Rating</span>4.96 ★ on Airbnb</div>
     </div>
   </div>
 </section>
@@ -97,21 +115,21 @@
      ============================================================ -->
 <section id="concept" class="section concept">
   <div class="section-head concept-head">
-    <div><div class="section-label"><span class="num">01</span>CONCEPT</div></div>
+    <div><div class="section-label"><span class="num">01</span>Concept</div></div>
     <div>
       <h2 class="section-title display">Three houses,<br/><em>one idea —</em><br/>to inhabit Kanazawa.</h2>
     </div>
   </div>
   <div class="concept-body">
-    <p>ホテルでもなく、観光のための箱でもない。<br/>金沢という街を、住まいの目線で歩くための場所。</p>
-    <p>築年数を重ねた戸建てを、静かに整えた<em class="serif-italic">Nomachi</em>。<br/>大正の趣と日本庭園の<em class="serif-italic">Shiragiku</em>。<br/>駅から徒歩7分、畳と障子で再構築した<em class="serif-italic">Horikawa</em>。</p>
+    <p>Not a hotel. Not a tourist box.<br/>A place to walk Kanazawa from the inside — at a resident's pace.</p>
+    <p>An old townhouse, quietly composed, in <em class="serif-italic">Nomachi</em>.<br/>A Taishō-era home with a private garden, in <em class="serif-italic">Shiragiku</em>.<br/>Three rooms reframed in tatami and shōji, seven minutes from the station, in <em class="serif-italic">Horikawa</em>.</p>
     <p class="en">Stay quietly. Cook for yourself.<br/>Leave the door, and the city is waiting.</p>
   </div>
   <div class="stats">
     <div class="stat"><div class="num">3<span class="unit">villas</span></div><div class="label">Nomachi · Shiragiku · Horikawa</div></div>
-    <div class="stat"><div class="num">5<span class="unit">rooms</span></div><div class="label">One-house & apartment stays</div></div>
+    <div class="stat"><div class="num">5<span class="unit">rooms</span></div><div class="label">Whole-house &amp; apartment stays</div></div>
     <div class="stat"><div class="num">4.96<span class="unit">★</span></div><div class="label">Average rating on Airbnb</div></div>
-    <div class="stat"><div class="num">129<span class="unit">reviews</span></div><div class="label">Across all listings</div></div>
+    <div class="stat"><div class="num">171<span class="unit">reviews</span></div><div class="label">Across our listings</div></div>
   </div>
 </section>
 
@@ -120,10 +138,10 @@
      ============================================================ -->
 <section id="villas" class="section">
   <div class="section-head">
-    <div><div class="section-label"><span class="num">02</span>THE VILLAS</div></div>
+    <div><div class="section-label"><span class="num">02</span>The villas</div></div>
     <div>
       <h2 class="section-title display">Three ways<br/>to <em>stay.</em></h2>
-      <p class="section-lede">それぞれ異なる個性をもつ、金沢の住まい。旅の目的と人数に合わせて選べます。</p>
+      <p class="section-lede">Each house carries its own character. Choose by group size, mood, or how close you want to be to the station.</p>
     </div>
   </div>
 
@@ -132,19 +150,19 @@
     <!-- Villa 01: Nomachi -->
     <article class="villa-card">
       <div class="media">
-        <div class="tag">01 / 野町</div>
+        <div class="tag">01 / Nomachi</div>
         <img src="images/nomachi-01.jpg" alt="Nomachi Villa interior"/>
       </div>
       <div class="info">
-        <div class="idx">VILLA NO.01 — 2024.11</div>
+        <div class="idx">VILLA NO.01 — opened Nov 2024</div>
         <h3>Nomachi Villa</h3>
         <div class="jp-name">野町邸 ／ Nomachi, Kanazawa</div>
-        <div class="desc">築年数を重ねた住宅を、和モダンの感覚で静かに整えた一棟。長い廊下、障子越しのやわらかな光、木と土の気配。金沢に暮らすように過ごす、6名までのための住まい。</div>
+        <div class="desc">A two-storey townhouse, quietly restored. Long corridors, paper light through shōji, the steady weight of wood and tatami. Two bedrooms — one Western, one Japanese — with semi-double beds and futons available for families up to six. Ten minutes on foot from the Katamachi nightlife, and quiet enough that you forget it's there.</div>
         <div class="specs">
-          <div><span>面積</span><strong>77 m²</strong></div>
-          <div><span>定員</span><strong>6 名</strong></div>
-          <div><span>寝室</span><strong>2 室</strong></div>
-          <div><span>タイプ</span><strong>一棟貸し</strong></div>
+          <div><span>Size</span><strong>76 m²</strong></div>
+          <div><span>Capacity</span><strong>6 guests</strong></div>
+          <div><span>Bedrooms</span><strong>2</strong></div>
+          <div><span>Type</span><strong>Whole house</strong></div>
         </div>
         <div class="actions">
           <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-ghost">
@@ -159,22 +177,22 @@
     <!-- Villa 02: Shiragiku -->
     <article class="villa-card reverse">
       <div class="media">
-        <div class="tag">02 / 白菊町</div>
+        <div class="tag">02 / Shiragiku</div>
         <div class="coming-soon">
-          <div class="label">Coming Soon</div>
-          <div class="date">2025.8</div>
+          <div class="label">Photography in progress</div>
+          <div class="date">Open since Aug 2025</div>
         </div>
       </div>
       <div class="info">
-        <div class="idx">VILLA NO.02 — 2025.8</div>
+        <div class="idx">VILLA NO.02 — opened Aug 2025</div>
         <h3>Shiragiku Villa</h3>
         <div class="jp-name">白菊町邸 ／ Shiragiku, Kanazawa</div>
-        <div class="desc">大正時代の趣を手仕事で残しながら、現代の快適さを織り込んだ一棟。リビングから望むのは、紅葉、松、南天の庭。窓を開け放てば、季節そのものが部屋に入り込む。</div>
+        <div class="desc">A Taishō-era residence, carefully restored with antique furniture and lighting. The living room opens onto a small Japanese garden — maple, pine, and nandina — lit softly at night. Two upstairs bedrooms, one tatami and one wooden, sleep up to five. The west teahouse district is two-hundred metres away.</div>
         <div class="specs">
-          <div><span>面積</span><strong>56 m²</strong></div>
-          <div><span>定員</span><strong>5 名</strong></div>
-          <div><span>特徴</span><strong>日本庭園</strong></div>
-          <div><span>タイプ</span><strong>一棟貸し</strong></div>
+          <div><span>Size</span><strong>68 m²</strong></div>
+          <div><span>Capacity</span><strong>5 guests</strong></div>
+          <div><span>Feature</span><strong>Garden</strong></div>
+          <div><span>Type</span><strong>Whole house</strong></div>
         </div>
         <div class="actions">
           <a href="#" class="btn-ghost">
@@ -189,22 +207,22 @@
     <!-- Villa 03: Horikawa -->
     <article class="villa-card">
       <div class="media">
-        <div class="tag">03 / 堀川町</div>
+        <div class="tag">03 / Horikawa</div>
         <div class="coming-soon">
-          <div class="label">Coming Soon</div>
-          <div class="date">2026.7 開業予定</div>
+          <div class="label">Coming soon</div>
+          <div class="date">Opening Jul 2026</div>
         </div>
       </div>
       <div class="info">
-        <div class="idx">VILLA NO.03 — 2026.7 開業予定</div>
+        <div class="idx">VILLA NO.03 — opening Jul 2026</div>
         <h3>Horikawa Villa</h3>
         <div class="jp-name">堀川町邸 ／ Horikawa, Kanazawa</div>
-        <div class="desc">金沢駅から徒歩7分。マンションの2階を、三つのまったく異なる「日本」として再構築する。畳、障子、押入れ。古いものが、まだ知らない使われ方をする場所。</div>
+        <div class="desc">Seven minutes from Kanazawa Station. A single floor of an apartment building, reframed as three distinct rooms — tatami, shōji, and closet-spaces given new life. Sleeps eleven across three rooms, with shared laundry on the same floor. For groups, families, or longer working stays.</div>
         <div class="specs">
-          <div><span>駅徒歩</span><strong>7 分</strong></div>
-          <div><span>部屋数</span><strong>3 室</strong></div>
-          <div><span>最大</span><strong>11 名</strong></div>
-          <div><span>開業</span><strong>2026.7</strong></div>
+          <div><span>To station</span><strong>7 min</strong></div>
+          <div><span>Rooms</span><strong>3</strong></div>
+          <div><span>Capacity</span><strong>11 guests</strong></div>
+          <div><span>Opens</span><strong>Jul 2026</strong></div>
         </div>
         <div class="actions">
           <a href="#" class="btn-ghost">
@@ -224,21 +242,21 @@
      ============================================================ -->
 <section id="neighborhood" class="section" style="background:var(--paper-warm);">
   <div class="section-head">
-    <div><div class="section-label"><span class="num">03</span>NEIGHBORHOOD</div></div>
+    <div><div class="section-label"><span class="num">03</span>Neighborhood</div></div>
     <div>
       <h2 class="section-title display">The city,<br/><em>close enough</em><br/>to walk.</h2>
-      <p class="section-lede">兼六園、茶屋街、21世紀美術館。金沢を象徴する場所のほとんどが、ヴィラから徒歩か短い移動の範囲にあります。</p>
+      <p class="section-lede">Most of what makes Kanazawa worth visiting — the gardens, the teahouse districts, the market — is within walking distance, or one short bus ride away.</p>
     </div>
   </div>
   <div class="neighborhood">
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Kenrokuen Garden"></div></div><div class="num">01</div><h4>Kenrokuen Garden</h4><div class="sub">兼六園 · 15 min by bus</div><p class="desc">日本三名園のひとつ。早朝、無料開園の時間にぜひ。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Higashi Chaya"></div></div><div class="num">02</div><h4>Higashi Chaya</h4><div class="sub">ひがし茶屋街 · 20 min on foot</div><p class="desc">格子戸の町並み。夕刻、提灯が灯る頃が最も美しい。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Omicho Market"></div></div><div class="num">03</div><h4>Omicho Market</h4><div class="sub">近江町市場 · 15 min on foot</div><p class="desc">加賀野菜、日本海の鮮魚。宿のキッチンのための買い出しに。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · 21st Century Museum"></div></div><div class="num">04</div><h4>21st Century Museum</h4><div class="sub">21世紀美術館 · 18 min on foot</div><p class="desc">現代アートと、日常のあわいを歩く体験。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Nishi Chaya"></div></div><div class="num">05</div><h4>Nishi Chaya</h4><div class="sub">にし茶屋街 · 8 min on foot</div><p class="desc">Nomachi・Shiragikuから最も近い茶屋街。静けさが残る。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Myoryuji"></div></div><div class="num">06</div><h4>Myoryuji (Ninja Temple)</h4><div class="sub">妙立寺 · 5 min on foot</div><p class="desc">仕掛けだらけの寺院。徒歩圏に隠れた名所。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Kanazawa Station"></div></div><div class="num">07</div><h4>Kanazawa Station</h4><div class="sub">金沢駅・鼓門 · 7 min from Horikawa</div><p class="desc">到着の瞬間から、旅の意匠は始まっている。</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="PH · Kazuemachi Chaya"></div></div><div class="num">08</div><h4>Kazuemachi Chaya</h4><div class="sub">主計町茶屋街 · 18 min on foot</div><p class="desc">浅野川沿いの、もっとも静かな茶屋街。</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kenroku-en"></div></div><div class="num">01</div><h4>Kenroku-en Garden</h4><div class="sub">15 min by bus</div><p class="desc">One of Japan's three great gardens. Try the early morning free-entry hour.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Higashi Chaya"></div></div><div class="num">02</div><h4>Higashi Chaya District</h4><div class="sub">20 min on foot</div><p class="desc">Lattice-fronted teahouses. Most beautiful at dusk, when the lanterns come on.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Omicho Market"></div></div><div class="num">03</div><h4>Omicho Market</h4><div class="sub">15 min on foot</div><p class="desc">Local vegetables, fish from the Sea of Japan. The villa kitchens ask to be cooked in.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="21st Century Museum"></div></div><div class="num">04</div><h4>21st Century Museum</h4><div class="sub">18 min on foot</div><p class="desc">Contemporary art that meets you on a daily, unhurried scale.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Nishi Chaya"></div></div><div class="num">05</div><h4>Nishi Chaya District</h4><div class="sub">6 min from Nomachi</div><p class="desc">The smallest of the three teahouse quarters. Quieter, less photographed.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Myoryuji"></div></div><div class="num">06</div><h4>Myōryū-ji (Ninja Temple)</h4><div class="sub">4 min from Nomachi</div><p class="desc">A temple of hidden mechanisms. Booking essential.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kanazawa Station"></div></div><div class="num">07</div><h4>Kanazawa Station</h4><div class="sub">7 min from Horikawa</div><p class="desc">The Tsuzumi-mon gate sets the tone — your trip begins on arrival.</p></div>
+    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kazuemachi Chaya"></div></div><div class="num">08</div><h4>Kazuemachi Chaya</h4><div class="sub">18 min on foot</div><p class="desc">A riverside teahouse district. The quietest of them all.</p></div>
   </div>
 </section>
 
@@ -247,16 +265,16 @@
      ============================================================ -->
 <section id="reviews" class="section reviews">
   <div class="section-head">
-    <div><div class="section-label"><span class="num">04</span>GUEST VOICES</div></div>
+    <div><div class="section-label"><span class="num">04</span>Guest voices</div></div>
     <div>
       <h2 class="section-title display"><em>4.96</em> average,<br/>across every stay.</h2>
-      <p class="section-lede">Airbnbに寄せられた実際のゲストからのレビュー。</p>
+      <p class="section-lede">From real Airbnb guests across our listings.</p>
     </div>
   </div>
   <div class="review-grid">
     <div class="review">
-      <div class="rating">4.98<em>/ 5.00</em></div>
-      <blockquote>"まるで金沢の古い友人の家に招かれたような、静かで豊かな時間でした。キッチンで朝食を作って庭を眺める、それだけで旅の目的になる。"</blockquote>
+      <div class="rating">5.00<em>/ 5.00</em></div>
+      <blockquote>"It felt like being invited to the home of an old friend in Kanazawa. Cooking breakfast and looking at the garden — that alone became the point of the trip."</blockquote>
       <div class="who">MEGUMI · FAMILY OF 4 · NOMACHI</div>
     </div>
     <div class="review">
@@ -266,7 +284,7 @@
     </div>
     <div class="review">
       <div class="rating">4.92<em>/ 5.00</em></div>
-      <blockquote>"ホストの対応がとても丁寧で、英語でのやりとりもスムーズ。ワーケーションで1週間滞在しましたが、仕事がはかどりました。"</blockquote>
+      <blockquote>"The host's communication was thoughtful, and English was easy. I worked from here for a week and got more done than I do at home."</blockquote>
       <div class="who">DANIEL · LONG STAY · NOMACHI</div>
     </div>
   </div>
@@ -277,10 +295,10 @@
      ============================================================ -->
 <section id="location" class="section">
   <div class="section-head">
-    <div><div class="section-label"><span class="num">05</span>LOCATION</div></div>
+    <div><div class="section-label"><span class="num">05</span>Location</div></div>
     <div>
       <h2 class="section-title display">Three addresses,<br/><em>one city.</em></h2>
-      <p class="section-lede">金沢駅、繁華街、観光エリア。それぞれのヴィラがもつ距離感を、一枚の地図に。</p>
+      <p class="section-lede">From the station to the old town — see how each villa sits within Kanazawa.</p>
     </div>
   </div>
   <div class="location-grid">
@@ -309,22 +327,23 @@
       <div class="item">
         <div class="pin">01</div>
         <div><h4>Nomachi Villa</h4><div class="meta">Nomachi, Kanazawa · Whole house</div></div>
-        <div class="dist">一棟貸し戸建て</div>
+        <div class="dist">76 m² · 6 guests</div>
       </div>
       <div class="item">
         <div class="pin">02</div>
         <div><h4>Shiragiku Villa</h4><div class="meta">Shiragiku, Kanazawa · Whole house</div></div>
-        <div class="dist">一棟貸し戸建て</div>
+        <div class="dist">68 m² · 5 guests</div>
       </div>
       <div class="item">
         <div class="pin">03</div>
         <div><h4>Horikawa Villa</h4><div class="meta">Horikawa, Kanazawa · Three apartments</div></div>
-        <div class="dist">マンション / 3部屋</div>
+        <div class="dist">3 rooms · 11 guests</div>
       </div>
       <div class="location-access">
         <div class="label">Access from Kanazawa Station</div>
-        Horikawa 徒歩7分 ／ Nomachi・Shiragiku 路線バス15分＋徒歩<br/>
-        小松空港から直行バス40分、JR大阪2h30m・東京2h30m。
+        Horikawa — 7 min on foot.<br/>
+        Nomachi &amp; Shiragiku — 15 min by city bus, then a short walk.<br/>
+        Komatsu Airport — 40 min by direct bus. Tokyo &amp; Osaka — 2h30m by JR.
       </div>
     </div>
   </div>
@@ -335,16 +354,16 @@
      ============================================================ -->
 <section id="host" class="section" style="background:var(--paper-warm);">
   <div class="host">
-    <div class="ph photo" data-label="PH-HOST · Host portrait, natural light"></div>
+    <div class="ph photo" data-label="Host portrait"></div>
     <div class="copy">
-      <div class="label-row"><div class="section-label"><span class="num">06</span>HOST</div></div>
-      <h2 class="section-title display">Hosted by<br/><em>people who live</em><br/>in Kanazawa.</h2>
-      <p class="lead">私たちは金沢に暮らしながら、古い住宅を少しずつ整え、滞在の場として開いています。</p>
-      <p class="desc">チェックインから滞在中のご案内、近隣のおすすめまで、メッセージでやり取りします。日本語・英語のほか、AI翻訳を介してほとんどの言語でご対応可能です。</p>
+      <div class="label-row"><div class="section-label"><span class="num">06</span>Host</div></div>
+      <h2 class="section-title display">Hosted by<br/><em>someone who lives</em><br/>this work.</h2>
+      <p class="lead">Makoto Inanuma — Superhost on Airbnb, third year of hosting, with two-hundred-fifty reviews across listings in Kanazawa and Asakusa.</p>
+      <p class="desc">A film and video maker by trade. Conversations move through Beds24 messaging — Japanese, English, and most major languages via translation. Most messages get a reply within an hour.</p>
       <div class="stats-row">
         <div><span>Response</span><strong>&lt; 1 hr</strong></div>
         <div><span>Languages</span><strong>All (AI)</strong></div>
-        <div><span>Hosting since</span><strong>2024</strong></div>
+        <div><span>Hosting since</span><strong>2022</strong></div>
       </div>
     </div>
   </div>
@@ -358,43 +377,43 @@
     <div><div class="section-label"><span class="num">07</span>FAQ</div></div>
     <div>
       <h2 class="section-title display">Questions,<br/><em>answered.</em></h2>
-      <p class="section-lede">滞在前にお寄せいただくことの多いご質問。ここにないことは、お気軽にメッセージでお尋ねください。</p>
+      <p class="section-lede">A few things guests usually ask before they arrive. For anything else, send a message.</p>
     </div>
   </div>
   <div class="faq-list" data-component="faq">
     <div class="faq-item open">
       <div class="num">Q.01</div>
-      <div><div class="q">チェックイン・チェックアウトの時間は？</div><div class="a">チェックインは16:00〜、チェックアウトは10:00です。アーリーチェックイン・レイトチェックアウトはご相談ください（空室状況による）。</div></div>
+      <div><div class="q">When can we check in and out?</div><div class="a">Check-in is from 16:00, check-out by 10:00. Earlier check-in or later check-out can sometimes be arranged — please ask.</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.02</div>
-      <div><div class="q">鍵の受け渡しは？</div><div class="a">すべての宿はセルフチェックイン方式です。ご予約後に、暗証番号式キーボックスの番号とアクセス方法をメールでご案内します。</div></div>
+      <div><div class="q">How does check-in work?</div><div class="a">All villas use self check-in via keypad. After your booking is confirmed, we email the access code and detailed instructions.</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.03</div>
-      <div><div class="q">どの言語で対応可能ですか？</div><div class="a">日本語・英語を中心に、中国語・韓国語・フランス語など主要言語にAI翻訳で対応しています。</div></div>
+      <div><div class="q">What languages can the host handle?</div><div class="a">Japanese and English directly. Most other languages — Chinese, Korean, French, Spanish, German, etc. — via real-time AI translation through the messaging system.</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.04</div>
-      <div><div class="q">公式サイトから予約するメリットは？</div><div class="a">当サイト経由のご予約は、各OTA（Airbnb等）より手数料分を差し引いた価格でご提供しています。長期滞在割引もこちらからのみ適用可能です。</div></div>
+      <div><div class="q">Why book direct, instead of Airbnb?</div><div class="a">Direct bookings come without the OTA service fee — usually around 8% lower. Long-stay discounts (for 7+ nights or 28+ nights) are also only available through direct booking.</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.05</div>
-      <div><div class="q">駐車場はありますか？</div><div class="a">Nomachi・Shiragikuは敷地内1台無料、Horikawaは徒歩3分のコインパーキング（実費）をご利用ください。</div></div>
+      <div><div class="q">Is there parking?</div><div class="a">Nomachi and Shiragiku include one free on-site parking space. Horikawa uses a coin parking lot 3 minutes away (paid by the guest).</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.06</div>
-      <div><div class="q">小さな子ども連れでも滞在できますか？</div><div class="a">はい、ベビーベッド・ベビーチェアの無料貸し出しがございます（事前にお知らせください）。</div></div>
+      <div><div class="q">Are the houses suitable for young children?</div><div class="a">Yes. Baby cots and high chairs are available on request, free of charge. Please mention this when booking.</div></div>
       <div class="toggle"></div>
     </div>
     <div class="faq-item">
       <div class="num">Q.07</div>
-      <div><div class="q">長期滞在・ワーケーションには対応していますか？</div><div class="a">全棟でWi-Fi完備、7泊以上で割引、28泊以上で月割料金をご用意しています。</div></div>
+      <div><div class="q">What about long stays and remote work?</div><div class="a">All villas have Wi-Fi suitable for video calls. Discounts apply at 7+ nights, with monthly rates available from 28 nights.</div></div>
       <div class="toggle"></div>
     </div>
   </div>
@@ -405,36 +424,35 @@
      ============================================================ -->
 <section id="book" class="section booking">
   <div class="section-head">
-    <div><div class="section-label"><span class="num">08</span>BOOK DIRECT</div></div>
+    <div><div class="section-label"><span class="num">08</span>Book direct</div></div>
     <div>
       <h2 class="section-title display">Reserve<br/><em>directly.</em></h2>
-      <p class="section-lede">当サイト経由のご予約は、OTA手数料分を差し引いたダイレクト料金。お支払い・確認メールはBeds24を通じて安全に。</p>
+      <p class="section-lede">Booking through this site removes the OTA service fee. Payment and confirmation are handled by Beds24.</p>
     </div>
   </div>
   <div class="booking-grid" data-component="booking">
 
-    <!-- left: villa picker + cal -->
     <div>
       <div class="booking-label">Select villa</div>
       <div class="villa-picker">
         <button class="pick" data-villa="nomachi" data-url="https://beds24.com/booking2.php?propid=261406">
           <div>
             <div class="name">Nomachi Villa</div>
-            <div class="area-meta">野町 · max 6</div>
+            <div class="area-meta">Nomachi · max 6</div>
           </div>
           <div class="arrow-text">→</div>
         </button>
         <button class="pick" data-villa="shiragiku" data-url="#">
           <div>
             <div class="name">Shiragiku Villa</div>
-            <div class="area-meta">白菊町 · max 5</div>
+            <div class="area-meta">Shiragiku · max 5</div>
           </div>
           <div class="arrow-text">→</div>
         </button>
         <button class="pick" data-villa="horikawa" data-url="#">
           <div>
             <div class="name">Horikawa Villa</div>
-            <div class="area-meta">堀川町 · max 11</div>
+            <div class="area-meta">Horikawa · max 11</div>
           </div>
           <div class="arrow-text">→</div>
         </button>
@@ -444,12 +462,11 @@
       <div class="cal-grid" data-component="calendar"></div>
     </div>
 
-    <!-- right: summary + cta -->
     <div class="booking-summary">
       <div>
         <div class="booking-label">Your stay</div>
         <div class="stay-title" data-component="stay-title">Select a villa —</div>
-        <div class="stay-desc">Beds24の予約エンジンに接続し、日付・人数・お支払いまでを安全に進めていただけます。</div>
+        <div class="stay-desc">You'll be taken to Beds24 to pick exact dates, guests, and complete payment securely.</div>
         <div class="rate-row first"><span>Direct rate</span><span>— 8% vs OTA</span></div>
         <div class="rate-row"><span>Long stay (7+ nights)</span><span>— 10%</span></div>
         <div class="rate-row"><span>Monthly (28+ nights)</span><span>— 25%</span></div>
@@ -469,8 +486,8 @@
   <div class="footer-top">
     <div>
       <div class="footer-brand-mark">Kanazawa Villas</div>
-      <div class="footer-brand-tag">金沢ヴィラズ ／ 三つの住まい</div>
-      <p class="footer-brand-desc">金沢の野町・白菊町・堀川町に構える、三つの直営民泊。<br/>一棟ごとに異なる、日本の住まいの体験を。</p>
+      <div class="footer-brand-tag">金沢ヴィラズ ／ Three houses, one Kanazawa.</div>
+      <p class="footer-brand-desc">Three privately operated houses in Kanazawa — Nomachi, Shiragiku, and (from 2026) Horikawa. Whole-house stays for residents, briefly.</p>
     </div>
     <div>
       <h5>Villas</h5>
@@ -493,14 +510,14 @@
       <h5>Legal</h5>
       <ul class="legal-links">
         <li><a href="legal/tokushoho.html">特定商取引法に基づく表記</a></li>
-        <li><a href="legal/privacy.html">プライバシーポリシー</a></li>
-        <li><a href="legal/terms.html">宿泊約款</a></li>
-        <li><a href="legal/house-rules.html">ハウスルール</a></li>
+        <li><a href="legal/privacy.html">Privacy Policy</a></li>
+        <li><a href="legal/terms.html">Accommodation Agreement</a></li>
+        <li><a href="legal/house-rules.html">House Rules</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 Kanazawa Villas / 合同会社IMK ／ 簡易宿所営業</div>
+    <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
     <div>Booking powered by Beds24</div>
   </div>
 </footer>

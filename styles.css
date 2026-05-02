@@ -1,23 +1,35 @@
 /* ============================================================
    金沢ヴィラズ — Kanazawa Villas
    styles.css
+   Theme: refined minimalism · monochrome · aizumi accent
    ============================================================ */
 
 :root {
-  --ink: #1a1815;
-  --ink-soft: #2a2722;
-  --paper: #f4f1ea;
-  --paper-warm: #ebe5d9;
-  --paper-deep: #d9d2c2;
-  --line: rgba(26, 24, 21, 0.14);
-  --line-strong: rgba(26, 24, 21, 0.28);
-  --muted: #7a756c;
-  --muted-soft: #a39e92;
-  --accent: #7a5c3a;
-  --accent-deep: #5a3f22;
-  --accent-cool: #3a4a52;
-  --highlight: #c2a878;
+  /* Ink — cool blue-black, single source of truth for text */
+  --ink: #0e1217;
+  --ink-soft: #1a1f26;
+  --ink-mute: #444a52;
 
+  /* Paper — neutral cool greys, no warmth */
+  --paper: #f0f1f3;
+  --paper-warm: #e8eaec;
+  --paper-deep: #d6d9dc;
+
+  /* Lines & dividers */
+  --line: rgba(14, 18, 23, 0.10);
+  --line-strong: rgba(14, 18, 23, 0.22);
+
+  /* Muted text */
+  --muted: #6b7178;
+  --muted-soft: #9aa0a6;
+
+  /* Accent — aizumi (indigo-grey) — the only chromatic note */
+  --accent: #3a4a52;
+  --accent-deep: #28343b;
+  --accent-cool: #3a4a52;
+  --highlight: #3a4a52;
+
+  /* Typography */
   --f-display: "Cormorant Garamond", "Shippori Mincho", serif;
   --f-jp-display: "Shippori Mincho", "Noto Serif JP", serif;
   --f-body: "Inter", "Noto Sans JP", system-ui, sans-serif;
