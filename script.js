@@ -183,6 +183,81 @@
         submitBtn.innerHTML = originalLabel;
       }
     });
+
+    // GA4 event: contact form submission (also fired earlier on success)
+    contactForm.addEventListener('submit', () => {
+      track('contact_submit', {
+        topic: contactForm.querySelector('[name="topic"]')?.value || '',
+        villa: contactForm.querySelector('[name="villa"]')?.value || '',
+      });
+    });
   }
+
+  // ── 7. GA4 Event Tracking ────────────────────────────────────
+  // Helper that safely calls gtag if available.
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
+  // 7a. "Book Direct" / "Check dates" / "View villa" — any link to Beds24
+  // Identify Beds24 links by URL pattern, then determine context (villa, location)
+  document.querySelectorAll('a[href*="beds24.com/booking"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const text = (link.textContent || '').trim().toLowerCase();
+      const propMatch = link.href.match(/propid=(\d+)/);
+      const propId = propMatch ? propMatch[1] : '';
+
+      // Map prop IDs to villa names (extend as more villas open)
+      const villaByProp = {
+        '261406': 'nomachi',
+      };
+      const villa = villaByProp[propId] || 'unknown';
+
+      // Identify which CTA was clicked based on its text content
+      let cta = 'book_direct';
+      if (text.includes('check dates')) cta = 'check_dates';
+      else if (text.includes('view villa')) cta = 'view_villa';
+      else if (text.includes('continue on beds24')) cta = 'continue_beds24';
+      else if (text.includes('explore the villas')) cta = 'explore_villas';
+
+      track('beds24_click', {
+        cta_label: cta,
+        villa: villa,
+        prop_id: propId,
+        page: window.location.pathname,
+      });
+    });
+  });
+
+  // 7b. Villa picker selection (BookingPreview section)
+  document.querySelectorAll('[data-component="booking"] .pick').forEach(btn => {
+    btn.addEventListener('click', () => {
+      track('villa_select', {
+        villa: btn.dataset.villa || '',
+        page: window.location.pathname,
+      });
+    });
+  });
+
+  // 7c. Mobile menu open
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      const isOpening = menuToggle.getAttribute('aria-expanded') === 'true';
+      // We listen *after* the toggle handler runs, so the state has flipped
+      track('mobile_menu_toggle', { state: isOpening ? 'open' : 'close' });
+    });
+  }
+
+  // 7d. Footer legal link clicks (helpful for compliance audit)
+  document.querySelectorAll('.legal-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      track('legal_link_click', {
+        link_text: (link.textContent || '').trim(),
+        href: link.getAttribute('href'),
+      });
+    });
+  });
 
 })();
