@@ -297,7 +297,7 @@ p { margin: 0; }
   min-height: 100dvh;
   padding: 0 var(--page-x);
   padding-top: 120px;
-  padding-bottom: 90px;
+  padding-bottom: clamp(60px, 12vh, 120px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -346,16 +346,12 @@ p { margin: 0; }
 }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-actions .btn-book { background: var(--paper); color: var(--ink); }
-.hero-actions .btn-paper-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 22px;
-  border: 1px solid rgba(244,241,234,0.4);
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.14em;
+.hero-actions .btn-book.hero-secondary {
+  background: var(--ink);
   color: var(--paper);
+}
+.hero-actions .btn-book.hero-secondary:hover {
+  background: var(--ink-soft);
 }
 .hero-meta {
   display: flex;
