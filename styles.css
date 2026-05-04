@@ -678,8 +678,39 @@ p { margin: 0; }
 
 /* ── Neighborhood ───────────────────────────────────────────── */
 .neighborhood { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-@media (max-width: 960px) { .neighborhood { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .neighborhood { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .neighborhood { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 860px) { .neighborhood { grid-template-columns: repeat(2, 1fr); } }
+
+/* Mobile (≤640px): horizontal scroller with snap behavior.
+   Cards become a fixed width and the section scrolls sideways.
+   This keeps the section tall ~1 card height instead of 7+. */
+@media (max-width: 640px) {
+  .neighborhood {
+    display: flex;
+    grid-template-columns: none;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Bleed to the screen edges — gives the "more to the right" peek */
+    margin-left: calc(-1 * var(--page-x));
+    margin-right: calc(-1 * var(--page-x));
+    padding: 4px var(--page-x) 8px;
+    /* Hide the scrollbar for a cleaner look */
+    scrollbar-width: none;
+  }
+  .neighborhood::-webkit-scrollbar { display: none; }
+  .neighborhood .nbh-card {
+    flex: 0 0 78%;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+  /* Last card gets a little right-margin so it ends comfortably */
+  .neighborhood .nbh-card:last-child {
+    margin-right: 4px;
+  }
+}
 .nbh-card .media { aspect-ratio: 3/4; position: relative; margin-bottom: 16px; }
 .nbh-card .media .ph { position: absolute; inset: 0; }
 .nbh-card .num {
