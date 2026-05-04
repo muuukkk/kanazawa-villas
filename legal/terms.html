@@ -24,9 +24,9 @@
 <body class="subpage">
 
 <header class="site-header">
-  <a href="../" class="brand">
-    <span class="brand-mark">金沢ヴィラズ</span>
-    <span class="brand-sub">Kanazawa · Est. 2024</span>
+  <a href="../index.html" class="brand">
+    <span class="brand-mark">Kanazawa Villas</span>
+    <span class="brand-sub">Est. 2024 · Ishikawa</span>
   </a>
   <div class="header-drawer" data-component="header-drawer">
     <nav class="site-nav">
@@ -39,7 +39,8 @@
   </div>
   <div class="header-cta">
     <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
-      <span>Book Direct</span>
+      <span class="btn-label-full">Book Direct</span>
+      <span class="btn-label-short">Book</span>
       <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <button class="menu-toggle" data-component="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -55,7 +56,15 @@
 </section>
 
 <main class="subpage-body">
-  <p class="lead">本約款は、合同会社IMK（以下「当施設」といいます）が運営する宿泊施設「金沢ヴィラズ」（Nomachi Villa、Shiragiku Villa、Horikawa Villa を総称します）における、宿泊契約およびこれに関連する契約の条件を定めるものです。本約款に定めのない事項は、法令または一般に確立された慣習によります。</p>
+
+  <div class="lang-toggle" data-component="legal-lang-toggle">
+    <button class="active" data-target="jp">日本語</button>
+    <button data-target="en">English</button>
+  </div>
+
+  <!-- ────────── 日本語版 ────────── -->
+  <section class="lang-section active" data-lang-section="jp">
+<p class="lead">本約款は、合同会社IMK（以下「当施設」といいます）が運営する宿泊施設「金沢ヴィラズ」（Nomachi Villa、Shiragiku Villa、Horikawa Villa を総称します）における、宿泊契約およびこれに関連する契約の条件を定めるものです。本約款に定めのない事項は、法令または一般に確立された慣習によります。</p>
 
   <h2>第1条（適用範囲）</h2>
   <p>1. 当施設が宿泊客との間で締結する宿泊契約およびこれに関連する契約は、本約款の定めるところによります。</p>
@@ -74,13 +83,10 @@
 
   <h2>第3条（宿泊契約の成立等）</h2>
   <p>1. 宿泊契約は、当施設が前条の申込みを承諾したときに成立するものとします。ただし、当施設が承諾をしなかったことを証明したときは、この限りではありません。</p>
-  <p>2. 前項の規定により宿泊契約が成立したときは、宿泊期間（3日を超えるときは3日間）の基本宿泊料金を限度として、当施設が定める申込金を、当施設が指定する日までにお支払いいただきます。</p>
-  <p>3. 申込金は、まず最終的に宿泊客が支払うべき宿泊料金に充当し、第6条および第18条の規定を適用する事態が生じたときは、違約金にこれを充当し、残額があれば、料金の支払いの際に返還します。</p>
+  <p>2. 前項の規定により宿泊契約が成立したときは、予約時に当施設が定める宿泊料金等を、当施設が指定する決済方法によりお支払いいただきます。</p>
+  <p>3. 第5条および第6条の規定により宿泊契約の解除等が生じたときは、当該宿泊料金等は違約金等に充当し、残額があれば、所定の決済方法と同一の方法により返金します。</p>
 
-  <h2>第4条（申込金の支払いを要しないこととする特約）</h2>
-  <p>当施設は、宿泊契約の成立後直ちに、申込金の支払いを要しないこととする特約に応じることがあります。当施設が、宿泊契約の承諾に当たって、第3条第2項の申込金の支払いを求めなかった場合、当該特約に応じたものとみなします。</p>
-
-  <h2>第5条（宿泊契約締結の拒否）</h2>
+  <h2>第4条（宿泊契約締結の拒否）</h2>
   <p>当施設は、次に掲げる場合において、宿泊契約の締結に応じないことがあります。</p>
   <ol>
     <li>宿泊の申込みが、本約款によらないとき</li>
@@ -96,7 +102,7 @@
     <li>宿泊しようとする者が、泥酔者等で他の宿泊客に著しく迷惑を及ぼすおそれがあると認められるとき、または宿泊客が他の宿泊客に著しく迷惑を及ぼす言動をしたとき</li>
   </ol>
 
-  <h2>第6条（宿泊客の契約解除権）</h2>
+  <h2>第5条（宿泊客の契約解除権）</h2>
   <p>1. 宿泊客は、当施設に申し出て、宿泊契約を解除することができます。</p>
   <p>2. 当施設は、宿泊客がその責めに帰すべき事由により宿泊契約の全部または一部を解除した場合は、以下の違約金（キャンセル料）を申し受けます。</p>
 
@@ -111,7 +117,7 @@
 
   <p>3. 当施設は、宿泊客が連絡をしないで宿泊日当日のチェックイン予定時刻（あらかじめ到着予定時刻が明示されていない場合は、原則としてチェックイン時刻から24時間）を経過しても到着しないときは、その宿泊契約は宿泊客により解除されたものとみなして処理することがあります。</p>
 
-  <h2>第7条（当施設の契約解除権）</h2>
+  <h2>第6条（当施設の契約解除権）</h2>
   <p>当施設は、次に掲げる場合においては、宿泊契約を解除することがあります。</p>
   <ol>
     <li>宿泊客が、宿泊に関し、法令の規定、公の秩序もしくは善良の風俗に反する行為をするおそれがあると認められるとき、または同行為をしたと認められるとき</li>
@@ -123,7 +129,7 @@
     <li>寝室内で、寝たばこ、消防用設備等に対するいたずら、その他当施設が定める利用規則の禁止事項に従わないとき</li>
   </ol>
 
-  <h2>第8条（宿泊の登録）</h2>
+  <h2>第7条（宿泊の登録）</h2>
   <p>1. 宿泊客は、宿泊日当日、当施設の指定する方法により、次の事項を申告しなければなりません。</p>
   <ul>
     <li>宿泊客の氏名、住所、連絡先、職業</li>
@@ -133,81 +139,118 @@
   </ul>
   <p>2. 上記の事項は、旅館業法第6条に基づく宿泊者名簿の作成のため必要なものです。</p>
 
-  <h2>第9条（客室の使用時間）</h2>
-  <p>1. 宿泊客が当施設の客室を使用できる時間は、原則として到着日の午後4時から出発日の午前10時までとします。ただし、連続して宿泊する場合においては、到着日および出発日を除き、終日使用することができます。</p>
+  <h2>第8条（客室の使用時間）</h2>
+  <p>1. 宿泊客が当施設の客室を使用できる時間は、原則として到着日の午後3時から出発日の午前11時までとします。ただし、連続して宿泊する場合においては、到着日および出発日を除き、終日使用することができます。</p>
   <p>2. 当施設は、前項の規定にかかわらず、同項に定める時間外の客室の使用に応じることがあります。この場合、別途追加料金を申し受けることがあります。</p>
 
-  <h2>第10条（料金の支払い）</h2>
+  <h2>第9条（料金の支払い）</h2>
   <p>1. 宿泊客が支払うべき宿泊料金等の内訳および算定方法は、各物件の予約ページにて明示します。</p>
   <p>2. 前項の宿泊料金等の支払いは、原則としてご予約確定時にクレジットカードにより行うものとします。</p>
   <p>3. 当施設が宿泊客に客室を提供し、使用が可能になったのち、宿泊客が任意に宿泊しなかった場合においても、宿泊料金は申し受けます。</p>
 
-  <h2>第11条（当施設の責任）</h2>
-  <p>1. 当施設は、宿泊契約および本約款に基づく契約の履行に当たり、または、それらの不履行により宿泊客に損害を与えたときは、その損害を賠償します。ただし、それが当施設の責めに帰すべき事由によるものでないときは、この限りではありません。</p>
-  <p>2. 当施設は、万一の火災等に対処するため、旅館賠償責任保険に加入しています。</p>
+  <h2>第10条（当施設の責任）</h2>
+  <p>当施設は、宿泊契約および本約款に基づく契約の履行に当たり、または、それらの不履行により宿泊客に損害を与えたときは、その損害を賠償します。ただし、それが当施設の責めに帰すべき事由によるものでないときは、この限りではありません。</p>
 
-  <h2>第12条（契約した客室の提供ができないときの取扱い）</h2>
+  <h2>第11条（契約した客室の提供ができないときの取扱い）</h2>
   <p>1. 当施設は、宿泊客に契約した客室を提供できないときは、宿泊客の了解を得て、できる限り同一の条件による他の宿泊施設を斡旋するものとします。</p>
   <p>2. 当施設は、前項の規定にかかわらず他の宿泊施設の斡旋ができないときは、違約金相当額の補償料を宿泊客に支払い、その補償料は損害賠償額に充当します。ただし、客室が提供できないことについて、当施設の責めに帰すべき事由がないときは、補償料を支払いません。</p>
 
-  <h2>第13条（寄託物等の取扱い）</h2>
+  <h2>第12条（寄託物等の取扱い）</h2>
   <p>1. 当施設は、原則として宿泊客の所持品の保管は行いません。</p>
   <p>2. 宿泊客が当施設内に持ち込んだ物品または現金ならびに貴重品であって、当施設にお預けにならなかったものについて、当施設の故意または過失により滅失、毀損等の損害が生じたときは、当施設はその損害を賠償します。ただし、宿泊客からあらかじめ種類および価額の明告のなかったものについては、当施設は10万円を限度としてその損害を賠償します。</p>
 
-  <h2>第14条（宿泊客の手荷物等の保管）</h2>
+  <h2>第13条（宿泊客の手荷物等の保管）</h2>
   <p>当施設は、宿泊客のチェックアウト後、当施設内に放置された物品については、可能な範囲で7日間保管したのち、当施設の判断において廃棄処分することがあります。</p>
 
-  <h2>第15条（宿泊客の責任）</h2>
+  <h2>第14条（宿泊客の責任）</h2>
   <p>宿泊客の故意または過失により当施設が損害を被ったときは、当該宿泊客は、当施設に対し、その損害を賠償しなければなりません。具体的な損害例および賠償額については、別途定める「ハウスルール」によります。</p>
 
-  <h2>第16条（準拠法・管轄裁判所）</h2>
+  <h2>第15条（準拠法・管轄裁判所）</h2>
   <p>1. 本約款の解釈および適用は、日本法に準拠するものとします。</p>
   <p>2. 本約款に関連して紛争が生じた場合は、当施設の所在地を管轄する地方裁判所または簡易裁判所を第一審の専属的合意管轄裁判所とします。</p>
 
-  <h2>第17条（約款の変更）</h2>
+  <h2>第16条（約款の変更）</h2>
   <p>当施設は、本約款を必要に応じて変更することがあります。重要な変更がある場合は、本サイトにて告知するとともに、ご予約済みのお客様には予約時の連絡先に通知いたします。</p>
 
   <h2>関連文書</h2>
   <p>滞在中の具体的なルールについては、別途「<a href="house-rules.html" style="text-decoration:underline; text-underline-offset:3px;">ハウスルール</a>」をご確認ください。</p>
+  </section>
+
+  <!-- ────────── English version ────────── -->
+  <section class="lang-section" data-lang-section="en">
+
+    <p class="lead">These Accommodation Terms govern the contract between IMK LLC ("we", "us", "our") and guests of "Kanazawa Villas" — Nomachi Villa, Shiragiku Villa, and Horikawa Villa (collectively, "the facility"). This English version is a summary translation; the Japanese version is the official, governing document.</p>
+
+    <h2>Article 1. Scope</h2>
+    <p>The accommodation contract and any related contracts between us and the guest are governed by these Terms. Where lawful and customary, special agreements may take precedence. Use of the facility is also subject to our House Rules, which form part of these Terms.</p>
+
+    <h2>Article 2. Booking Application</h2>
+    <p>To apply for an accommodation contract, guests must provide their name and contact details, dates of stay, expected arrival time, number of guests, and any other information we may require, via our designated booking platforms (e.g., Beds24).</p>
+
+    <h2>Article 3. Formation of Contract</h2>
+    <p>The accommodation contract is formed when we accept a booking application. Upon formation, the guest pays the accommodation charges in full at the time of booking by our designated payment method (Stripe). If a contract is later cancelled or terminated under Articles 5 or 6, the charges may be applied to cancellation fees, with any balance refunded by the same payment method.</p>
+
+    <h2>Article 4. Refusal of Contract</h2>
+    <p>We may refuse to enter into an accommodation contract in cases including, but not limited to: applications that do not comply with these Terms; full occupancy; conduct contrary to law or public order; suspected affiliation with anti-social forces; serious nuisance to other guests; communicable disease; force majeure; or significant intoxication or other behavior likely to disturb others.</p>
+
+    <h2>Article 5. Right to Cancel</h2>
+    <p>Guests may cancel by notifying us. Cancellation fees apply as follows:</p>
+    <table class="info-table">
+      <tbody>
+        <tr><th>5+ days before<br/>check-in</th><td>No charge</td></tr>
+        <tr><th>4 days or less<br/>before check-in</th><td>100% of accommodation charges</td></tr>
+        <tr><th>No-show</th><td>100% of accommodation charges</td></tr>
+      </tbody>
+    </table>
+    <p>If a guest does not arrive by the scheduled check-in time and has not notified us, we may treat the booking as cancelled by the guest.</p>
+
+    <h2>Article 6. Our Right to Terminate</h2>
+    <p>We may terminate the contract if a guest engages in conduct contrary to law or public order, falls under any of the categories in Article 4, causes serious nuisance to other guests, violates the House Rules (including smoking, pets, unregistered guests, or noise complaints), or in cases of force majeure.</p>
+
+    <h2>Article 7. Guest Registration</h2>
+    <p>On the day of arrival, guests must provide name, address, contact details, and occupation; for non-Japanese guests, also nationality, passport number, and entry information. This is required by Article 6 of the Hotel Business Act.</p>
+
+    <h2>Article 8. Use of Rooms</h2>
+    <p>Rooms may be used from 15:00 on the arrival day until 11:00 on the departure day. Continuous stays may use the room throughout the day, except on arrival and departure days. Use outside these hours may be arranged with additional charges.</p>
+
+    <h2>Article 9. Payment</h2>
+    <p>Charges and payment methods are stated on each villa's booking page. Payment is made at the time of booking by credit card. If the guest does not stay despite the room being made available, the full charge is still payable.</p>
+
+    <h2>Article 10. Our Liability</h2>
+    <p>We will compensate the guest for damages caused by our breach of contract, except where the cause is not attributable to us.</p>
+
+    <h2>Article 11. Inability to Provide the Reserved Room</h2>
+    <p>If we cannot provide the reserved room, we will, with the guest's consent, arrange alternative accommodation of similar standards where possible. If alternative accommodation cannot be arranged, we will pay compensation equivalent to the cancellation fee, except where the inability is not attributable to us.</p>
+
+    <h2>Article 12. Deposited Items</h2>
+    <p>We do not generally provide storage for guest belongings. For items brought into the facility but not deposited with us, we are liable for damages caused by our intent or negligence; for items whose nature and value were not declared in advance, our liability is capped at JPY 100,000.</p>
+
+    <h2>Article 13. Items Left After Check-Out</h2>
+    <p>Items left at the facility after check-out may be stored for up to seven days, after which they may be disposed of at our discretion.</p>
+
+    <h2>Article 14. Guest Liability</h2>
+    <p>If a guest causes damage to the facility through intent or negligence, the guest must compensate us. Specific examples and amounts are set out in the House Rules.</p>
+
+    <h2>Article 15. Governing Law and Jurisdiction</h2>
+    <p>These Terms are governed by the laws of Japan. Disputes will be subject to the exclusive jurisdiction of the courts having jurisdiction over the location of the facility.</p>
+
+    <h2>Article 16. Changes</h2>
+    <p>We may revise these Terms as needed. Material changes will be announced on this site, and existing bookings will be notified at the contact details provided.</p>
+
+    <h2>Related Documents</h2>
+    <p>For specific rules during your stay, please refer to the <a href="house-rules.html#en" style="text-decoration:underline; text-underline-offset:3px;">House Rules</a>.</p>
+
+    <p style="margin-top: 32px; color: var(--muted); font-size: 13px;"><em>Note: The Japanese version of these Terms is the official, governing version. This English translation is provided for convenience.</em></p>
+
+  </section>
 
   <div class="updated">制定日：2026年4月30日　／　最終更新日：2026年4月30日</div>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-mark">Kanazawa Villas</div>
-      <div class="footer-brand-tag">金沢ヴィラズ ／ Three houses, one Kanazawa.</div>
-    </div>
-    <div>
-      <h5>Stay</h5>
-      <ul>
-        <li><a href="../#villas">Villas</a></li>
-        <li><a href="../#faq">FAQ</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Legal</h5>
-      <ul class="legal-links">
-        <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Accommodation Agreement</a></li>
-        <li><a href="house-rules.html">House Rules</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Booking</h5>
-      <ul>
-        <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Book Direct</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
-    <div>Booking powered by Beds24</div>
-  </div>
-</footer>
+<!-- ============================================================
+     FOOTER (injected by script.js)
+     ============================================================ -->
+<footer class="site-footer" data-component="site-footer"></footer>
 
 <script src="../script.js"></script>
 </body>

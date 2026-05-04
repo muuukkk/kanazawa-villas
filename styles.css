@@ -181,7 +181,16 @@ p { margin: 0; }
     -webkit-backdrop-filter: none;
   }
   .site-header .brand-sub { display: none; }
-  .header-cta .btn-book { display: none; }
+  /* Mobile: keep a short "Book" CTA visible at all times; hide the arrow icon */
+  .header-cta .btn-book {
+    display: inline-flex;
+    padding: 9px 16px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .header-cta .btn-book .btn-label-full { display: none; }
+  .header-cta .btn-book .btn-label-short { display: inline; }
+  .header-cta .btn-book .arrow { display: none; }
   .menu-toggle { display: block; position: relative; z-index: 60; }
 
   /* When menu is open, hamburger needs to stay tappable above drawer.
@@ -248,6 +257,8 @@ p { margin: 0; }
 .btn-book:hover { background: var(--accent-deep, var(--ink-soft)); transform: translateY(-1px); }
 .btn-book .arrow { width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center; }
 .btn-book .arrow svg { width: 100%; height: 100%; }
+.btn-book .btn-label-short { display: none; }
+.btn-book .btn-label-full { display: inline; }
 
 .btn-ghost {
   display: inline-flex;
@@ -564,6 +575,16 @@ p { margin: 0; }
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+.villa-card .info .booking-note {
+  font-family: var(--f-body);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
 }
 .villa-card .info .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
@@ -1213,3 +1234,49 @@ p { margin: 0; }
 
 /* ── Footer legal links ─────────────────────────────────────── */
 .footer-top ul.legal-links li { margin-bottom: 8px; }
+
+/* ── Booking: Why book direct list ──────────────────────────── */
+.direct-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  border-top: 1px solid var(--line);
+}
+.direct-benefits li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-mute, var(--ink));
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.direct-benefits li .bullet {
+  color: var(--accent);
+  font-family: var(--f-mono);
+  font-weight: 400;
+  flex-shrink: 0;
+}
+.direct-benefits li.note {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border-bottom: none;
+  display: block;
+  padding-top: 18px;
+}
+
+/* ── Host stats-row: handle longer Languages text ───────────── */
+@media (max-width: 760px) {
+  .host .stats-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+.host .stats-row > div strong {
+  word-wrap: break-word;
+  max-width: 100%;
+}

@@ -24,9 +24,9 @@
 <body class="subpage">
 
 <header class="site-header">
-  <a href="./" class="brand">
-    <span class="brand-mark">金沢ヴィラズ</span>
-    <span class="brand-sub">Kanazawa · Est. 2024</span>
+  <a href="index.html" class="brand">
+    <span class="brand-mark">Kanazawa Villas</span>
+    <span class="brand-sub">Est. 2024 · Ishikawa</span>
   </a>
   <div class="header-drawer" data-component="header-drawer">
     <nav class="site-nav">
@@ -39,7 +39,8 @@
   </div>
   <div class="header-cta">
     <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
-      <span>Book Direct</span>
+      <span class="btn-label-full">Book Direct</span>
+      <span class="btn-label-short">Book</span>
       <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <button class="menu-toggle" data-component="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -55,21 +56,26 @@
 </section>
 
 <main class="subpage-body">
-  <p class="lead">
-    ご予約・ご滞在に関するご相談、長期滞在の見積もり、その他のお問い合わせを受け付けています。<br/>
-    通常 24時間以内 にホストよりご返信いたします。<br/>
-    <span style="display:block; margin-top:14px; font-family:var(--f-body); font-size:13px; letter-spacing:0;">
-      For all inquiries, please use the form below. We typically respond within 24 hours.
-    </span>
-  </p>
 
-  <!--
-    Formspree について：
-    - 下記の "YOUR_FORM_ID" を、Formspree (https://formspree.io) で取得した
-      フォームIDに置き換えてください
-    - 無料プランで月50件まで送信可能
-    - 送信先メールは Formspree 側のダッシュボードで設定
-  -->
+  <div class="lang-toggle" data-component="legal-lang-toggle">
+    <button class="active" data-target="en">English</button>
+    <button data-target="jp">日本語</button>
+  </div>
+
+  <!-- Lead text — language-aware -->
+  <section class="lang-section active" data-lang-section="en">
+    <p class="lead">
+      For booking inquiries, long-stay quotes, group bookings, or anything else — please use the form below.<br/>
+      We typically respond within 24 hours.
+    </p>
+  </section>
+  <section class="lang-section" data-lang-section="jp">
+    <p class="lead">
+      ご予約・ご滞在に関するご相談、長期滞在の見積もり、その他のお問い合わせを受け付けています。<br/>
+      通常 24時間以内 にホストよりご返信いたします。
+    </p>
+  </section>
+
   <form
     class="contact-form"
     data-component="contact-form"
@@ -77,51 +83,50 @@
     method="POST"
   >
     <div class="field">
-      <label for="name">お名前 / Name<span style="color:var(--accent);">*</span></label>
+      <label for="name">Name<span style="color:var(--accent);">*</span></label>
       <input type="text" id="name" name="name" required autocomplete="name"/>
     </div>
 
     <div class="field">
-      <label for="email">メールアドレス / Email<span style="color:var(--accent);">*</span></label>
+      <label for="email">Email<span style="color:var(--accent);">*</span></label>
       <input type="email" id="email" name="email" required autocomplete="email"/>
     </div>
 
     <div class="field">
-      <label for="topic">お問い合わせ内容 / Topic</label>
-      <select id="topic" name="topic">
-        <option value="general">一般的なお問い合わせ / General inquiry</option>
-        <option value="booking">ご予約に関するご相談 / Booking inquiry</option>
-        <option value="long-stay">長期滞在のご相談 / Long-term stay</option>
-        <option value="group">団体・特別利用 / Group or special use</option>
-        <option value="other">その他 / Other</option>
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic" data-component="topic-select">
+        <option value="general">General inquiry</option>
+        <option value="booking">Booking inquiry</option>
+        <option value="long-stay">Long-term stay</option>
+        <option value="group">Group or special use</option>
+        <option value="horikawa">Horikawa Villa — Notify me when bookings open</option>
+        <option value="other">Other</option>
       </select>
     </div>
 
     <div class="field">
-      <label for="villa">対象のヴィラ / Villa</label>
-      <select id="villa" name="villa">
-        <option value="">指定なし / Not specified</option>
-        <option value="nomachi">Nomachi Villa（野町邸）</option>
-        <option value="shiragiku">Shiragiku Villa（白菊町邸）</option>
-        <option value="horikawa">Horikawa Villa（堀川町邸）</option>
+      <label for="villa">Villa</label>
+      <select id="villa" name="villa" data-component="villa-select">
+        <option value="">Not specified</option>
+        <option value="nomachi">Nomachi Villa</option>
+        <option value="shiragiku">Shiragiku Villa</option>
+        <option value="horikawa">Horikawa Villa</option>
       </select>
     </div>
 
     <div class="field">
-      <label for="message">お問い合わせ内容 / Message<span style="color:var(--accent);">*</span></label>
+      <label for="message">Message<span style="color:var(--accent);">*</span></label>
       <textarea id="message" name="message" required></textarea>
     </div>
 
-    <!-- Spam honeypot — bots fill this, humans don't see it -->
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
 
     <p class="note">
-      送信いただいた情報は、<a href="legal/privacy.html" style="text-decoration:underline; text-underline-offset:3px;">プライバシーポリシー</a> に基づき、お問い合わせ対応の目的のみに利用いたします。<br/>
       Your information will be used only to respond to your inquiry, in accordance with our <a href="legal/privacy.html" style="text-decoration:underline; text-underline-offset:3px;">Privacy Policy</a>.
     </p>
 
     <button type="submit" class="submit">
-      <span>Send message — 送信</span>
+      <span>Send message</span>
       <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </button>
 
@@ -129,41 +134,10 @@
   </form>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-mark">Kanazawa Villas</div>
-      <div class="footer-brand-tag">金沢ヴィラズ ／ Three houses, one Kanazawa.</div>
-    </div>
-    <div>
-      <h5>Stay</h5>
-      <ul>
-        <li><a href="./#villas">Villas</a></li>
-        <li><a href="./#faq">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Legal</h5>
-      <ul class="legal-links">
-        <li><a href="legal/tokushoho.html">特定商取引法に基づく表記</a></li>
-        <li><a href="legal/privacy.html">Privacy Policy</a></li>
-        <li><a href="legal/terms.html">Accommodation Agreement</a></li>
-        <li><a href="legal/house-rules.html">House Rules</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Booking</h5>
-      <ul>
-        <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Book Direct</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
-    <div>Booking powered by Beds24</div>
-  </div>
-</footer>
+<!-- ============================================================
+     FOOTER (injected by script.js)
+     ============================================================ -->
+<footer class="site-footer" data-component="site-footer"></footer>
 
 <script src="script.js"></script>
 </body>

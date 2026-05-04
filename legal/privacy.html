@@ -24,9 +24,9 @@
 <body class="subpage">
 
 <header class="site-header">
-  <a href="../" class="brand">
-    <span class="brand-mark">金沢ヴィラズ</span>
-    <span class="brand-sub">Kanazawa · Est. 2024</span>
+  <a href="../index.html" class="brand">
+    <span class="brand-mark">Kanazawa Villas</span>
+    <span class="brand-sub">Est. 2024 · Ishikawa</span>
   </a>
   <div class="header-drawer" data-component="header-drawer">
     <nav class="site-nav">
@@ -39,7 +39,8 @@
   </div>
   <div class="header-cta">
     <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
-      <span>Book Direct</span>
+      <span class="btn-label-full">Book Direct</span>
+      <span class="btn-label-short">Book</span>
       <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <button class="menu-toggle" data-component="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -55,7 +56,15 @@
 </section>
 
 <main class="subpage-body">
-  <p class="lead">合同会社IMK（以下「当社」といいます）は、当社が運営する宿泊施設「金沢ヴィラズ」のウェブサイトおよび関連サービス（以下「本サービス」といいます）における、お客様の個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+
+  <div class="lang-toggle" data-component="legal-lang-toggle">
+    <button class="active" data-target="jp">日本語</button>
+    <button data-target="en">English</button>
+  </div>
+
+  <!-- ────────── 日本語版 ────────── -->
+  <section class="lang-section active" data-lang-section="jp">
+<p class="lead">合同会社IMK（以下「当社」といいます）は、当社が運営する宿泊施設「金沢ヴィラズ」のウェブサイトおよび関連サービス（以下「本サービス」といいます）における、お客様の個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
 
   <h2>1. 取得する個人情報</h2>
   <p>当社は、本サービスの提供にあたり、以下の個人情報を取得することがあります。</p>
@@ -126,45 +135,92 @@
       <tr><th>所在地</th><td>東京都小平市学園東町3丁目2番17号</td></tr>
     </tbody>
   </table>
+  </section>
+
+  <!-- ────────── English version ────────── -->
+  <section class="lang-section" data-lang-section="en">
+    <p class="lead">IMK LLC ("we", "us", "our") is the operator of the lodging facility known as "Kanazawa Villas" and its related website and services (the "Service"). This Privacy Policy describes how we handle personal information collected through the Service.</p>
+
+    <h2>1. Personal Information We Collect</h2>
+    <p>In providing the Service, we may collect the following personal information:</p>
+    <ul>
+      <li>Name (in kanji and/or romanized form)</li>
+      <li>Address and nationality</li>
+      <li>Phone number</li>
+      <li>Email address</li>
+      <li>Date of birth and gender (where necessary)</li>
+      <li>Passport or other identification details (required by the Hotel Business Act for guest registers)</li>
+      <li>Credit card information (handled directly by Stripe, Inc.; not stored by us)</li>
+      <li>Booking and inquiry content</li>
+      <li>Website access logs and cookie information</li>
+    </ul>
+
+    <h2>2. Purposes of Use</h2>
+    <p>We use personal information only for the following purposes:</p>
+    <ul>
+      <li>Receiving, managing, and confirming bookings</li>
+      <li>Creating the legally required guest register (Hotel Business Act, Article 6)</li>
+      <li>Processing payments and refunds</li>
+      <li>Responding to inquiries</li>
+      <li>Improving the quality of the Service</li>
+      <li>Responding to lawful requests from authorities</li>
+    </ul>
+
+    <h2>3. Disclosure to Third Parties</h2>
+    <p>We do not disclose your personal information to third parties except in the following cases:</p>
+    <ul>
+      <li>With your consent</li>
+      <li>When disclosure is required by law (including presentation of the guest register to police under the Hotel Business Act)</li>
+      <li>When sharing with the following service providers, only to the extent necessary to deliver the Service</li>
+    </ul>
+
+    <h3>Service Providers</h3>
+    <table class="info-table">
+      <tbody>
+        <tr><th>Beds24.com Limited</th><td>Booking management system. Handles your booking and contact details.</td></tr>
+        <tr><th>Stripe, Inc.</th><td>Credit card payment processing. Card details are handled solely by Stripe and are not stored by us.</td></tr>
+        <tr><th>Google LLC</th><td>Website analytics (Google Analytics). Receives anonymized aggregate data.</td></tr>
+        <tr><th>OTAs<br/>(Airbnb, etc.)</th><td>For bookings made via OTAs, information is exchanged only through the relevant OTA.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Storage and Disposal</h2>
+    <p>We retain personal information only for as long as necessary to fulfill the purposes of use, and as required by law (e.g., guest registers must be retained for three years under the Hotel Business Act). After this period, the information is properly disposed of.</p>
+
+    <h2>5. Cookies and Analytics</h2>
+    <p>To improve service quality and analyze site usage, we may use cookies and similar technologies. Specifically, we use Google Analytics to gather anonymized data such as page views, time on page, and referrers.</p>
+    <p>You may disable cookies in your browser, but doing so may limit certain functionality.</p>
+
+    <h2>6. Security Measures</h2>
+    <p>We take appropriate and reasonable measures to prevent leakage, loss, or damage to personal information, including SSL/TLS encryption, access controls, and not retaining payment card details.</p>
+
+    <h2>7. Right to Access, Correct, or Delete</h2>
+    <p>You may request access to, correction, deletion, or restriction of use of your personal information. Please contact us via the contact form below; we will respond within a reasonable period after verifying your identity.</p>
+
+    <h2>8. Changes to this Policy</h2>
+    <p>We may revise this policy in response to changes in law or our operations. Material changes will be announced on this site.</p>
+
+    <h2>9. Contact</h2>
+    <p>For inquiries about the handling of personal information, please use our <a href="../contact.html" style="text-decoration:underline; text-underline-offset:3px;">contact form</a>.</p>
+
+    <table class="info-table">
+      <tbody>
+        <tr><th>Operator</th><td>IMK LLC (合同会社IMK)</td></tr>
+        <tr><th>Privacy Officer</th><td>Makoto Inanuma (Representative)</td></tr>
+        <tr><th>Address</th><td>3-2-17 Gakuen Higashi-machi, Kodaira-shi, Tokyo, Japan</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 32px; color: var(--muted); font-size: 13px;"><em>Note: The Japanese version of this Privacy Policy is the official, governing version. This English translation is provided for convenience.</em></p>
+  </section>
 
   <div class="updated">制定日：2026年4月30日　／　最終更新日：2026年4月30日</div>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-mark">Kanazawa Villas</div>
-      <div class="footer-brand-tag">金沢ヴィラズ ／ Three houses, one Kanazawa.</div>
-    </div>
-    <div>
-      <h5>Stay</h5>
-      <ul>
-        <li><a href="../#villas">Villas</a></li>
-        <li><a href="../#faq">FAQ</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Legal</h5>
-      <ul class="legal-links">
-        <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Accommodation Agreement</a></li>
-        <li><a href="house-rules.html">House Rules</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Booking</h5>
-      <ul>
-        <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Book Direct</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
-    <div>Booking powered by Beds24</div>
-  </div>
-</footer>
+<!-- ============================================================
+     FOOTER (injected by script.js)
+     ============================================================ -->
+<footer class="site-footer" data-component="site-footer"></footer>
 
 <script src="../script.js"></script>
 </body>

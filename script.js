@@ -6,7 +6,58 @@
 (function () {
   'use strict';
 
-  // ── 0. Force scroll to top on fresh load ─────────────────────
+  // ── 0. Inject site footer (single source of truth) ───────────
+  // Determine path prefix based on current page depth:
+  //  - root pages (index.html, contact.html) use ""
+  //  - subpages (legal/*.html) use "../"
+  const footerEl = document.querySelector('[data-component="site-footer"]');
+  if (footerEl) {
+    const path = window.location.pathname;
+    const isSubpage = path.includes('/legal/') || path.endsWith('legal/');
+    const root = isSubpage ? '../' : '';
+
+    footerEl.innerHTML = `
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-mark">Kanazawa Villas</div>
+          <div class="footer-brand-tag">Three houses, one Kanazawa.</div>
+          <p class="footer-brand-desc">Three privately operated houses in Kanazawa — Nomachi, Shiragiku, and (from 2026) Horikawa. Whole-house stays for residents, briefly.</p>
+        </div>
+        <div>
+          <h5>Site</h5>
+          <ul>
+            <li><a href="${root}index.html#villas">Villas</a></li>
+            <li><a href="${root}index.html#concept">Concept</a></li>
+            <li><a href="${root}index.html#faq">FAQ</a></li>
+            <li><a href="${root}contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Book</h5>
+          <ul>
+            <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Nomachi · Direct</a></li>
+            <li><a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Shiragiku · Airbnb</a></li>
+            <li><a href="${root}contact.html?topic=horikawa">Horikawa · Notify me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <ul class="legal-links">
+            <li><a href="${root}legal/tokushoho.html">特定商取引法に基づく表記</a></li>
+            <li><a href="${root}legal/privacy.html">Privacy Policy</a></li>
+            <li><a href="${root}legal/terms.html">Accommodation Agreement</a></li>
+            <li><a href="${root}legal/house-rules.html">House Rules</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
+        <div>Booking powered by Beds24</div>
+      </div>
+    `;
+  }
+
+  // ── 0b. Force scroll to top on fresh load ─────────────────────
   // iOS Safari sometimes restores a stale scroll position or treats
   // a bare "#" href as a fragment. Reset position on initial load
   // (but only when there's no real anchor like #villas).
@@ -84,11 +135,34 @@
       horikawa: 'Horikawa Villa',
     };
 
+    // CTA configuration for each booking target type
+    const targetConfig = {
+      beds24: {
+        ctaLabel: 'Continue on Beds24',
+        desc: "You'll be taken to Beds24 to pick exact dates, guests, and complete payment securely.",
+        external: true,
+      },
+      airbnb: {
+        ctaLabel: 'Book on Airbnb',
+        desc: "Currently bookable via Airbnb while we prepare full direct booking.",
+        external: true,
+      },
+      notify: {
+        ctaLabel: 'Notify me when ready',
+        desc: "Opening Jul 2026. Leave your email and we'll let you know when bookings open.",
+        external: false,
+      },
+    };
+
+    const stayDesc = booking.querySelector('[data-component="stay-desc"]');
+    const ctaLabelSpan = continueCta ? continueCta.querySelector('[data-component="cta-label"]') : null;
+
     picks.forEach(pick => {
       pick.addEventListener('click', () => {
         const villa = pick.dataset.villa;
         const url = pick.dataset.url;
-        const isComingSoon = url === '#';
+        const target = pick.dataset.target || 'beds24';
+        const config = targetConfig[target] || targetConfig.beds24;
 
         // toggle active state + arrow text
         picks.forEach(p => {
@@ -101,15 +175,19 @@
         // update summary title
         if (stayTitle) stayTitle.textContent = villaNames[villa] || 'Select a villa —';
 
-        // update CTA
+        // update summary description
+        if (stayDesc) stayDesc.textContent = config.desc;
+
+        // update CTA label + behavior
         if (continueCta) {
           continueCta.href = url;
-          if (isComingSoon) {
-            continueCta.removeAttribute('target');
-            continueCta.removeAttribute('rel');
-          } else {
+          if (ctaLabelSpan) ctaLabelSpan.textContent = config.ctaLabel;
+          if (config.external) {
             continueCta.setAttribute('target', '_blank');
             continueCta.setAttribute('rel', 'noopener');
+          } else {
+            continueCta.removeAttribute('target');
+            continueCta.removeAttribute('rel');
           }
         }
       });
@@ -132,10 +210,12 @@
     cal.innerHTML = html;
   }
 
-  // ── 5. House rules language toggle (JP / EN) ─────────────────
-  const houseLangToggle = document.querySelector('[data-component="house-lang-toggle"]');
-  if (houseLangToggle) {
-    const buttons = houseLangToggle.querySelectorAll('button');
+  // ── 5. Legal/House rules language toggle (JP / EN) ───────────
+  // Supports both legacy [data-component="house-lang-toggle"] and
+  // generic [data-component="legal-lang-toggle"] for any subpage.
+  const langToggles = document.querySelectorAll('[data-component="house-lang-toggle"], [data-component="legal-lang-toggle"]');
+  langToggles.forEach(toggle => {
+    const buttons = toggle.querySelectorAll('button');
     const sections = document.querySelectorAll('[data-lang-section]');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -145,20 +225,59 @@
         sections.forEach(s => {
           s.classList.toggle('active', s.dataset.langSection === target);
         });
+        // Sync URL hash so users can bookmark a language preference (optional)
+        if (target === 'en') {
+          history.replaceState(null, '', '#en');
+        } else {
+          history.replaceState(null, '', window.location.pathname);
+        }
       });
     });
-  }
+    // Auto-switch to EN if URL has #en
+    if (window.location.hash === '#en') {
+      const enBtn = toggle.querySelector('button[data-target="en"]');
+      if (enBtn) enBtn.click();
+    }
+  });
 
   // ── 6. Contact form (Formspree submission) ───────────────────
   const contactForm = document.querySelector('[data-component="contact-form"]');
   const formStatus = document.querySelector('[data-component="form-status"]');
+
+  // 6a. Auto-populate topic and villa from URL parameters
+  // e.g. contact.html?topic=horikawa → preselect horikawa option
+  if (contactForm) {
+    const params = new URLSearchParams(window.location.search);
+    const topicParam = params.get('topic');
+    const villaParam = params.get('villa');
+    if (topicParam) {
+      const topicSelect = contactForm.querySelector('[data-component="topic-select"]');
+      if (topicSelect) {
+        const matching = topicSelect.querySelector(`option[value="${topicParam}"]`);
+        if (matching) topicSelect.value = topicParam;
+      }
+    }
+    if (villaParam) {
+      const villaSelect = contactForm.querySelector('[data-component="villa-select"]');
+      if (villaSelect) {
+        const matching = villaSelect.querySelector(`option[value="${villaParam}"]`);
+        if (matching) villaSelect.value = villaParam;
+      }
+    }
+    // If user came via topic=horikawa, also set villa = horikawa
+    if (topicParam === 'horikawa') {
+      const villaSelect = contactForm.querySelector('[data-component="villa-select"]');
+      if (villaSelect) villaSelect.value = 'horikawa';
+    }
+  }
+
   if (contactForm && formStatus) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalLabel = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Sending — 送信中...</span>';
+      submitBtn.innerHTML = '<span>Sending...</span>';
       formStatus.className = 'form-status';
       formStatus.textContent = '';
 
@@ -170,14 +289,14 @@
         });
         if (response.ok) {
           formStatus.className = 'form-status success';
-          formStatus.innerHTML = 'お問い合わせを受け付けました。24時間以内にご返信いたします。<br/>Your message has been received. We will respond within 24 hours.';
+          formStatus.innerHTML = 'Your message has been received. We will respond within 24 hours.';
           contactForm.reset();
         } else {
           throw new Error('Submission failed');
         }
       } catch (err) {
         formStatus.className = 'form-status error';
-        formStatus.innerHTML = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。<br/>Failed to send. Please try again later.';
+        formStatus.innerHTML = 'Failed to send. Please try again later.';
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalLabel;
