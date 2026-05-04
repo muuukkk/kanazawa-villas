@@ -71,6 +71,21 @@ p { margin: 0; }
   border: 0;
 }
 
+/* SEO/Crawler fallback: discoverable links for crawlers, AI search,
+   and Stripe review even when JS is disabled. Hidden from sighted users
+   because the visible footer (JS-injected) carries the same links. */
+.seo-fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── Typography helpers ─────────────────────────────────────── */
 .display { font-family: var(--f-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
 .jp-display { font-family: var(--f-jp-display); font-weight: 400; letter-spacing: 0.04em; }

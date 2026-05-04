@@ -194,21 +194,9 @@
     });
   }
 
-  // ── 4. Booking preview: 14-day calendar ──────────────────────
-  const cal = document.querySelector('[data-component="calendar"]');
-  if (cal) {
-    const dows = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-    const busyDays = [2, 7, 8]; // demo placeholder until real data
-    const today = new Date();
-    let html = '';
-    for (let i = 0; i < 14; i++) {
-      const d = new Date(today);
-      d.setDate(d.getDate() + i);
-      const busy = busyDays.includes(i) ? ' busy' : '';
-      html += `<div class="cal-day${busy}"><div class="dow">${dows[d.getDay()]}</div><div class="num">${d.getDate()}</div></div>`;
-    }
-    cal.innerHTML = html;
-  }
+  // ── 4. (Removed) Booking preview demo calendar
+  //    Kept as a placeholder reference. Section was simplified to a
+  //    "Why book direct" benefits list; no calendar is rendered.
 
   // ── 5. Legal/House rules language toggle (JP / EN) ───────────
   // Supports both legacy [data-component="house-lang-toggle"] and
@@ -271,6 +259,15 @@
     }
   }
 
+  // ── 7. GA4 Event Tracking ────────────────────────────────────
+  // Helper that safely calls gtag if available.
+  // Defined here (before contact form handler) so it can be used inside it.
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
   if (contactForm && formStatus) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -280,6 +277,13 @@
       submitBtn.innerHTML = '<span>Sending...</span>';
       formStatus.className = 'form-status';
       formStatus.textContent = '';
+
+      // GA4 event: track every submission attempt (regardless of outcome)
+      const eventParams = {
+        topic: contactForm.querySelector('[name="topic"]')?.value || '',
+        villa: contactForm.querySelector('[name="villa"]')?.value || '',
+      };
+      track('contact_submit_attempt', eventParams);
 
       try {
         const response = await fetch(contactForm.action, {
@@ -291,36 +295,27 @@
           formStatus.className = 'form-status success';
           formStatus.innerHTML = 'Your message has been received. We will respond within 24 hours.';
           contactForm.reset();
+          // GA4: success
+          track('contact_submit_success', eventParams);
         } else {
-          throw new Error('Submission failed');
+          throw new Error('Submission failed: HTTP ' + response.status);
         }
       } catch (err) {
         formStatus.className = 'form-status error';
         formStatus.innerHTML = 'Failed to send. Please try again later.';
+        // GA4: error (with reason for debugging)
+        track('contact_submit_error', {
+          ...eventParams,
+          error: (err && err.message) ? err.message.slice(0, 100) : 'unknown',
+        });
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalLabel;
       }
     });
-
-    // GA4 event: contact form submission (also fired earlier on success)
-    contactForm.addEventListener('submit', () => {
-      track('contact_submit', {
-        topic: contactForm.querySelector('[name="topic"]')?.value || '',
-        villa: contactForm.querySelector('[name="villa"]')?.value || '',
-      });
-    });
   }
 
-  // ── 7. GA4 Event Tracking ────────────────────────────────────
-  // Helper that safely calls gtag if available.
-  function track(eventName, params) {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, params || {});
-    }
-  }
-
-  // 7a. "Book Direct" / "Check dates" / "View villa" — any link to Beds24
+  // ── 7b. Other tracked interactions ──────────────────────────
   // Identify Beds24 links by URL pattern, then determine context (villa, location)
   document.querySelectorAll('a[href*="beds24.com/booking"]').forEach(link => {
     link.addEventListener('click', () => {
