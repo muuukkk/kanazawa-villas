@@ -9,50 +9,101 @@
   // ── 0. Inject site footer (single source of truth) ───────────
   // Determine path prefix based on current page depth:
   //  - root pages (index.html, contact.html) use ""
-  //  - subpages (legal/*.html) use "../"
+  //  - language subpages (en/index.html, ja/index.html) use "../"
+  //  - legal subpages (legal/*.html) use "../"
+  // Also detect language to render the footer in JP or EN.
   const footerEl = document.querySelector('[data-component="site-footer"]');
   if (footerEl) {
     const path = window.location.pathname;
-    const isSubpage = path.includes('/legal/') || path.endsWith('legal/');
-    const root = isSubpage ? '../' : '';
+    const isLegal = path.includes('/legal/') || path.endsWith('legal/');
+    const isLangSubdir = /\/(en|ja)\/?($|index\.html)/.test(path);
+    const root = (isLegal || isLangSubdir) ? '../' : '';
+
+    // Detect current language: prefer html[lang], fall back to URL.
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+    const isJa = htmlLang === 'ja' || /\/ja\//.test(path);
+
+    // Cross-language link param helps subpages (contact, legal) auto-toggle.
+    const langParam = isJa ? '?lang=ja' : '';
+
+    // i18n strings for footer
+    const t = isJa ? {
+      tag: '三つの家、ひとつの金沢。',
+      desc: '野町・白菊町・堀川町に構える、合同会社IMK 直営の三棟。一棟貸しで、住人のように、しばし。',
+      site: 'サイト',
+      villas: '物件',
+      concept: 'コンセプト',
+      faq: 'FAQ',
+      contact: 'お問い合わせ',
+      book: '予約',
+      nomachiDirect: '野町邸 · 直接予約',
+      shiragikuAirbnb: '白菊町邸 · Airbnb',
+      horikawaNotify: '堀川町邸 · 開業のお知らせ',
+      legal: '法令',
+      langOther: 'English',
+      langOtherUrl: root + 'en/',
+      copy: '© 2026 Kanazawa Villas / 合同会社IMK ／ 旅館業法 簡易宿所営業',
+      poweredBy: '予約システム提供：Beds24',
+      // Internal page anchors point to the language-appropriate index.
+      indexHref: isLangSubdir ? './' : (root + 'ja/'),
+    } : {
+      tag: 'Three houses, one Kanazawa.',
+      desc: 'Three privately operated houses in Kanazawa — Nomachi, Shiragiku, and (from 2026) Horikawa. Whole-house stays for residents, briefly.',
+      site: 'Site',
+      villas: 'Villas',
+      concept: 'Concept',
+      faq: 'FAQ',
+      contact: 'Contact',
+      book: 'Book',
+      nomachiDirect: 'Nomachi · Direct',
+      shiragikuAirbnb: 'Shiragiku · Airbnb',
+      horikawaNotify: 'Horikawa · Notify me',
+      legal: 'Legal',
+      langOther: '日本語',
+      langOtherUrl: root + 'ja/',
+      copy: '© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging',
+      poweredBy: 'Booking powered by Beds24',
+      indexHref: isLangSubdir ? './' : (root + 'en/'),
+    };
 
     footerEl.innerHTML = `
       <div class="footer-top">
         <div>
           <div class="footer-brand-mark">Kanazawa Villas</div>
-          <div class="footer-brand-tag">Three houses, one Kanazawa.</div>
-          <p class="footer-brand-desc">Three privately operated houses in Kanazawa — Nomachi, Shiragiku, and (from 2026) Horikawa. Whole-house stays for residents, briefly.</p>
+          <div class="footer-brand-tag">${t.tag}</div>
+          <p class="footer-brand-desc">${t.desc}</p>
         </div>
         <div>
-          <h5>Site</h5>
+          <h5>${t.site}</h5>
           <ul>
-            <li><a href="${root}index.html#villas">Villas</a></li>
-            <li><a href="${root}index.html#concept">Concept</a></li>
-            <li><a href="${root}index.html#faq">FAQ</a></li>
-            <li><a href="${root}contact.html">Contact</a></li>
+            <li><a href="${t.indexHref}#villas">${t.villas}</a></li>
+            <li><a href="${t.indexHref}#concept">${t.concept}</a></li>
+            <li><a href="${t.indexHref}#faq">${t.faq}</a></li>
+            <li><a href="${root}contact.html${langParam}">${t.contact}</a></li>
+            <li><a href="${t.langOtherUrl}" hreflang="${isJa ? 'en' : 'ja'}">${t.langOther}</a></li>
           </ul>
         </div>
         <div>
-          <h5>Book</h5>
+          <h5>${t.book}</h5>
           <ul>
-            <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Nomachi · Direct</a></li>
-            <li><a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Shiragiku · Airbnb</a></li>
-            <li><a href="${root}contact.html?topic=horikawa">Horikawa · Notify me</a></li>
+            <li><a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">${t.nomachiDirect}</a></li>
+            <li><a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">${t.shiragikuAirbnb}</a></li>
+            <li><a href="${root}contact.html?topic=horikawa${isJa ? '&lang=ja' : ''}">${t.horikawaNotify}</a></li>
           </ul>
         </div>
         <div>
-          <h5>Legal</h5>
+          <h5>${t.legal}</h5>
           <ul class="legal-links">
             <li><a href="${root}legal/tokushoho.html">特定商取引法に基づく表記</a></li>
-            <li><a href="${root}legal/privacy.html">Privacy Policy</a></li>
-            <li><a href="${root}legal/terms.html">Accommodation Agreement</a></li>
-            <li><a href="${root}legal/house-rules.html">House Rules</a></li>
+            <li><a href="${root}legal/privacy.html${langParam}">${isJa ? 'プライバシーポリシー' : 'Privacy Policy'}</a></li>
+            <li><a href="${root}legal/terms.html${langParam}">${isJa ? '宿泊約款' : 'Accommodation Agreement'}</a></li>
+            <li><a href="${root}legal/house-rules.html${langParam}">${isJa ? 'ハウスルール' : 'House Rules'}</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>© 2026 Kanazawa Villas / 合同会社IMK ／ Licensed simple lodging</div>
-        <div>Booking powered by Beds24</div>
+        <div>${t.copy}</div>
+        <div>${t.poweredBy}</div>
       </div>
     `;
   }
@@ -70,17 +121,9 @@
     }
   });
 
-  // ── 1. Language switch (UI toggle only, no actual i18n yet) ──
-  const langSwitch = document.querySelector('[data-component="lang-switch"]');
-  if (langSwitch) {
-    const buttons = langSwitch.querySelectorAll('button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  }
+  // ── 1. Language switch ───────────────────────────────────────
+  // Header lang switcher uses native <a> tags pointing to /en/ or /ja/,
+  // so no JS handling is needed here. Active state is set in HTML.
 
   // ── 1b. Mobile menu toggle ───────────────────────────────────
   const menuToggle = document.querySelector('[data-component="menu-toggle"]');
@@ -221,8 +264,14 @@
         }
       });
     });
-    // Auto-switch to EN if URL has #en
-    if (window.location.hash === '#en') {
+    // Auto-switch based on URL: prefer ?lang=ja|en query param,
+    // fall back to legacy #en hash for backward compatibility.
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = (urlParams.get('lang') || '').toLowerCase();
+    if (langParam === 'ja' || langParam === 'jp') {
+      const jpBtn = toggle.querySelector('button[data-target="jp"]');
+      if (jpBtn) jpBtn.click();
+    } else if (langParam === 'en' || window.location.hash === '#en') {
       const enBtn = toggle.querySelector('button[data-target="en"]');
       if (enBtn) enBtn.click();
     }
