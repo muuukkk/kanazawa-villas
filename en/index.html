@@ -159,6 +159,7 @@ h2.display em{font-style:normal;color:var(--indigo)}
 .btn.primary{background:var(--indigo-deep);border-color:var(--indigo-deep);color:#fff}
 .btn.primary:hover{background:var(--ink)}
 @media(max-width:860px){.site-nav{display:none}}
+@media(max-width:760px){.site-header > .btn{display:none}}
 
 .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -245,10 +246,12 @@ details.faq .a{padding:0 4px 24px 64px;font-size:13.5px;color:var(--ink-soft)}
 .access-grid ul{list-style:none}
 .access-grid li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
 .access-grid li a{text-decoration:underline;text-underline-offset:3px;color:var(--indigo)}
-.route-list{margin:0;padding:0}
-.route-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 0;border-bottom:1px solid var(--line);justify-content:flex-start}
+.route-list{margin:0;padding:0;list-style:none}
+.route-list li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:14px 0;border-bottom:1px solid var(--line);justify-content:flex-start}
 .route-list li strong{font-family:var(--serif);font-size:14px;letter-spacing:.04em;color:var(--ink);font-weight:500;white-space:nowrap}
 .route-list .route-leg{font-size:11.5px;letter-spacing:.06em;color:var(--ink-faint);padding:2px 10px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.route-list .arrow-step{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.route-list .arrow-step .arr{color:var(--ink-faint);font-family:var(--serif);font-size:14px;font-weight:500}
 .site-footer{border-top:1px solid var(--line);background:var(--white)}
 .site-footer .inner{max-width:1120px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;font-size:12.5px;color:var(--ink-soft)}
 @media(max-width:760px){.site-footer .inner{grid-template-columns:1fr}}
@@ -265,7 +268,8 @@ details.faq .a{padding:0 4px 24px 64px;font-size:13.5px;color:var(--ink-soft)}
 .btn-gallery:hover{background:var(--ink);color:var(--paper)}
 .btn-gallery .ct{color:var(--ink-faint);font-size:11px;letter-spacing:.05em}
 .btn-gallery:hover .ct{color:var(--paper-warm)}
-.villa .act{display:flex;gap:12px;flex-wrap:wrap}
+.villa .act{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:10px;margin-top:22px}
+.villa .act > .btn, .villa .act > a.btn, .villa .act > .btn-gallery{width:100%;justify-content:center;text-align:center}
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(15,17,20,.97);display:none;align-items:center;justify-content:center;padding:60px 80px}
 .lightbox.open{display:flex}
 .lightbox .stage{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -363,10 +367,10 @@ body.lb-open{overflow:hidden}
 
   <div class="direct-grid">
     <div>
-      <div class="benefit"><div class="no">1</div><div><h4>Lowest rate, zero platform fees</h4><p>OTA commissions (typically around 15%) don't apply here. Compare the same dates, same house — we'll be cheapest.</p></div></div>
-      <div class="benefit"><div class="no">2</div><div><h4>Long-stay discounts, direct-only</h4><p>10% off for 3+ nights, 15% off for 4+ nights, 18% off for 7+ nights. The longer you stay, the wider the gap.</p></div></div>
-      <div class="benefit"><div class="no">3</div><div><h4>Private guest page after booking</h4><p>Check-in details, Wi-Fi, entrance PIN, maps — all in one place. Message the host anytime during your stay.</p></div></div>
-      <div class="benefit"><div class="no">4</div><div><h4>Direct contact with the host</h4><p>Cancellations or schedule changes go straight to us — no middleman. Most messages get a reply within an hour.</p></div></div>
+      <div class="benefit"><div class="no">1</div><div><h4>The lowest rate, guaranteed</h4><p>Compare any date and house — we'll be cheapest.</p></div></div>
+      <div class="benefit"><div class="no">2</div><div><h4>Long-stay discounts</h4><p>The longer you stay, the more you save. See the rate card for details.</p></div></div>
+      <div class="benefit"><div class="no">3</div><div><h4>Private guest page after booking</h4><p>Everything from booking to check-out, in one place.</p></div></div>
+      <div class="benefit"><div class="no">4</div><div><h4>Direct contact with the host</h4><p>Chat with the host anytime through your guest page.</p></div></div>
     </div>
     <aside class="ratecard">
       <div class="t">Direct booking rates — Nomachi Villa</div>
@@ -527,8 +531,20 @@ body.lb-open{overflow:hidden}
     <div>
       <h4>Getting to Kanazawa</h4>
       <ul class="route-list">
-        <li><strong>Tokyo Station</strong> <span class="route-leg">Shinkansen ~2h30m</span> <strong>Kanazawa Station</strong> <span class="route-leg">Bus 20min / Taxi 15min</span> <strong>Villa</strong></li>
-        <li><strong>Komatsu Airport</strong> <span class="route-leg">Direct bus 40min</span> <strong>Kanazawa Station</strong> <span class="route-leg">Bus 20min / Taxi 15min</span> <strong>Villa</strong></li>
+        <li>
+          <strong>Tokyo Station</strong>
+          <span class="arrow-step"><span class="arr">→</span><span class="route-leg">Shinkansen ~2h30m</span></span>
+          <span class="arrow-step"><span class="arr">→</span><strong>Kanazawa Station</strong></span>
+          <span class="arrow-step"><span class="arr">→</span><span class="route-leg">Bus 20min / Taxi 15min</span></span>
+          <span class="arrow-step"><span class="arr">→</span><strong>Villa</strong></span>
+        </li>
+        <li>
+          <strong>Komatsu Airport</strong>
+          <span class="arrow-step"><span class="arr">→</span><span class="route-leg">Direct bus 40min</span></span>
+          <span class="arrow-step"><span class="arr">→</span><strong>Kanazawa Station</strong></span>
+          <span class="arrow-step"><span class="arr">→</span><span class="route-leg">Bus 20min / Taxi 15min</span></span>
+          <span class="arrow-step"><span class="arr">→</span><strong>Villa</strong></span>
+        </li>
       </ul>
       <h4 style="margin-top:26px">Walking distance (from Nomachi)</h4>
       <p>Nishi Chaya District — 6 min walk / Myōryū-ji (Ninja Temple) — 4 min walk / Omicho Market — 15 min walk / 21st Century Museum — 18 min walk / Kenroku-en Garden — 15 min by bus</p>
@@ -569,7 +585,7 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ MOBILE STICKY CTA ============ -->
 <div class="sticky-cta">
-  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates — book direct for the lowest price</a>
+  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Book direct — lowest rate</a>
 </div>
 
 
