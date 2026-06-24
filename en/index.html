@@ -1,526 +1,703 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <!-- Google Analytics 4 (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-66ERFZ5CFB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-66ERFZ5CFB', {
-      'anonymize_ip': true
-    });
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Three quietly designed houses in Kanazawa — Nomachi, Shiragiku, Horikawa. Whole-house stays for families and small groups, ten minutes from the old town. Book direct."/>
-  <title>Kanazawa Villas — Three houses, one Kanazawa.</title>
+<meta charset="utf-8"/>
+<!-- Google Analytics 4 (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-66ERFZ5CFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-66ERFZ5CFB', { 'anonymize_ip': true });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- Canonical & language alternates (SEO) -->
-  <link rel="canonical" href="https://muuukkk.github.io/kanazawa-villas/en/"/>
-  <link rel="alternate" hreflang="en" href="https://muuukkk.github.io/kanazawa-villas/en/"/>
-  <link rel="alternate" hreflang="ja" href="https://muuukkk.github.io/kanazawa-villas/ja/"/>
-  <link rel="alternate" hreflang="x-default" href="https://muuukkk.github.io/kanazawa-villas/"/>
+<!-- ============================================================
+     Kanazawa Villas — EN v2 (mirrors JA v2 structure, 2026-06-24)
+     ============================================================ -->
 
-  <!-- OGP / Twitter -->
-  <meta property="og:title" content="Kanazawa Villas — Three houses, one Kanazawa."/>
-  <meta property="og:description" content="Whole-house stays in Kanazawa, designed for residents — not tourists."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://muuukkk.github.io/kanazawa-villas/en/"/>
-  <meta property="og:image" content="https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:locale:alternate" content="ja_JP"/>
-  <meta name="twitter:card" content="summary_large_image"/>
+<title>Kanazawa Villas | Two licensed whole-house stays in Kanazawa — Book direct for the lowest rate</title>
+<meta name="description" content="Two privately operated whole-house stays in Kanazawa: Nomachi and Shiragiku. Licensed under Japan's Inn and Hotel Business Act, designed for families and small groups. Direct booking is the lowest rate — up to 18% off for stays of 7+ nights. Post-booking guest page with chat support."/>
 
-  <!-- Schema.org structured data — helps AI search & SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "Kanazawa Villas",
-    "alternateName": "金沢ヴィラズ",
-    "description": "Three privately operated whole-house stays in Kanazawa, Japan.",
-    "url": "https://muuukkk.github.io/kanazawa-villas/en/",
-    "image": "https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kanazawa",
-      "addressRegion": "Ishikawa",
-      "addressCountry": "JP"
+<link rel="canonical" href="https://muuukkk.github.io/kanazawa-villas/en/"/>
+<link rel="alternate" hreflang="en" href="https://muuukkk.github.io/kanazawa-villas/en/"/>
+<link rel="alternate" hreflang="ja" href="https://muuukkk.github.io/kanazawa-villas/ja/"/>
+<link rel="alternate" hreflang="x-default" href="https://muuukkk.github.io/kanazawa-villas/"/>
+
+<!-- OGP -->
+<meta property="og:title" content="Kanazawa Villas — Two houses, one Kanazawa"/>
+<meta property="og:description" content="Stay like a local in Kanazawa — privately operated whole-house stays. Direct booking is the lowest rate."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://muuukkk.github.io/kanazawa-villas/en/"/>
+<meta property="og:image" content="https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="ja_JP"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<!-- ============================================================
+     Schema.org
+     ・aggregateRating omitted (self-serving review policy)
+     ・LodgingBusiness + 2 Accommodations + FAQPage
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LodgingBusiness",
+      "@id": "https://muuukkk.github.io/kanazawa-villas/#business",
+      "name": "Kanazawa Villas",
+      "alternateName": "金沢ヴィラズ",
+      "description": "Two privately operated whole-house stays in Kanazawa, Japan, licensed under the Inn and Hotel Business Act (simple lodging category). For families and small groups.",
+      "url": "https://muuukkk.github.io/kanazawa-villas/en/",
+      "image": "https://muuukkk.github.io/kanazawa-villas/images/nomachi-hero.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kanazawa",
+        "addressRegion": "Ishikawa",
+        "addressCountry": "JP"
+      },
+      "checkinTime": "15:00",
+      "checkoutTime": "11:00",
+      "parentOrganization": { "@type": "Organization", "name": "IMK LLC" }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.96",
-      "reviewCount": "250"
+    {
+      "@type": "Accommodation",
+      "name": "Nomachi Villa",
+      "description": "Whole-house townhouse stay in Nomachi, Kanazawa. 76 m², 2 bedrooms, sleeps 6. Opened November 2024. Kanazawa City Health Office permit No. 24250020.",
+      "containedInPlace": { "@id": "https://muuukkk.github.io/kanazawa-villas/#business" },
+      "occupancy": { "@type": "QuantitativeValue", "maxValue": 6 },
+      "floorSize": { "@type": "QuantitativeValue", "value": 76, "unitCode": "MTK" },
+      "numberOfBedrooms": 2
+    },
+    {
+      "@type": "Accommodation",
+      "name": "Shiragiku Villa",
+      "description": "Whole-house stay with antique furniture and lighting evoking Taishō-era atmosphere. 56 m², 2 bedrooms, sleeps 5, with private Japanese garden. Opened August 2025. Kanazawa City Health Office permit No. 25250003.",
+      "containedInPlace": { "@id": "https://muuukkk.github.io/kanazawa-villas/#business" },
+      "occupancy": { "@type": "QuantitativeValue", "maxValue": 5 },
+      "floorSize": { "@type": "QuantitativeValue", "value": 56, "unitCode": "MTK" },
+      "numberOfBedrooms": 2
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When can we check in and out?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Check-in is from 15:00, check-out by 11:00. Earlier check-in or later check-out can sometimes be arranged on request." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does check-in work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "After booking, we send you a link to your private guest page. There you upload a passport photo (non-Japanese guests) and complete a short guest registry for everyone in your party — a step required by Japanese law. Once submitted, your check-in details (address, access, Wi-Fi, entrance keybox PIN) appear on the page. A staff member usually meets you at the villa for in-person ID verification. You can message us anytime through the guest page during your stay." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between direct booking and Airbnb?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Direct booking (Nomachi) is the lowest rate — no OTA commission. Long-stay discounts (10% for 3+ nights, 15% for 4+ nights, 18% for 7+ nights) are direct-only. Shiragiku is currently bookable on Airbnb only." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a minimum stay?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — two nights minimum at both villas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there parking?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nomachi has free parking 2 minutes on foot. Shiragiku has coin parking 1 minute away." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we stay with young children?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A high chair is available on request, free of charge." }
+        }
+      ]
     }
-  }
-  </script>
+  ]
+}
+</script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Shippori+Mincho:wght@400;500;600&amp;family=Noto+Serif+JP:wght@300;400;500&amp;family=Inter:wght@300;400;500&amp;family=Noto+Sans+JP:wght@300;400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet"/>
 
-  <link rel="stylesheet" href="../styles.css">
+<style>
+:root{
+  --ink:#26282b;
+  --ink-soft:#5a5f66;
+  --ink-faint:#9aa0a8;
+  --paper:#fbfafa;
+  --paper-warm:#f4f2ef;
+  --indigo:#46556a;
+  --indigo-deep:#36425a;
+  --line:#e3e1de;
+  --white:#ffffff;
+  --serif:"Shippori Mincho","Noto Serif JP",serif;
+  --sans:"Inter","Noto Sans JP",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;font-size:15px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:var(--serif)}
+.section{max-width:1120px;margin:0 auto;padding:96px 24px}
+.label{font-size:11px;letter-spacing:.22em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:18px}
+.label .num{color:var(--indigo);margin-right:10px}
+h2.display{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.5;letter-spacing:.04em}
+h2.display em{font-style:normal;color:var(--indigo)}
+.lede{color:var(--ink-soft);margin-top:16px;max-width:38em}
+
+.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(251,250,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.12em}
+.brand small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:var(--ink-faint)}
+.site-nav{display:flex;gap:26px;font-size:13px;color:var(--ink-soft)}
+.site-nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;font-size:13px;letter-spacing:.1em;border:1px solid var(--ink);transition:all .25s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--indigo-deep);border-color:var(--indigo-deep);color:#fff}
+.btn.primary:hover{background:var(--ink)}
+@media(max-width:860px){.site-nav{display:none}}
+
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,22,26,.62),rgba(20,22,26,.08) 55%)}
+.hero-inner{position:relative;z-index:2;color:#fff;max-width:1120px;margin:0 auto;width:100%;padding:0 24px 56px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,5vw,52px);line-height:1.45;letter-spacing:.05em}
+.hero p.sub{margin-top:14px;font-size:14px;letter-spacing:.06em;color:rgba(255,255,255,.85);max-width:34em}
+.hero-actions{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn{border-color:rgba(255,255,255,.7);color:#fff}
+.hero .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}
+.hero .btn.primary:hover{background:var(--paper-warm)}
+
+.trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .row{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr)}
+.trust .cell{padding:18px 18px;text-align:center}
+.trust .cell + .cell{border-left:1px solid var(--line)}
+.trust strong{display:block;font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:.06em}
+.trust span{display:block;font-size:11px;letter-spacing:.08em;color:var(--ink-faint);margin-top:6px}
+@media(max-width:760px){.trust .row{grid-template-columns:1fr}.trust .cell + .cell{border-left:none;border-top:1px solid var(--line)}}
+
+.direct{background:var(--paper-warm)}
+.direct-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:40px}
+@media(max-width:860px){.direct-grid{grid-template-columns:1fr}}
+.benefit{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.benefit:first-child{border-top:1px solid var(--line)}
+.benefit .no{font-family:var(--serif);color:var(--indigo);font-size:13px;padding-top:3px;min-width:24px}
+.benefit h4{font-size:14.5px;font-weight:500;letter-spacing:.04em}
+.benefit p{font-size:13px;color:var(--ink-soft);margin-top:4px}
+.ratecard{background:var(--white);border:1px solid var(--line);padding:34px 32px;align-self:start}
+.ratecard .t{font-family:var(--serif);font-size:16px;letter-spacing:.08em;margin-bottom:18px}
+.rate-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.rate-row span:last-child{font-family:var(--serif);color:var(--indigo);letter-spacing:.05em}
+.ratecard .note{font-size:11.5px;color:var(--ink-faint);margin-top:14px;line-height:1.7}
+.ratecard .btn{width:100%;justify-content:center;margin-top:22px}
+
+.villa{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--white);margin-top:34px}
+.villa .media{position:relative;min-height:340px;background:#dadbd9}
+.villa .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.villa .body{padding:44px 46px}
+.villa .idx{font-size:11px;letter-spacing:.2em;color:var(--ink-faint)}
+.villa h3{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.08em;margin-top:10px}
+.villa .en{font-size:12px;color:var(--ink-faint);letter-spacing:.12em;margin-top:2px}
+.villa .desc{font-size:13.5px;color:var(--ink-soft);margin-top:16px}
+.specs{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.specs div{font-size:12px;color:var(--ink-faint)}
+.specs strong{display:block;font-size:14px;color:var(--ink);font-weight:500;font-family:var(--serif);letter-spacing:.04em}
+.villa .status{display:inline-block;font-size:11px;letter-spacing:.12em;padding:5px 12px;border:1px solid var(--line);color:var(--ink-soft);margin-top:18px}
+.villa .status.ok{border-color:var(--indigo);color:var(--indigo)}
+.villa .act{margin-top:22px}
+.villa.flip .media{order:2}
+@media(max-width:860px){.villa{grid-template-columns:1fr}.villa.flip .media{order:0}.villa .body{padding:32px 26px}}
+
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+@media(max-width:860px){.review-grid{grid-template-columns:1fr}}
+.review{border-top:2px solid var(--indigo);padding-top:22px}
+.review blockquote{font-family:var(--serif);font-size:14.5px;line-height:2;color:var(--ink)}
+.review .who{margin-top:14px;font-size:11px;letter-spacing:.14em;color:var(--ink-faint)}
+.review-src{margin-top:30px;font-size:12px;color:var(--ink-faint)}
+.review-src a{text-decoration:underline;text-underline-offset:3px}
+
+.facts{background:var(--paper-warm)}
+.facts dl{display:grid;grid-template-columns:max-content 1fr;gap:10px 34px;margin-top:34px;font-size:13.5px}
+.facts dt{color:var(--ink-faint);letter-spacing:.06em}
+.facts dd{color:var(--ink)}
+@media(max-width:640px){.facts dl{grid-template-columns:1fr}.facts dt{margin-top:10px}}
+
+.faq-list{margin-top:38px;border-top:1px solid var(--line)}
+details.faq{border-bottom:1px solid var(--line)}
+details.faq summary{list-style:none;cursor:pointer;display:flex;gap:22px;align-items:baseline;padding:22px 4px;font-size:15px;font-weight:500;letter-spacing:.03em}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary .q-no{font-family:var(--serif);font-size:12px;color:var(--indigo);letter-spacing:.1em;min-width:42px}
+details.faq summary::after{content:"+";margin-left:auto;font-family:var(--serif);color:var(--ink-faint);font-size:18px;transition:transform .25s}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .a{padding:0 4px 24px 64px;font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:640px){details.faq .a{padding-left:4px}}
+
+.access-map{margin-top:38px;border:1px solid var(--line);background:var(--white)}
+.access-map img{width:100%;height:auto}
+.access-map .cap{padding:12px 18px;font-size:11.5px;letter-spacing:.08em;color:var(--ink-faint);border-top:1px solid var(--line)}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:38px}
+@media(max-width:860px){.access-grid{grid-template-columns:1fr}}
+.access-grid h4{font-family:var(--serif);font-size:16px;letter-spacing:.08em;margin-bottom:10px}
+.access-grid p, .access-grid li{font-size:13.5px;color:var(--ink-soft)}
+.access-grid ul{list-style:none}
+.access-grid li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.access-grid li a{text-decoration:underline;text-underline-offset:3px;color:var(--indigo)}
+.route-list{margin:0;padding:0}
+.route-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 0;border-bottom:1px solid var(--line);justify-content:flex-start}
+.route-list li strong{font-family:var(--serif);font-size:14px;letter-spacing:.04em;color:var(--ink);font-weight:500;white-space:nowrap}
+.route-list .route-leg{font-size:11.5px;letter-spacing:.06em;color:var(--ink-faint);padding:2px 10px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.site-footer{border-top:1px solid var(--line);background:var(--white)}
+.site-footer .inner{max-width:1120px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;font-size:12.5px;color:var(--ink-soft)}
+@media(max-width:760px){.site-footer .inner{grid-template-columns:1fr}}
+.site-footer h5{font-size:11px;letter-spacing:.2em;color:var(--ink-faint);margin-bottom:14px;font-weight:400}
+.site-footer a{display:block;padding:4px 0}
+.site-footer a:hover{color:var(--ink)}
+.copyright{border-top:1px solid var(--line);padding:18px 24px;text-align:center;font-size:11px;color:var(--ink-faint);letter-spacing:.1em}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;background:var(--indigo-deep);color:#fff}
+.sticky-cta a{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;font-size:14px;letter-spacing:.12em}
+@media(max-width:760px){.sticky-cta{display:block}body{padding-bottom:52px}}
+
+.btn-gallery{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-size:13px;letter-spacing:.1em;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:all .25s}
+.btn-gallery:hover{background:var(--ink);color:var(--paper)}
+.btn-gallery .ct{color:var(--ink-faint);font-size:11px;letter-spacing:.05em}
+.btn-gallery:hover .ct{color:var(--paper-warm)}
+.villa .act{display:flex;gap:12px;flex-wrap:wrap}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(15,17,20,.97);display:none;align-items:center;justify-content:center;padding:60px 80px}
+.lightbox.open{display:flex}
+.lightbox .stage{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lightbox img{max-width:90vw;max-height:78vh;object-fit:contain;display:block;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.lightbox .caption{color:#e7e7e3;font-family:var(--serif);font-size:14px;letter-spacing:.08em;text-align:center;max-width:90vw}
+.lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;cursor:pointer;padding:24px 14px;font-size:36px;background:none;border:none;opacity:.6;transition:opacity .15s;user-select:none;font-family:var(--serif)}
+.lightbox .nav:hover{opacity:1}
+.lightbox .prev{left:8px}
+.lightbox .next{right:8px}
+.lightbox .close{position:absolute;top:18px;right:24px;color:#fff;font-size:28px;cursor:pointer;background:none;border:none;opacity:.7;transition:opacity .15s;padding:8px;line-height:1}
+.lightbox .close:hover{opacity:1}
+.lightbox .counter{position:absolute;top:24px;left:24px;color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:.18em;opacity:.7}
+@media(max-width:760px){
+  .lightbox{padding:50px 8px}
+  .lightbox .nav{padding:18px 10px;font-size:30px}
+  .lightbox img{max-height:72vh}
+}
+body.lb-open{overflow:hidden}
+
+.facility-modal{position:fixed;inset:0;z-index:100;background:rgba(15,17,20,.85);display:none;align-items:flex-start;justify-content:center;padding:60px 16px 30px;overflow-y:auto}
+.facility-modal.open{display:flex}
+.facility-modal .card{background:var(--paper);max-width:760px;width:100%;padding:48px 44px 40px;position:relative;border:1px solid var(--line);box-shadow:0 12px 60px rgba(0,0,0,.3);margin:auto}
+.facility-modal .close{position:fixed;top:18px;right:24px;z-index:110;width:38px;height:38px;border-radius:50%;background:var(--paper);border:1px solid var(--line);font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);transition:all .2s}
+.facility-modal .close:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.facility-modal h3{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.08em;margin-bottom:6px}
+.facility-modal .subtitle{font-family:monospace;font-size:11px;letter-spacing:.2em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:30px}
+.facility-modal .section{margin-bottom:28px}
+.facility-modal .section h4{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.1em;color:var(--indigo);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.facility-modal .info-list{list-style:none;padding:0;margin:0}
+.facility-modal .info-list li{padding:7px 0 7px 14px;position:relative;font-size:13px;line-height:1.65;color:var(--ink);border-bottom:1px dotted var(--line)}
+.facility-modal .info-list li:last-child{border-bottom:none}
+.facility-modal .info-list li::before{content:"·";position:absolute;left:0;color:var(--ink-faint);font-weight:600}
+.facility-modal .info-list li .detail{color:var(--ink-soft);margin-left:8px}
+.facility-modal .info-list li .detail::before{content:"— ";color:var(--ink-faint)}
+@media(max-width:640px){
+  .facility-modal .card{padding:36px 22px 28px}
+  .facility-modal .close{top:12px;right:12px;width:34px;height:34px;font-size:20px}
+}
+body.lb-open{overflow:hidden}
+
+</style>
 </head>
-
 <body>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
+<!-- ============ HEADER ============ -->
 <header class="site-header">
-  <a href="./" class="brand">
-    <span class="brand-mark">Kanazawa Villas</span>
-    <span class="brand-sub">Est. 2024 · Ishikawa</span>
-  </a>
-
-  <div class="header-drawer" data-component="header-drawer">
-    <nav class="site-nav">
-      <a href="#villas">Villas</a>
-      <a href="#concept">Concept</a>
-      <a href="#neighborhood">Neighborhood</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <!-- Mobile-visible language switch (also visible inside drawer on mobile) -->
-    <div class="lang-switch" data-component="lang-switch">
-      <a href="./" class="active" lang="en" aria-current="page">EN</a>
-      <a href="../ja/" lang="ja" hreflang="ja">日本語</a>
-    </div>
-  </div>
-
-  <div class="header-cta">
-    <!-- Desktop-visible language switch (hidden on mobile, drawer version is shown instead) -->
-    <div class="lang-switch lang-switch-desktop" data-component="lang-switch">
-      <a href="./" class="active" lang="en" aria-current="page">EN</a>
-      <a href="../ja/" lang="ja" hreflang="ja">日本語</a>
-    </div>
-    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
-      <span class="btn-label-full">Book Direct</span>
-      <span class="btn-label-short">Book</span>
-      <span class="arrow">
-        <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-    </a>
-    <button class="menu-toggle" data-component="menu-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-  </div>
+  <a class="brand" href="#top">Kanazawa Villas<small>EST. 2024 · ISHIKAWA</small></a>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="#concept">Concept</a>
+    <a href="#direct">Why book direct</a>
+    <a href="#villas">Villas</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#access">Access</a>
+    <a href="../ja/" hreflang="ja" lang="ja" style="margin-left:8px">日本語</a>
+  </nav>
+  <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check availability</a>
 </header>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
-<section class="hero">
-  <div class="hero-media">
-    <img src="../images/nomachi-hero.jpg" alt="Tatami bedroom interior, Nomachi Villa"/>
-  </div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <img src="../images/nomachi-hero.jpg" alt="Shiragiku Villa — Japanese garden through shōji"/>
   <div class="hero-inner">
-    <h1 class="visually-hidden">Kanazawa Villas — Three houses, one Kanazawa.</h1>
+    <h1>Two houses, one Kanazawa.<br/>Stay like a local.</h1>
+    <p class="sub">Privately operated whole-house stays, licensed under Japan's Inn and Hotel Business Act. For families and small groups.<br/>Direct booking on this site is the lowest available rate.</p>
     <div class="hero-actions">
-      <a href="#villas" class="btn-book">
-        <span>Explore the villas</span>
-        <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book hero-secondary">Book direct</a>
+      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
+      <a class="btn" href="#villas">See both houses</a>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     CONCEPT
-     ============================================================ -->
-<section id="concept" class="section concept">
-  <div class="section-head concept-head">
-    <div><div class="section-label"><span class="num">01</span>Concept</div></div>
-    <div>
-      <h2 class="section-title display">Three houses,<br/><em>one idea —</em><br/>to inhabit Kanazawa.</h2>
-    </div>
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust" role="complementary" aria-label="Trust information">
+  <div class="row">
+    <div class="cell"><strong>4.96 / 250 reviews</strong><span>Average rating on Airbnb (as of June 2026)</span></div>
+    <div class="cell"><strong>Licensed lodging</strong><span>Permitted under Japan's Inn and Hotel Business Act</span></div>
   </div>
-  <div class="concept-body">
-    <p>Not a hotel. Not a tourist box.<br/>A place to walk Kanazawa from the inside — at a resident's pace.</p>
-    <p>An old townhouse, quietly composed, in <em class="serif-italic">Nomachi</em>.<br/>A Taishō-era home with a private garden, in <em class="serif-italic">Shiragiku</em>.<br/>Three rooms reframed in tatami and shōji, seven minutes from the station, in <em class="serif-italic">Horikawa</em>.</p>
-    <p class="en">Stay quietly. Cook for yourself.<br/>Leave the door, and the city is waiting.</p>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="num">3<span class="unit">villas</span></div><div class="label">Nomachi · Shiragiku · Horikawa</div></div>
-    <div class="stat"><div class="num">5<span class="unit">rooms</span></div><div class="label">Whole-house &amp; apartment stays</div></div>
-    <div class="stat"><div class="num">4.96<span class="unit">★</span></div><div class="label">Average rating on Airbnb</div></div>
-    <div class="stat"><div class="num">250<span class="unit">reviews</span></div><div class="label">Across our hosting history</div></div>
-  </div>
-</section>
-
-<!-- ============================================================
-     VILLAS
-     ============================================================ -->
-<section id="villas" class="section">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">02</span>The villas</div></div>
-    <div>
-      <h2 class="section-title display">Three ways<br/>to <em>stay.</em></h2>
-      <p class="section-lede">Each house carries its own character. Choose by group size, mood, or how close you want to be to the station.</p>
-    </div>
-  </div>
-
-  <div class="villa-list">
-
-    <!-- Villa 01: Nomachi -->
-    <article class="villa-card">
-      <div class="media">
-        <div class="tag">01 / Nomachi</div>
-        <img src="../images/nomachi-01.jpg" alt="Nomachi Villa interior"/>
-      </div>
-      <div class="info">
-        <div class="idx">VILLA NO.01 — opened Nov 2024</div>
-        <h3>Nomachi Villa</h3>
-        <div class="jp-name">野町邸 ／ Nomachi, Kanazawa</div>
-        <div class="desc">A two-storey townhouse, quietly restored. Long corridors, paper light through shōji, the steady weight of wood and tatami. Two bedrooms — one Western, one Japanese — with semi-double beds and futons available for families up to six. Ten minutes on foot from the Katamachi nightlife, and quiet enough that you forget it's there.</div>
-        <div class="specs">
-          <div><span>Size</span><strong>76 m²</strong></div>
-          <div><span>Capacity</span><strong>6 guests</strong></div>
-          <div><span>Bedrooms</span><strong>2</strong></div>
-          <div><span>Type</span><strong>Whole house</strong></div>
-          <div><span>Min stay</span><strong>2 nights</strong></div>
-        </div>
-        <div class="actions">
-          <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book"><span>Book direct</span>
-            <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Villa 02: Shiragiku -->
-    <article class="villa-card reverse">
-      <div class="media">
-        <div class="tag">02 / Shiragiku</div>
-        <div class="coming-soon">
-          <div class="label">Photography in progress</div>
-          <div class="date">Open and welcoming guests</div>
-        </div>
-      </div>
-      <div class="info">
-        <div class="idx">VILLA NO.02 — opened Aug 2025</div>
-        <h3>Shiragiku Villa</h3>
-        <div class="jp-name">白菊町邸 ／ Shiragiku, Kanazawa</div>
-        <div class="desc">A Taishō-era residence, carefully restored with antique furniture and lighting. The living room opens onto a small Japanese garden — maple, pine, and nandina — lit softly at night. Two upstairs bedrooms, one tatami and one wooden, sleep up to five. The west teahouse district is two-hundred metres away.</div>
-        <div class="specs">
-          <div><span>Size</span><strong>68 m²</strong></div>
-          <div><span>Capacity</span><strong>5 guests</strong></div>
-          <div><span>Feature</span><strong>Garden</strong></div>
-          <div><span>Type</span><strong>Whole house</strong></div>
-          <div><span>Min stay</span><strong>2 nights</strong></div>
-        </div>
-        <p class="booking-note">Currently bookable via Airbnb while we prepare full direct booking.</p>
-        <div class="actions">
-          <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener" class="btn-book" data-villa="shiragiku"><span>Book on Airbnb</span>
-            <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Villa 03: Horikawa -->
-    <article class="villa-card">
-      <div class="media">
-        <div class="tag">03 / Horikawa</div>
-        <div class="coming-soon">
-          <div class="label">Coming soon</div>
-          <div class="date">Opening Jul 2026</div>
-        </div>
-      </div>
-      <div class="info">
-        <div class="idx">VILLA NO.03 — opening Jul 2026</div>
-        <h3>Horikawa Villa</h3>
-        <div class="jp-name">堀川町邸 ／ Horikawa, Kanazawa</div>
-        <div class="desc">Seven minutes from Kanazawa Station. A single floor of an apartment building, reframed as three distinct rooms — tatami, shōji, and closet-spaces given new life. Sleeps eleven across three rooms, with shared laundry on the same floor. For groups, families, or longer working stays.</div>
-        <div class="specs">
-          <div><span>To station</span><strong>7 min</strong></div>
-          <div><span>Rooms</span><strong>3</strong></div>
-          <div><span>Capacity</span><strong>11 guests</strong></div>
-          <div><span>Opens</span><strong>Jul 2026</strong></div>
-          <div><span>Min stay</span><strong>2 nights</strong></div>
-        </div>
-        <p class="booking-note">Early bookings will first open on Airbnb, with direct booking joining shortly after.</p>
-        <div class="actions">
-          <a href="../contact.html?topic=horikawa" class="btn-book" data-villa="horikawa"><span>Notify me</span>
-            <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ============================================================
-     NEIGHBORHOOD
-     ============================================================ -->
-<section id="neighborhood" class="section" style="background:var(--paper-warm);">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">03</span>Neighborhood</div></div>
-    <div>
-      <h2 class="section-title display">The city,<br/><em>close enough</em><br/>to walk.</h2>
-      <p class="section-lede">The gardens, the teahouse districts, the market — most of what makes Kanazawa worth visiting is within walking distance from Nomachi and Shiragiku, or one short bus ride away. Horikawa sits closer to the station — see Location for details.</p>
-    </div>
-  </div>
-  <div class="neighborhood" data-component="nbh-scroller">
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kenroku-en"></div></div><div class="num">01</div><h4>Kenroku-en Garden</h4><div class="sub">15 min by bus</div><p class="desc">One of Japan's three great gardens. Try the early morning free-entry hour.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Myoryuji"></div></div><div class="num">02</div><h4>Myōryū-ji (Ninja Temple)</h4><div class="sub">4 min on foot</div><p class="desc">A temple of hidden mechanisms. Booking essential.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Higashi Chaya"></div></div><div class="num">03</div><h4>Higashi Chaya District</h4><div class="sub">20 min on foot</div><p class="desc">Lattice-fronted teahouses. Most beautiful at dusk, when the lanterns come on.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Omicho Market"></div></div><div class="num">04</div><h4>Omicho Market</h4><div class="sub">15 min on foot</div><p class="desc">Local vegetables, fish from the Sea of Japan. The villa kitchens ask to be cooked in.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="21st Century Museum"></div></div><div class="num">05</div><h4>21st Century Museum</h4><div class="sub">18 min on foot</div><p class="desc">Contemporary art that meets you on a daily, unhurried scale.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Nishi Chaya"></div></div><div class="num">06</div><h4>Nishi Chaya District</h4><div class="sub">6 min on foot</div><p class="desc">The smallest of the three teahouse quarters. Quieter, less photographed.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kazuemachi Chaya"></div></div><div class="num">07</div><h4>Kazuemachi Chaya</h4><div class="sub">18 min on foot</div><p class="desc">A riverside teahouse district. The quietest of them all.</p></div>
-    <div class="nbh-card"><div class="media"><div class="ph" data-label="Kanazawa Station"></div></div><div class="num">08</div><h4>Kanazawa Station</h4><div class="sub">15 min by bus</div><p class="desc">The Tsuzumi-mon gate sets the tone — your trip begins on arrival.</p></div>
-  </div>
-</section>
-
-<!-- ============================================================
-     REVIEWS
-     ============================================================ -->
-<section id="reviews" class="section reviews">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">04</span>Guest voices</div></div>
-    <div>
-      <h2 class="section-title display"><em>4.96</em> average,<br/>across every stay.</h2>
-      <p class="section-lede">From real Airbnb guests across our listings.</p>
-    </div>
-  </div>
-  <div class="review-grid">
-    <div class="review">
-      <div class="rating">5.00<em>/ 5.00</em></div>
-      <blockquote>"It felt like being invited to the home of an old friend in Kanazawa. Cooking breakfast and looking at the garden — that alone became the point of the trip."</blockquote>
-      <div class="who">MEGUMI · FAMILY OF 4 · NOMACHI</div>
-    </div>
-    <div class="review">
-      <div class="rating">5.00<em>/ 5.00</em></div>
-      <blockquote>"The garden changed with the morning light. We cooked from the Omicho market haul and didn't want to leave."</blockquote>
-      <div class="who">JAMES · COUPLE · SHIRAGIKU</div>
-    </div>
-    <div class="review">
-      <div class="rating">4.92<em>/ 5.00</em></div>
-      <blockquote>"The host's communication was thoughtful, and English was easy. I worked from here for a week and got more done than I do at home."</blockquote>
-      <div class="who">DANIEL · LONG STAY · NOMACHI</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     LOCATION
-     ============================================================ -->
-<section id="location" class="section">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">05</span>Location</div></div>
-    <div>
-      <h2 class="section-title display">Three addresses,<br/><em>one city.</em></h2>
-      <p class="section-lede">From the station to the old town — see how each villa sits within Kanazawa.</p>
-    </div>
-  </div>
-  <div class="location-grid">
-    <div class="map-wrap">
-      <img class="map-img" src="../images/location.png" alt="Map of Kanazawa Villas — three properties with surrounding landmarks" loading="lazy" />
-    </div>
-    <div class="location-list">
-      <div class="item">
-        <div class="pin">01</div>
-        <div><h4>Nomachi Villa</h4><div class="meta">Nomachi, Kanazawa · Whole house</div></div>
-        <div class="dist">76 m² · 6 guests</div>
-      </div>
-      <div class="item">
-        <div class="pin">02</div>
-        <div><h4>Shiragiku Villa</h4><div class="meta">Shiragiku, Kanazawa · Whole house</div></div>
-        <div class="dist">68 m² · 5 guests</div>
-      </div>
-      <div class="item">
-        <div class="pin">03</div>
-        <div><h4>Horikawa Villa</h4><div class="meta">Horikawa, Kanazawa · Three apartments</div></div>
-        <div class="dist">3 rooms · 11 guests</div>
-      </div>
-      <div class="location-access">
-        <div class="label">Access from Kanazawa Station</div>
-        Horikawa — 7 min on foot.<br/>
-        Nomachi &amp; Shiragiku — 15 min by city bus, then a short walk.<br/>
-        Komatsu Airport — 40 min by direct bus. Tokyo &amp; Osaka — 2h30m by JR.
-      </div>
-      <div class="location-access" style="margin-top: 14px;">
-        <div class="label">Find on Google Maps</div>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=金沢市野町" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px; display:inline-block; margin-right:18px;">Nomachi area →</a>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=金沢市白菊町" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px; display:inline-block; margin-right:18px;">Shiragiku area →</a>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=金沢市堀川町" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px; display:inline-block;">Horikawa area →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     HOST
-     ============================================================ -->
-<section id="host" class="section" style="background:var(--paper-warm);">
-  <div class="host">
-    <div class="ph photo" data-label="Host portrait"></div>
-    <div class="copy">
-      <div class="label-row"><div class="section-label"><span class="num">06</span>Host</div></div>
-      <h2 class="section-title display">Hosted by<br/><em>someone who lives</em><br/>this work.</h2>
-      <p class="lead">Makoto Inanuma — Superhost on Airbnb, with hosting experience built across two-hundred-fifty reviews in Kanazawa and beyond.</p>
-      <p class="desc">A film and video maker by trade. Conversations move through Beds24 messaging — Japanese, multilingual via translation. Most messages get a reply within an hour.</p>
-      <div class="stats-row">
-        <div><span>Response</span><strong>&lt; 1 hr</strong></div>
-        <div><span>Languages</span><strong>Japanese · multilingual via translation</strong></div>
-        <div><span>Hosting since</span><strong>2022</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FAQ
-     ============================================================ -->
-<section id="faq" class="section">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">07</span>FAQ</div></div>
-    <div>
-      <h2 class="section-title display">Questions,<br/><em>answered.</em></h2>
-      <p class="section-lede">A few things guests usually ask before they arrive. For anything else, send a message.</p>
-    </div>
-  </div>
-  <div class="faq-list" data-component="faq">
-    <div class="faq-item open">
-      <div class="num">Q.01</div>
-      <div><div class="q">When can we check in and out?</div><div class="a">Check-in is from 15:00, check-out by 11:00. Earlier check-in or later check-out can sometimes be arranged — please ask.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.02</div>
-      <div><div class="q">How does check-in work?</div><div class="a">After booking, we send you a link to your private guest page. There you’ll upload a passport photo (non-Japanese guests) and complete a short guest registry for everyone in your party — a step required by Japanese law. Once submitted, your check-in details (address, access, Wi-Fi, and the entrance keybox PIN) unlock on the page. A staff member will usually meet you at the villa to confirm your identity in person, and you can message us anytime through the page during your stay.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.03</div>
-      <div><div class="q">Is there a minimum stay?</div><div class="a">Yes — two nights minimum at all villas. Longer stays receive direct booking discounts (see below).</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.04</div>
-      <div><div class="q">What languages can the host handle?</div><div class="a">The host speaks Japanese only, but uses real-time translation tools to assist guests in any language. Replies typically arrive within the hour.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.05</div>
-      <div><div class="q">Why book direct, instead of Airbnb?</div><div class="a">Direct bookings (Nomachi) are the lowest available rate. Long-stay discounts apply: 10% off for 3+ nights, 15% off for 4+ nights, and 18% off for 7+ nights. These discounts are only available via direct booking. Shiragiku is currently bookable through Airbnb only; Horikawa opens for booking in summer 2026.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.06</div>
-      <div><div class="q">Is there parking?</div><div class="a">Nomachi has free parking 2 minutes on foot from the villa. Shiragiku and Horikawa do not include parking, but coin parking is available 1 minute away — let us know and we'll send the details.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.07</div>
-      <div><div class="q">Are the houses suitable for young children?</div><div class="a">Yes. A high chair is available on request, free of charge. Please mention this when booking.</div></div>
-      <div class="toggle"></div>
-    </div>
-    <div class="faq-item">
-      <div class="num">Q.08</div>
-      <div><div class="q">What about long stays and remote work?</div><div class="a">All villas have Wi-Fi suitable for video calls. Discounts apply from three nights onward, with the deepest direct-booking discount at seven nights or more.</div></div>
-      <div class="toggle"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     BOOKING PREVIEW
-     ============================================================ -->
-<section id="book" class="section booking">
-  <div class="section-head">
-    <div><div class="section-label"><span class="num">08</span>Book</div></div>
-    <div>
-      <h2 class="section-title display">Choose<br/>your <em>villa.</em></h2>
-      <p class="section-lede">Nomachi accepts direct booking through this site at the lowest rate. Shiragiku is currently bookable via Airbnb. Horikawa opens for booking in summer 2026.</p>
-    </div>
-  </div>
-  <div class="booking-grid" data-component="booking">
-
-    <div>
-      <div class="booking-label">Select villa</div>
-      <div class="villa-picker">
-        <button class="pick active" data-villa="nomachi" data-url="https://beds24.com/booking2.php?propid=261406" data-target="beds24">
-          <div>
-            <div class="name">Nomachi Villa</div>
-            <div class="area-meta">Nomachi · max 6 · direct booking</div>
-          </div>
-          <div class="arrow-text">— selected</div>
-        </button>
-        <button class="pick" data-villa="shiragiku" data-url="https://airbnb.jp/h/shiragiku-villa" data-target="airbnb">
-          <div>
-            <div class="name">Shiragiku Villa</div>
-            <div class="area-meta">Shiragiku · max 5 · via Airbnb</div>
-          </div>
-          <div class="arrow-text">→</div>
-        </button>
-        <button class="pick" data-villa="horikawa" data-url="../contact.html?topic=horikawa" data-target="notify">
-          <div>
-            <div class="name">Horikawa Villa</div>
-            <div class="area-meta">Horikawa · opens Jul 2026</div>
-          </div>
-          <div class="arrow-text">→</div>
-        </button>
-      </div>
-
-      <div class="booking-label">Why book direct</div>
-      <ul class="direct-benefits">
-        <li><span class="bullet">→</span> Lowest available rate, no OTA service fee</li>
-        <li><span class="bullet">→</span> 10% off for stays of 3+ nights</li>
-        <li><span class="bullet">→</span> 15% off for stays of 4+ nights</li>
-        <li><span class="bullet">→</span> 18% off for stays of 7+ nights</li>
-        <li><span class="bullet">→</span> Direct messaging with the host</li>
-        <li class="note">Minimum stay: 2 nights at all villas.</li>
-      </ul>
-    </div>
-
-    <div class="booking-summary">
-      <div>
-        <div class="booking-label">Your stay</div>
-        <div class="stay-title" data-component="stay-title">Nomachi Villa</div>
-        <div class="stay-desc" data-component="stay-desc">You'll be taken to Beds24 to pick exact dates, guests, and complete payment securely.</div>
-        <div class="rate-row first"><span>Direct rate</span><span>Lowest available</span></div>
-        <div class="rate-row"><span>3+ nights</span><span>— 10%</span></div>
-        <div class="rate-row"><span>4+ nights</span><span>— 15%</span></div>
-        <div class="rate-row"><span>7+ nights</span><span>— 18%</span></div>
-      </div>
-      <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-component="continue-cta" class="btn-book continue">
-        <span data-component="cta-label">Continue on Beds24</span>
-        <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     STATIC FALLBACK for crawlers, AI search, Stripe review etc.
-     These links are always present in HTML even if JS does not run.
-     They are visually hidden but accessible to screen readers and bots.
-     ============================================================ -->
-<div class="seo-fallback" aria-label="Site links">
-  <h2>Legal & site information</h2>
-  <ul>
-    <li><a href="../legal/tokushoho.html">特定商取引法に基づく表記</a></li>
-    <li><a href="../legal/privacy.html">Privacy Policy</a></li>
-    <li><a href="../legal/terms.html">Accommodation Agreement</a></li>
-    <li><a href="../legal/house-rules.html">House Rules</a></li>
-    <li><a href="../contact.html">Contact</a></li>
-    <li><a href="../ja/" hreflang="ja">日本語版 (Japanese)</a></li>
-    <li><a href="https://beds24.com/booking2.php?propid=261406" rel="noopener">Book Nomachi Villa directly</a></li>
-    <li><a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener">Book Shiragiku Villa on Airbnb</a></li>
-  </ul>
 </div>
 
-<!-- ============================================================
-     FOOTER (injected by script.js)
-     ============================================================ -->
-<footer class="site-footer" data-component="site-footer"></footer>
+<!-- ============ CONCEPT (01) ============ -->
+<section class="section" id="concept">
+  <div class="label"><span class="num">01</span>Concept</div>
+  <h2 class="display">Kanazawa, at a <em>resident's pace</em>.</h2>
+  <p class="lede">Not a hotel. Not a tourist box.<br/>
+  A quietly restored old townhouse, and a home with a small Japanese garden carrying Taishō-era atmosphere.<br/>
+  Two whole-house stays, each offering its own way of inhabiting Kanazawa.</p>
+</section>
 
-<script src="../script.js"></script>
+<!-- ============ WHY DIRECT (02) ============ -->
+<section class="section direct" id="direct">
+  <div class="label"><span class="num">02</span>Why book direct</div>
+  <h2 class="display">Same house, <em>best terms</em>.</h2>
+  <p class="lede">We also list on Airbnb. But we recommend booking directly because the savings — no platform commission — come back to you, as a lower rate and better service.</p>
+
+  <div class="direct-grid">
+    <div>
+      <div class="benefit"><div class="no">1</div><div><h4>Lowest rate, zero platform fees</h4><p>OTA commissions (typically around 15%) don't apply here. Compare the same dates, same house — we'll be cheapest.</p></div></div>
+      <div class="benefit"><div class="no">2</div><div><h4>Long-stay discounts, direct-only</h4><p>10% off for 3+ nights, 15% off for 4+ nights, 18% off for 7+ nights. The longer you stay, the wider the gap.</p></div></div>
+      <div class="benefit"><div class="no">3</div><div><h4>Private guest page after booking</h4><p>Check-in details, Wi-Fi, entrance PIN, maps — all in one place. Message the host anytime during your stay.</p></div></div>
+      <div class="benefit"><div class="no">4</div><div><h4>Direct contact with the host</h4><p>Cancellations or schedule changes go straight to us — no middleman. Most messages get a reply within an hour.</p></div></div>
+    </div>
+    <aside class="ratecard">
+      <div class="t">Direct booking rates — Nomachi Villa</div>
+      <div class="rate-row"><span>Base rate</span><span>Lowest guaranteed</span></div>
+      <div class="rate-row"><span>3+ nights</span><span>−10%</span></div>
+      <div class="rate-row"><span>4+ nights</span><span>−15%</span></div>
+      <div class="rate-row"><span>7+ nights</span><span>−18%</span></div>
+      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Pick dates &amp; see rates</a>
+      <p class="note">Choose dates and guests to see your total with discounts applied. Payment is processed securely via Beds24/Stripe. Free cancellation up to 5 days before check-in.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ VILLAS (03) ============ -->
+<section class="section" id="villas">
+  <div class="label"><span class="num">03</span>Villas</div>
+  <h2 class="display">Two ways <em>to stay</em>.</h2>
+  <p class="lede">Two distinct houses. Choose by group size or atmosphere.</p>
+
+  <!-- Nomachi -->
+  <article class="villa">
+    <div class="media"><img src="../images/nomachi-01.jpg" alt="Nomachi Villa — dining table with warm light at night"/></div>
+    <div class="body">
+      <div class="idx">VILLA No.01 — opened November 2024</div>
+      <h3>Nomachi Villa</h3>
+      <div class="en">野町邸 / Nomachi, Kanazawa</div>
+      <p class="desc">A quietly restored two-storey townhouse. Soft light through shōji, the warm calm of wood and tatami. Two bedrooms — one Japanese, one Western — sleeping up to 6. Ten minutes' walk from the Katamachi nightlife, far enough that the city's hum doesn't reach you.</p>
+      <div class="specs">
+        <div><strong>76 m²</strong>Size</div>
+        <div><strong>6</strong>Guests</div>
+        <div><strong>2</strong>Bedrooms</div>
+        <div><strong>2 nights</strong>Min stay</div>
+        <div><strong>Free</strong>Parking 2 min walk</div>
+      </div>
+      <div class="status ok">Bookable on this site — lowest rate</div>
+      <div class="act">
+        <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
+        <button class="btn-gallery gallery-trigger" data-villa="nomachi-rooms" type="button">See the rooms<span class="ct">(29 photos)</span></button>
+        <button class="btn-gallery gallery-trigger" data-villa="nomachi-mood" type="button">See the atmosphere<span class="ct">(14 photos)</span></button>
+        <button class="btn-gallery facility-trigger" data-villa="nomachi" type="button">Facility info</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Shiragiku -->
+  <article class="villa flip">
+    <div class="media"><img src="../images/shiragiku-card.jpg" alt="Shiragiku Villa — view of the Japanese garden"/></div>
+    <div class="body">
+      <div class="idx">VILLA No.02 — opened August 2025</div>
+      <h3>Shiragiku Villa</h3>
+      <div class="en">白菊町邸 / Shiragiku, Kanazawa</div>
+      <p class="desc">Antique furniture and lighting bring Taishō-era atmosphere to the interior. The living room overlooks a small Japanese garden of maple, pine, and nandina. Two upstairs bedrooms (one Western, one Japanese-style) sleep up to 5. The Nishi Chaya teahouse district is 200 metres away.</p>
+      <div class="specs">
+        <div><strong>56 m²</strong>Size</div>
+        <div><strong>5</strong>Guests</div>
+        <div><strong>Garden</strong>Japanese garden</div>
+        <div><strong>2 nights</strong>Min stay</div>
+        <div><strong>1 min walk</strong>Coin parking</div>
+      </div>
+      <div class="status">Currently bookable on Airbnb — direct booking coming soon</div>
+      <div class="act">
+        <a class="btn" href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Book on Airbnb</a>
+        <button class="btn-gallery gallery-trigger" data-villa="shiragiku-rooms" type="button">See the rooms<span class="ct">(12 photos)</span></button>
+        <button class="btn-gallery gallery-trigger" data-villa="shiragiku-mood" type="button">See the atmosphere<span class="ct">(8 photos)</span></button>
+        <button class="btn-gallery facility-trigger" data-villa="shiragiku" type="button">Facility info</button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ REVIEWS (04) ============ -->
+<section class="section" id="reviews" style="background:var(--white);max-width:none"><div style="max-width:1120px;margin:0 auto">
+  <div class="label"><span class="num">04</span>Guest voices</div>
+  <h2 class="display">Ratings come from <em>real stays</em>.</h2>
+  <div class="review-grid">
+    <figure class="review">
+      <blockquote>"This was the most beautiful and peaceful stay in Japan, looks exactly like the photos in real life. The house is beautiful with so many amazing details, everything taken care of."</blockquote>
+      <figcaption class="who">Annemarie · Nomachi Villa · Nov 2025</figcaption>
+    </figure>
+    <figure class="review">
+      <blockquote>"This home is an authentic, original Japanese style home. The Japanese garden is as beautiful as the photos. After sleeping on typical beds for 25 nights, I had the best sleep at this home."</blockquote>
+      <figcaption class="who">Angela · 5 nights · Shiragiku Villa · Nov 2025</figcaption>
+    </figure>
+    <figure class="review">
+      <blockquote>"Wish we could give it 6 stars for our one week stay. In a great location in a typical quiet Japanese neighborhood, full of temples and trees."</blockquote>
+      <figcaption class="who">Lisa · 1-week stay · Nomachi Villa · Oct 2025</figcaption>
+    </figure>
+  </div>
+  <p class="review-src">All reviews are real excerpts from <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> guests. Average rating 4.96 across 250 reviews (as of June 2026). Google reviews are available at <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">"Nomachi" on Google</a>.</p>
+</div></section>
+
+<!-- ============ FACTS (05) ============ -->
+<section class="section facts" id="facts">
+  <div class="label"><span class="num">05</span>Key facts</div>
+  <h2 class="display">Kanazawa Villas, <em>in numbers</em>.</h2>
+  <dl>
+    <dt>Operator</dt><dd>IMK LLC (licensed under Japan's Inn and Hotel Business Act, simple-lodging category)</dd>
+    <dt>Permit numbers</dt><dd>Nomachi: Kanazawa City Health Office No. 24250020 / Shiragiku: No. 25250003</dd>
+    <dt>Properties</dt><dd>Nomachi Villa (76 m², 6 guests, Nomachi) / Shiragiku Villa (56 m², 5 guests, Shiragiku)</dd>
+    <dt>Check-in</dt><dd>From 15:00 (check-out by 11:00). After booking, complete ID verification and guest registry on your private guest page to unlock check-in details</dd>
+    <dt>Min stay</dt><dd>2 nights at both villas</dd>
+    <dt>Direct booking discount</dt><dd>10% for 3+ nights / 15% for 4+ nights / 18% for 7+ nights (direct booking only)</dd>
+    <dt>Cancellation</dt><dd>Free up to 5 days before / 100% from 4 days before</dd>
+    <dt>Languages</dt><dd>Japanese (multilingual support via translation tools — English and others, most replies within 1 hour)</dd>
+    <dt>Access</dt><dd>From Kanazawa Station: city bus 20 min / taxi 15 min. Komatsu Airport to Kanazawa Station: direct bus 40 min. Tokyo to Kanazawa: ~2h30m by shinkansen</dd>
+  </dl>
+</section>
+
+<!-- ============ FAQ (06) ============ -->
+<section class="section" id="faq">
+  <div class="label"><span class="num">06</span>FAQ</div>
+  <h2 class="display">Frequently asked <em>questions</em>.</h2>
+  <div class="faq-list">
+    <details class="faq" open>
+      <summary><span class="q-no">Q.01</span>When can we check in and out?</summary>
+      <div class="a">Check-in is from 15:00, check-out by 11:00. Earlier check-in or later check-out can sometimes be arranged — please ask.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.02</span>How does check-in work?</summary>
+      <div class="a">After booking, we send you a link to your private guest page. There you upload a passport photo (non-Japanese guests) and complete a short guest registry for everyone in your party — a step required by Japanese law. Once submitted, your check-in details (address, access, Wi-Fi, entrance keybox PIN) appear on the page. A staff member usually meets you at the villa for in-person ID verification. You can message us anytime through the guest page during your stay.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.03</span>What's the difference between direct booking and Airbnb?</summary>
+      <div class="a">Direct booking (Nomachi) is the lowest rate — no OTA commission applies. Long-stay discounts (10% for 3+ nights, 15% for 4+ nights, 18% for 7+ nights) are direct-booking only. Shiragiku is currently bookable on Airbnb only.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.04</span>Is there a minimum stay?</summary>
+      <div class="a">Yes — two nights minimum at all villas.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.05</span>What languages can the host handle?</summary>
+      <div class="a">The host speaks Japanese only, but uses real-time translation tools to assist guests in any language. Replies typically arrive within the hour.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.06</span>Is there parking?</summary>
+      <div class="a">Nomachi has free parking 2 minutes on foot from the villa. Shiragiku doesn't have private parking, but coin parking is available 1 minute away.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.07</span>Can we stay with young children?</summary>
+      <div class="a">Yes. A high chair is available on request, free of charge — please mention this when booking.</div>
+    </details>
+    <details class="faq">
+      <summary><span class="q-no">Q.08</span>What about long stays and remote work?</summary>
+      <div class="a">All villas have Wi-Fi suitable for video calls. Discounts apply from 3 nights onward, with the deepest direct-booking discount at 7+ nights.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ACCESS (07) ============ -->
+<section class="section" id="access" style="padding-top:0">
+  <div class="label"><span class="num">07</span>Access</div>
+  <h2 class="display">Two addresses, <em>one city</em>.</h2>
+  <figure class="access-map">
+    <img src="https://muuukkk.github.io/kanazawa-villas/images/location.png" alt="Map of Kanazawa Villas — Nomachi and Shiragiku locations relative to Kenroku-en, the teahouse districts, Omicho Market, and other landmarks" loading="lazy"/>
+    <figcaption class="cap">Two villas and major Kanazawa landmarks — full directions sent after booking via the private guest page</figcaption>
+  </figure>
+  <div class="access-grid">
+    <div>
+      <h4>Getting to Kanazawa</h4>
+      <ul class="route-list">
+        <li><strong>Tokyo Station</strong> <span class="route-leg">Shinkansen ~2h30m</span> <strong>Kanazawa Station</strong> <span class="route-leg">Bus 20min / Taxi 15min</span> <strong>Villa</strong></li>
+        <li><strong>Komatsu Airport</strong> <span class="route-leg">Direct bus 40min</span> <strong>Kanazawa Station</strong> <span class="route-leg">Bus 20min / Taxi 15min</span> <strong>Villa</strong></li>
+      </ul>
+      <h4 style="margin-top:26px">Walking distance (from Nomachi)</h4>
+      <p>Nishi Chaya District — 6 min walk / Myōryū-ji (Ninja Temple) — 4 min walk / Omicho Market — 15 min walk / 21st Century Museum — 18 min walk / Kenroku-en Garden — 15 min by bus</p>
+    </div>
+    <div>
+      <h4>View on Google Maps</h4>
+      <ul>
+        <li>Nomachi Villa <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">View on Google →</a></li>
+        <li>Shiragiku area <a href="https://www.google.com/maps/search/?api=1&amp;query=金沢市白菊町" target="_blank" rel="noopener">Google Maps →</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <div class="brand" style="margin-bottom:12px">Kanazawa Villas<small>KANAZAWA VILLAS</small></div>
+      <p>Operated by IMK LLC. Privately operated whole-house stays in Kanazawa.<br/>Licensed under Japan's Inn and Hotel Business Act (simple-lodging category).</p>
+    </div>
+    <div>
+      <h5>Booking</h5>
+      <a href="https://beds24.com/booking2.php?propid=261406" rel="noopener">Book Nomachi Villa directly</a>
+      <a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener">Book Shiragiku Villa on Airbnb</a>
+      <a href="https://muuukkk.github.io/kanazawa-villas/contact.html?lang=en">Contact</a>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <a href="https://muuukkk.github.io/kanazawa-villas/legal/tokushoho.html">Specified Commercial Transaction Act disclosure</a>
+      <a href="https://muuukkk.github.io/kanazawa-villas/legal/privacy.html?lang=en">Privacy Policy</a>
+      <a href="https://muuukkk.github.io/kanazawa-villas/legal/terms.html?lang=en">Accommodation Terms</a>
+      <a href="https://muuukkk.github.io/kanazawa-villas/legal/house-rules.html?lang=en">House Rules</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Kanazawa Villas / IMK LLC</div>
+</footer>
+
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="sticky-cta">
+  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates — book direct for the lowest price</a>
+</div>
+
+
+<!-- ============ LIGHTBOX GALLERY ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Gallery">
+  <button class="close" aria-label="Close" type="button">×</button>
+  <span class="counter" id="lb-counter">1 / 1</span>
+  <button class="nav prev" aria-label="Previous" type="button">‹</button>
+  <div class="stage">
+    <img id="lb-img" src="" alt=""/>
+    <div class="caption" id="lb-caption"></div>
+  </div>
+  <button class="nav next" aria-label="Next" type="button">›</button>
+</div>
+
+<script>
+(function() {
+  const galleries = {"shiragiku-rooms": [{"src": "../images/gallery/shiragiku-1462.jpg", "thumb": "../images/gallery/shiragiku-1462-thumb.jpg", "cap": "Bedroom 1"}, {"src": "../images/gallery/shiragiku-1962.jpg", "thumb": "../images/gallery/shiragiku-1962-thumb.jpg", "cap": "Bedroom 2"}, {"src": "../images/gallery/shiragiku-2014.jpg", "thumb": "../images/gallery/shiragiku-2014-thumb.jpg", "cap": "Living room"}, {"src": "../images/gallery/shiragiku-1573.jpg", "thumb": "../images/gallery/shiragiku-1573-thumb.jpg", "cap": "Kitchen"}, {"src": "../images/gallery/shiragiku-1621.jpg", "thumb": "../images/gallery/shiragiku-1621-thumb.jpg", "cap": "Kitchen — alt angle"}, {"src": "../images/gallery/shiragiku-2010.jpg", "thumb": "../images/gallery/shiragiku-2010-thumb.jpg", "cap": "Toilet (1F)"}, {"src": "../images/gallery/shiragiku-1710.jpg", "thumb": "../images/gallery/shiragiku-1710-thumb.jpg", "cap": "Engawa (veranda)"}, {"src": "../images/gallery/shiragiku-1581.jpg", "thumb": "../images/gallery/shiragiku-1581-thumb.jpg", "cap": "Vanity"}, {"src": "../images/gallery/shiragiku-1700.jpg", "thumb": "../images/gallery/shiragiku-1700-thumb.jpg", "cap": "Vanity — alt angle"}, {"src": "../images/gallery/shiragiku-1932.jpg", "thumb": "../images/gallery/shiragiku-1932-thumb.jpg", "cap": "Staircase"}, {"src": "../images/gallery/shiragiku-1883.jpg", "thumb": "../images/gallery/shiragiku-1883-thumb.jpg", "cap": "Garden"}, {"src": "../images/gallery/shiragiku-1875.jpg", "thumb": "../images/gallery/shiragiku-1875-thumb.jpg", "cap": "Garden — alt angle"}], "shiragiku-mood": [{"src": "../images/gallery/shiragiku-1777.jpg", "thumb": "../images/gallery/shiragiku-1777-thumb.jpg", "cap": "A moment of daily life"}, {"src": "../images/gallery/shiragiku-1817.jpg", "thumb": "../images/gallery/shiragiku-1817-thumb.jpg", "cap": "Light through shōji"}, {"src": "../images/gallery/shiragiku-1822.jpg", "thumb": "../images/gallery/shiragiku-1822-thumb.jpg", "cap": "Garden view"}, {"src": "../images/gallery/shiragiku-1826.jpg", "thumb": "../images/gallery/shiragiku-1826-thumb.jpg", "cap": "Garden ambience"}, {"src": "../images/gallery/shiragiku-1545.jpg", "thumb": "../images/gallery/shiragiku-1545-thumb.jpg", "cap": "Twilight mood"}, {"src": "../images/gallery/shiragiku-1992.jpg", "thumb": "../images/gallery/shiragiku-1992-thumb.jpg", "cap": "Night quiet"}, {"src": "../images/gallery/shiragiku-1856.jpg", "thumb": "../images/gallery/shiragiku-1856-thumb.jpg", "cap": "Everyday ambience"}, {"src": "../images/gallery/shiragiku-1496.jpg", "thumb": "../images/gallery/shiragiku-1496-thumb.jpg", "cap": "Morning by the window"}], "nomachi-rooms": [{"src": "../images/gallery/nomachi-2495.jpg", "thumb": "../images/gallery/nomachi-2495-thumb.jpg", "cap": "Bedroom at night"}, {"src": "../images/gallery/nomachi-2523.jpg", "thumb": "../images/gallery/nomachi-2523-thumb.jpg", "cap": "Bed and lantern at night"}, {"src": "../images/gallery/nomachi-2158.jpg", "thumb": "../images/gallery/nomachi-2158-thumb.jpg", "cap": "Vanity — mirror and white porcelain"}, {"src": "../images/gallery/nomachi-2199.jpg", "thumb": "../images/gallery/nomachi-2199-thumb.jpg", "cap": "Floor texture"}, {"src": "../images/gallery/nomachi-2154.jpg", "thumb": "../images/gallery/nomachi-2154-thumb.jpg", "cap": "Toilet — alt angle"}, {"src": "../images/gallery/nomachi-2371.jpg", "thumb": "../images/gallery/nomachi-2371-thumb.jpg", "cap": "Bedroom (Western) — light by the window"}, {"src": "../images/gallery/nomachi-2303.jpg", "thumb": "../images/gallery/nomachi-2303-thumb.jpg", "cap": "Bedroom (Japanese) — shōji windowside"}, {"src": "../images/gallery/nomachi-2321.jpg", "thumb": "../images/gallery/nomachi-2321-thumb.jpg", "cap": "Bedroom (Japanese) — tatami and futon"}, {"src": "../images/gallery/nomachi-2334.jpg", "thumb": "../images/gallery/nomachi-2334-thumb.jpg", "cap": "Light and shadow — shōji gradient"}, {"src": "../images/gallery/nomachi-2177.jpg", "thumb": "../images/gallery/nomachi-2177-thumb.jpg", "cap": "Wooden frame detail"}, {"src": "../images/gallery/nomachi-2326.jpg", "thumb": "../images/gallery/nomachi-2326-thumb.jpg", "cap": "Bedroom (Japanese) — round pendant"}, {"src": "../images/gallery/nomachi-2498.jpg", "thumb": "../images/gallery/nomachi-2498-thumb.jpg", "cap": "Pendant lighting at night"}, {"src": "../images/gallery/nomachi-2161.jpg", "thumb": "../images/gallery/nomachi-2161-thumb.jpg", "cap": "Bathroom — soaking tub"}, {"src": "../images/gallery/nomachi-2088.jpg", "thumb": "../images/gallery/nomachi-2088-thumb.jpg", "cap": "Toilet"}, {"src": "../images/gallery/nomachi-2263.jpg", "thumb": "../images/gallery/nomachi-2263-thumb.jpg", "cap": "Morning light through shōji"}, {"src": "../images/gallery/nomachi-2038.jpg", "thumb": "../images/gallery/nomachi-2038-thumb.jpg", "cap": "Living room — shōji doors and wood warmth"}, {"src": "../images/gallery/nomachi-2056.jpg", "thumb": "../images/gallery/nomachi-2056-thumb.jpg", "cap": "Dining — paper lantern and wooden ceiling"}, {"src": "../images/gallery/nomachi-2072.jpg", "thumb": "../images/gallery/nomachi-2072-thumb.jpg", "cap": "Staircase — 1F to 2F"}, {"src": "../images/gallery/nomachi-2077.jpg", "thumb": "../images/gallery/nomachi-2077-thumb.jpg", "cap": "Staircase — wooden handrail"}, {"src": "../images/gallery/nomachi-2278.jpg", "thumb": "../images/gallery/nomachi-2278-thumb.jpg", "cap": "Bedroom (Western) — bed and shōji"}, {"src": "../images/gallery/nomachi-2328.jpg", "thumb": "../images/gallery/nomachi-2328-thumb.jpg", "cap": "Bedroom (Japanese) — light through shōji"}, {"src": "../images/gallery/nomachi-2330.jpg", "thumb": "../images/gallery/nomachi-2330-thumb.jpg", "cap": "Bedroom (Japanese) — alt angle"}, {"src": "../images/gallery/nomachi-2530.jpg", "thumb": "../images/gallery/nomachi-2530-thumb.jpg", "cap": "White linen and night light"}, {"src": "../images/gallery/nomachi-2533.jpg", "thumb": "../images/gallery/nomachi-2533-thumb.jpg", "cap": "Bed at night"}, {"src": "../images/gallery/nomachi-2509.jpg", "thumb": "../images/gallery/nomachi-2509-thumb.jpg", "cap": "Floor lamp"}, {"src": "../images/gallery/nomachi-2511.jpg", "thumb": "../images/gallery/nomachi-2511-thumb.jpg", "cap": "Exterior at night"}, {"src": "../images/gallery/nomachi-2516.jpg", "thumb": "../images/gallery/nomachi-2516-thumb.jpg", "cap": "Exterior from the street at night"}, {"src": "../images/gallery/nomachi-2566.jpg", "thumb": "../images/gallery/nomachi-2566-thumb.jpg", "cap": "Entrance lights at night"}, {"src": "../images/gallery/nomachi-2567.jpg", "thumb": "../images/gallery/nomachi-2567-thumb.jpg", "cap": "Townhouse at dusk"}], "nomachi-mood": [{"src": "../images/gallery/nomachi-2319.jpg", "thumb": "../images/gallery/nomachi-2319-thumb.jpg", "cap": "Staircase — looking down"}, {"src": "../images/gallery/nomachi-2299.jpg", "thumb": "../images/gallery/nomachi-2299-thumb.jpg", "cap": "Japanese bedroom ambience"}, {"src": "../images/gallery/nomachi-2083.jpg", "thumb": "../images/gallery/nomachi-2083-thumb.jpg", "cap": "Floral decoration at night"}, {"src": "../images/gallery/nomachi-2091.jpg", "thumb": "../images/gallery/nomachi-2091-thumb.jpg", "cap": "Table runner and red berries"}, {"src": "../images/gallery/nomachi-2305.jpg", "thumb": "../images/gallery/nomachi-2305-thumb.jpg", "cap": "Vase on the table"}, {"src": "../images/gallery/nomachi-2562.jpg", "thumb": "../images/gallery/nomachi-2562-thumb.jpg", "cap": "House at night, glowing lights"}, {"src": "../images/gallery/nomachi-2084.jpg", "thumb": "../images/gallery/nomachi-2084-thumb.jpg", "cap": "Exterior — townhouse on a quiet lane"}, {"src": "../images/gallery/nomachi-2086.jpg", "thumb": "../images/gallery/nomachi-2086-thumb.jpg", "cap": "The townhouse street"}, {"src": "../images/gallery/nomachi-2144.jpg", "thumb": "../images/gallery/nomachi-2144-thumb.jpg", "cap": "Nomachi alley"}, {"src": "../images/gallery/nomachi-2113.jpg", "thumb": "../images/gallery/nomachi-2113-thumb.jpg", "cap": "Dining area — shōji and green chairs"}, {"src": "../images/gallery/nomachi-2127.jpg", "thumb": "../images/gallery/nomachi-2127-thumb.jpg", "cap": "Kitchen — overview"}, {"src": "../images/gallery/nomachi-2171.jpg", "thumb": "../images/gallery/nomachi-2171-thumb.jpg", "cap": "Kitchen — light through the window"}, {"src": "../images/gallery/nomachi-2410.jpg", "thumb": "../images/gallery/nomachi-2410-thumb.jpg", "cap": "Dining at night, warm light"}, {"src": "../images/gallery/nomachi-2503.jpg", "thumb": "../images/gallery/nomachi-2503-thumb.jpg", "cap": "Bathroom mirror at night"}]};
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-caption');
+  const lbCount = document.getElementById('lb-counter');
+  let current = { villa: null, index: 0 };
+
+  function show() {
+    const arr = galleries[current.villa];
+    const item = arr[current.index];
+    lbImg.src = item.src;
+    lbImg.alt = item.cap;
+    lbCap.textContent = item.cap;
+    lbCount.textContent = (current.index + 1) + ' / ' + arr.length;
+  }
+  function open(villa, idx) {
+    current = { villa, index: idx || 0 };
+    show();
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lb-open');
+  }
+  function close() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lb-open');
+  }
+  function next(d) {
+    const arr = galleries[current.villa];
+    current.index = (current.index + d + arr.length) % arr.length;
+    show();
+  }
+
+  document.querySelectorAll('.gallery-trigger').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      open(btn.dataset.villa, 0);
+    });
+  });
+  lb.querySelector('.close').addEventListener('click', close);
+  lb.querySelector('.prev').addEventListener('click', () => next(-1));
+  lb.querySelector('.next').addEventListener('click', () => next(1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') next(-1);
+    else if (e.key === 'ArrowRight') next(1);
+  });
+})();
+</script>
+
+
+<!-- ============ FACILITY INFO MODAL ============ -->
+<div class="facility-modal" id="facility-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Facility info">
+  <button class="close" aria-label="Close" type="button">×</button>
+  <div class="card">
+    <h3 id="fc-title">Property</h3>
+    <div class="subtitle">FACILITY INFO</div>
+    <div id="fc-body"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const facilities = {"nomachi": {"title": "Nomachi Villa — Facility info", "sections": [{"name": "Bedrooms & Bedding", "items": [{"label": "Japanese-style room", "value": "Semi-double beds × 2"}, {"label": "Western-style room", "value": "Single bed × 1"}, {"label": "Bedding set", "value": "Sheets, pillows, duvet"}, {"label": "Additional futons", "value": "Up to 3 futons for groups of 4+ (max 6 guests, each with separate bedding)"}]}, {"name": "Bath, Vanity & Toilet", "items": [{"label": "Bathtub"}, {"label": "Shower"}, {"label": "Vanity"}, {"label": "Shampoo, conditioner, body soap"}, {"label": "Bath towels & face towels"}, {"label": "Hair dryer"}, {"label": "Toilets", "value": "2 (next to 1F living room and next to 2F Western room)"}]}, {"name": "Kitchen", "items": [{"label": "Refrigerator"}, {"label": "Gas stove"}, {"label": "Microwave"}, {"label": "Rice cooker"}, {"label": "Electric kettle"}, {"label": "Tableware & cookware set"}]}, {"name": "Living & Amenities", "items": [{"label": "Wi-Fi"}, {"label": "TV"}, {"label": "Sofa"}, {"label": "Air conditioning (heat/cool, all rooms)"}]}, {"name": "Stay rules", "items": [{"label": "Check-in", "value": "From 15:00"}, {"label": "Check-out", "value": "By 11:00"}, {"label": "Non-smoking"}, {"label": "No pets"}, {"label": "Children welcome"}]}]}, "shiragiku": {"title": "Shiragiku Villa — Facility info", "sections": [{"name": "Bedrooms & Bedding", "items": [{"label": "Bedroom with single beds", "value": "Single beds × 2"}, {"label": "Bedroom with double bed", "value": "Double bed × 1"}, {"label": "Bedding set", "value": "Sheets, pillows, duvet"}, {"label": "Additional futons", "value": "Up to 2 futons for groups of 4+ (max 5 guests, each with separate bedding)"}]}, {"name": "Bath, Vanity & Toilet", "items": [{"label": "Bathtub"}, {"label": "Shower"}, {"label": "Vanity"}, {"label": "Shampoo, conditioner, body soap"}, {"label": "Bath towels & face towels"}, {"label": "Hair dryer"}, {"label": "Toilet", "value": "1 (on 1F)"}]}, {"name": "Kitchen", "items": [{"label": "Refrigerator"}, {"label": "Gas stove"}, {"label": "Microwave"}, {"label": "Rice cooker"}, {"label": "Electric kettle"}, {"label": "Tableware & cookware set"}]}, {"name": "Living & Amenities", "items": [{"label": "Wi-Fi"}, {"label": "Garden", "value": "Small Japanese garden viewable from the living room"}, {"label": "Air conditioning (heat/cool, all rooms)"}]}, {"name": "Stay rules", "items": [{"label": "Check-in", "value": "From 15:00"}, {"label": "Check-out", "value": "By 11:00"}, {"label": "Non-smoking"}, {"label": "No pets"}, {"label": "Children welcome"}]}]}};
+  const modal = document.getElementById('facility-modal');
+  const title = document.getElementById('fc-title');
+  const body = document.getElementById('fc-body');
+
+  function render(villa) {
+    const data = facilities[villa];
+    if (!data) return;
+    title.textContent = data.title;
+    let html = '';
+    data.sections.forEach(sec => {
+      html += `<div class="section"><h4>${sec.name}</h4><ul class="info-list">`;
+      sec.items.forEach(item => {
+        html += `<li>${item.label}`;
+        if (item.value) html += `<span class="detail">${item.value}</span>`;
+        html += `</li>`;
+      });
+      html += `</ul></div>`;
+    });
+    body.innerHTML = html;
+  }
+  function open(villa) {
+    render(villa);
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lb-open');
+  }
+  function close() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lb-open');
+  }
+
+  document.querySelectorAll('.facility-trigger').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      open(btn.dataset.villa);
+    });
+  });
+  modal.querySelector('.close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => {
+    if (modal.classList.contains('open') && e.key === 'Escape') close();
+  });
+})();
+</script>
+
 </body>
 </html>
