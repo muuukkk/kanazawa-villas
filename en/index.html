@@ -191,6 +191,8 @@ body.mn-open{overflow:hidden}
 .hero .btn{border-color:rgba(255,255,255,.7);color:#fff}
 .hero .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}
 .hero .btn.primary:hover{background:var(--paper-warm)}
+.hero-secondary{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.08em;padding:13px 4px;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
+.hero-secondary:hover{opacity:.7}
 
 .trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trust .row{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr)}
@@ -210,8 +212,10 @@ body.mn-open{overflow:hidden}
 .benefit p{font-size:13px;color:var(--ink-soft);margin-top:4px}
 .ratecard{background:var(--white);border:1px solid var(--line);padding:34px 32px;align-self:start}
 .ratecard .t{font-family:var(--serif);font-size:16px;letter-spacing:.08em;margin-bottom:18px}
-.rate-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
-.rate-row span:last-child{font-family:var(--serif);color:var(--indigo);letter-spacing:.05em}
+.rate-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px;gap:12px}
+.rate-row span:last-child{font-family:var(--serif);color:var(--indigo);letter-spacing:.05em;text-align:right}
+.rate-row.cancel-row{padding-top:14px;margin-top:6px;border-top:1px solid var(--line)}
+.rate-row.cancel-row span:last-child{font-size:11.5px;letter-spacing:.04em}
 .ratecard .note{font-size:11.5px;color:var(--ink-faint);margin-top:14px;line-height:1.7}
 .ratecard .btn{width:100%;justify-content:center;margin-top:22px}
 
@@ -232,12 +236,25 @@ body.mn-open{overflow:hidden}
 .villa.flip .media{order:2}
 @media(max-width:860px){.villa{grid-template-columns:1fr}.villa.flip .media{order:0}.villa .body{padding:32px 26px}}
 
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
-@media(max-width:860px){.review-grid{grid-template-columns:1fr}}
-.review{border-top:2px solid var(--indigo);padding-top:22px}
-.review blockquote{font-family:var(--serif);font-size:14.5px;line-height:2;color:var(--ink)}
-.review .who{margin-top:14px;font-size:11px;letter-spacing:.14em;color:var(--ink-faint)}
-.review-src{margin-top:30px;font-size:12px;color:var(--ink-faint)}
+/* ---- 2-villa difference block ---- */
+.villa-distinguish{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:26px;border:1px solid var(--line);background:var(--paper-warm)}
+.vd-item{padding:18px 22px}
+.vd-item + .vd-item{border-left:1px solid var(--line)}
+.vd-label{font-family:var(--serif);font-size:14px;color:var(--ink);letter-spacing:.08em;margin-bottom:4px}
+.vd-value{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.vd-value strong{color:var(--indigo);font-weight:500}
+@media(max-width:640px){
+  .villa-distinguish{grid-template-columns:1fr}
+  .vd-item + .vd-item{border-left:none;border-top:1px solid var(--line)}
+}
+
+/* ---- reviews (tighter density) ---- */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+@media(max-width:860px){.review-grid{grid-template-columns:1fr;gap:16px}}
+.review{border-top:2px solid var(--indigo);padding-top:16px}
+.review blockquote{font-family:var(--serif);font-size:13px;line-height:1.85;color:var(--ink)}
+.review .who{margin-top:10px;font-size:10.5px;letter-spacing:.14em;color:var(--ink-faint)}
+.review-src{margin-top:22px;font-size:11.5px;color:var(--ink-faint);line-height:1.7}
 .review-src a{text-decoration:underline;text-underline-offset:3px}
 
 .facts{background:var(--paper-warm)}
@@ -385,10 +402,10 @@ body.lb-open{overflow:hidden}
   <img src="../images/nomachi-hero.jpg" alt="Shiragiku Villa — Japanese garden through shōji"/>
   <div class="hero-inner">
     <h1>Two houses, one Kanazawa.<br/>Stay like a local.</h1>
-    <p class="sub">Privately operated whole-house stays, licensed under Japan's Inn and Hotel Business Act. For families and small groups.<br/>Direct booking on this site is the lowest available rate.</p>
+    <p class="sub">Licensed whole-house stays for families and small groups.<br/>Direct booking on this site is the lowest rate.</p>
     <div class="hero-actions">
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
-      <a class="btn" href="#villas">See both houses</a>
+      <a class="hero-secondary" href="#villas">See both houses →</a>
     </div>
   </div>
 </section>
@@ -414,7 +431,7 @@ body.lb-open{overflow:hidden}
 <section class="section direct" id="direct">
   <div class="label"><span class="num">02</span>Why book direct</div>
   <h2 class="display">Same house, <em>best terms</em>.</h2>
-  <p class="lede">We also list on Airbnb. But we recommend booking directly because the savings — no platform commission — come back to you, as a lower rate and better service.</p>
+  <p class="lede">We also list on Airbnb. But direct booking returns the platform's cut to you — as a lower rate and better service.</p>
 
   <div class="direct-grid">
     <div>
@@ -429,8 +446,9 @@ body.lb-open{overflow:hidden}
       <div class="rate-row"><span>3+ nights</span><span>−10%</span></div>
       <div class="rate-row"><span>4+ nights</span><span>−15%</span></div>
       <div class="rate-row"><span>7+ nights</span><span>−18%</span></div>
+      <div class="rate-row cancel-row"><span>Cancellation</span><span>Free up to 5 days before / 100% from 4 days</span></div>
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Pick dates &amp; see rates</a>
-      <p class="note">Choose dates and guests to see your total with discounts applied. Payment is processed securely via Beds24/Stripe. Free cancellation up to 5 days before check-in.</p>
+      <p class="note">Choose dates and guests to see your total with discounts applied. Payment is processed securely via Beds24/Stripe.</p>
     </aside>
   </div>
 </section>
@@ -439,7 +457,18 @@ body.lb-open{overflow:hidden}
 <section class="section" id="villas">
   <div class="label"><span class="num">03</span>Villas</div>
   <h2 class="display">Two ways <em>to stay</em>.</h2>
-  <p class="lede">Two distinct houses. Choose by group size or atmosphere.</p>
+
+  <!-- The difference between the two -->
+  <div class="villa-distinguish">
+    <div class="vd-item">
+      <div class="vd-label">Nomachi Villa</div>
+      <div class="vd-value"><strong>Direct booking</strong> on this site (lowest rate)</div>
+    </div>
+    <div class="vd-item">
+      <div class="vd-label">Shiragiku Villa</div>
+      <div class="vd-value">Currently <strong>Airbnb only</strong></div>
+    </div>
+  </div>
 
   <!-- Nomachi -->
   <article class="villa">
@@ -455,6 +484,8 @@ body.lb-open{overflow:hidden}
         <div><strong>2</strong>Bedrooms</div>
         <div><strong>2 nights</strong>Min stay</div>
         <div><strong>Free</strong>Parking 2 min walk</div>
+        <div><strong>From 15:00</strong>Check-in</div>
+        <div><strong>By 11:00</strong>Check-out</div>
       </div>
       <div class="status ok">Bookable on this site — lowest rate</div>
       <div class="act">
@@ -480,6 +511,8 @@ body.lb-open{overflow:hidden}
         <div><strong>Garden</strong>Japanese garden</div>
         <div><strong>2 nights</strong>Min stay</div>
         <div><strong>1 min walk</strong>Coin parking</div>
+        <div><strong>From 15:00</strong>Check-in</div>
+        <div><strong>By 11:00</strong>Check-out</div>
       </div>
       <div class="status">Currently bookable on Airbnb — direct booking coming soon</div>
       <div class="act">
@@ -513,20 +546,14 @@ body.lb-open{overflow:hidden}
   <p class="review-src">All reviews are real excerpts from <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> guests. Average rating 4.96 across 250 reviews (as of June 2026). Google reviews are available at <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">"Nomachi" on Google</a>.</p>
 </div></section>
 
-<!-- ============ FACTS (05) ============ -->
+<!-- ============ FACTS (05) — operator info only ============ -->
 <section class="section facts" id="facts">
-  <div class="label"><span class="num">05</span>Key facts</div>
-  <h2 class="display">Kanazawa Villas, <em>in numbers</em>.</h2>
+  <div class="label"><span class="num">05</span>Operator</div>
+  <h2 class="display">Operated by IMK LLC, <em>under license</em>.</h2>
   <dl>
-    <dt>Operator</dt><dd>IMK LLC (licensed under Japan's Inn and Hotel Business Act, simple-lodging category)</dd>
+    <dt>Operator</dt><dd>IMK LLC</dd>
     <dt>Permit numbers</dt><dd>Nomachi: Kanazawa City Health Office No. 24250020 / Shiragiku: No. 25250003</dd>
-    <dt>Properties</dt><dd>Nomachi Villa (76 m², 6 guests, Nomachi) / Shiragiku Villa (56 m², 5 guests, Shiragiku)</dd>
-    <dt>Check-in</dt><dd>From 15:00 (check-out by 11:00). After booking, complete ID verification and guest registry on your private guest page to unlock check-in details</dd>
-    <dt>Min stay</dt><dd>2 nights at both villas</dd>
-    <dt>Direct booking discount</dt><dd>10% for 3+ nights / 15% for 4+ nights / 18% for 7+ nights (direct booking only)</dd>
-    <dt>Cancellation</dt><dd>Free up to 5 days before / 100% from 4 days before</dd>
-    <dt>Languages</dt><dd>Japanese (multilingual support via translation tools — English and others, most replies within 1 hour)</dd>
-    <dt>Access</dt><dd>From Kanazawa Station: city bus 20 min / taxi 15 min. Komatsu Airport to Kanazawa Station: direct bus 40 min. Tokyo to Kanazawa: ~2h30m by shinkansen</dd>
+    <dt>Regulation</dt><dd>Licensed under Japan's Inn and Hotel Business Act (simple-lodging category)</dd>
   </dl>
 </section>
 
@@ -545,19 +572,19 @@ body.lb-open{overflow:hidden}
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.03</span>What's the difference between direct booking and Airbnb?</summary>
-      <div class="a">Direct booking (Nomachi) is the lowest rate — no OTA commission applies. Long-stay discounts (10% for 3+ nights, 15% for 4+ nights, 18% for 7+ nights) are direct-booking only. Shiragiku is currently bookable on Airbnb only.</div>
+      <div class="a">Direct booking on Nomachi Villa is the lowest rate, with long-stay discounts. See <a href="#direct" style="text-decoration:underline;text-underline-offset:3px">02 Why book direct</a> for details. Shiragiku is currently bookable on Airbnb only.</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.04</span>Is there a minimum stay?</summary>
-      <div class="a">Yes — two nights minimum at all villas.</div>
+      <div class="a">Two nights minimum at both villas.</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.05</span>What languages can the host handle?</summary>
-      <div class="a">The host speaks Japanese only, but uses real-time translation tools to assist guests in any language. Replies typically arrive within the hour.</div>
+      <div class="a">Japanese, plus real-time translation for virtually any language. Most replies within an hour.</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.06</span>Is there parking?</summary>
-      <div class="a">Nomachi has free parking 2 minutes on foot from the villa. Shiragiku doesn't have private parking, but coin parking is available 1 minute away.</div>
+      <div class="a">Nomachi: free parking 2 min on foot. Shiragiku: coin parking 1 min away.</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.07</span>Can we stay with young children?</summary>
