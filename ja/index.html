@@ -200,6 +200,8 @@ body.mn-open{overflow:hidden}
 .hero .btn{border-color:rgba(255,255,255,.7);color:#fff}
 .hero .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}
 .hero .btn.primary:hover{background:var(--paper-warm)}
+.hero-secondary{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.08em;padding:13px 4px;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
+.hero-secondary:hover{opacity:.7}
 
 /* ---- trust strip（軽量版・引き算優先） ---- */
 .trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -221,8 +223,10 @@ body.mn-open{overflow:hidden}
 .benefit p{font-size:13px;color:var(--ink-soft);margin-top:4px}
 .ratecard{background:var(--white);border:1px solid var(--line);padding:34px 32px;align-self:start}
 .ratecard .t{font-family:var(--serif);font-size:16px;letter-spacing:.08em;margin-bottom:18px}
-.rate-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
-.rate-row span:last-child{font-family:var(--serif);color:var(--indigo);letter-spacing:.05em}
+.rate-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px;gap:12px}
+.rate-row span:last-child{font-family:var(--serif);color:var(--indigo);letter-spacing:.05em;text-align:right}
+.rate-row.cancel-row{padding-top:14px;margin-top:6px;border-top:1px solid var(--line)}
+.rate-row.cancel-row span:last-child{font-size:11.5px;letter-spacing:.04em}
 .ratecard .note{font-size:11.5px;color:var(--ink-faint);margin-top:14px;line-height:1.7}
 .ratecard .btn{width:100%;justify-content:center;margin-top:22px}
 
@@ -246,13 +250,25 @@ body.mn-open{overflow:hidden}
 .villa.flip .media{order:2}
 @media(max-width:860px){.villa{grid-template-columns:1fr}.villa.flip .media{order:0}.villa .body{padding:32px 26px}}
 
-/* ---- reviews ---- */
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
-@media(max-width:860px){.review-grid{grid-template-columns:1fr}}
-.review{border-top:2px solid var(--indigo);padding-top:22px}
-.review blockquote{font-family:var(--serif);font-size:14.5px;line-height:2;color:var(--ink)}
-.review .who{margin-top:14px;font-size:11px;letter-spacing:.14em;color:var(--ink-faint)}
-.review-src{margin-top:30px;font-size:12px;color:var(--ink-faint)}
+/* ---- 2棟の違いブロック ---- */
+.villa-distinguish{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:26px;border:1px solid var(--line);background:var(--paper-warm)}
+.vd-item{padding:18px 22px}
+.vd-item + .vd-item{border-left:1px solid var(--line)}
+.vd-label{font-family:var(--serif);font-size:14px;color:var(--ink);letter-spacing:.08em;margin-bottom:4px}
+.vd-value{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.vd-value strong{color:var(--indigo);font-weight:500}
+@media(max-width:640px){
+  .villa-distinguish{grid-template-columns:1fr}
+  .vd-item + .vd-item{border-left:none;border-top:1px solid var(--line)}
+}
+
+/* ---- reviews (密度UP) ---- */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+@media(max-width:860px){.review-grid{grid-template-columns:1fr;gap:16px}}
+.review{border-top:2px solid var(--indigo);padding-top:16px}
+.review blockquote{font-family:var(--serif);font-size:13px;line-height:1.85;color:var(--ink)}
+.review .who{margin-top:10px;font-size:10.5px;letter-spacing:.14em;color:var(--ink-faint)}
+.review-src{margin-top:22px;font-size:11.5px;color:var(--ink-faint);line-height:1.7}
 .review-src a{text-decoration:underline;text-underline-offset:3px}
 
 /* ---- facts（AI検索向け・新設） ---- */
@@ -405,10 +421,10 @@ body.lb-open{overflow:hidden}
   <img src="../images/nomachi-hero.jpg" alt="白菊町邸 — 障子越しに望む日本庭園"/>
   <div class="hero-inner">
     <h1>二つの家、ひとつの金沢。<br/>暮らすように、泊まる。</h1>
-    <p class="sub">旅館業の許可を受けた一棟貸しの宿。家族と、小さなグループのために。<br/>公式サイトからの直接予約が、いちばん低い料金です。</p>
+    <p class="sub">許可済の一棟貸し、家族と小さなグループのために。<br/>公式サイトからの直接予約が最安です。</p>
     <div class="hero-actions">
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る</a>
-      <a class="btn" href="#villas">二つの家を見る</a>
+      <a class="hero-secondary" href="#villas">二つの家を見る →</a>
     </div>
   </div>
 </section>
@@ -434,7 +450,7 @@ body.lb-open{overflow:hidden}
 <section class="section direct" id="direct">
   <div class="label"><span class="num">02</span>直接予約の理由</div>
   <h2 class="display">同じ家なら、<em>いちばん良い条件</em>で。</h2>
-  <p class="lede">私たちはAirbnbでもお部屋をご提供しています。それでも公式サイトからの直接予約をおすすめするのは、仲介手数料がかからないぶん、そのまま料金とサービスにお返しできるからです。</p>
+  <p class="lede">Airbnbでもご利用いただけますが、直接予約なら手数料分そのまま、料金と対応の質に還元できます。</p>
 
   <div class="direct-grid">
     <div>
@@ -449,8 +465,9 @@ body.lb-open{overflow:hidden}
       <div class="rate-row"><span>3泊以上</span><span>−10%</span></div>
       <div class="rate-row"><span>4泊以上</span><span>−15%</span></div>
       <div class="rate-row"><span>7泊以上</span><span>−18%</span></div>
+      <div class="rate-row cancel-row"><span>キャンセル</span><span>5日前まで無料 ／ 4日前以降100%</span></div>
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">日程を入れて料金を見る</a>
-      <p class="note">日付と人数を選ぶと、割引適用後の総額が表示されます。決済は安全な予約システム（Beds24/Stripe）経由。キャンセルは5日前まで無料です。</p>
+      <p class="note">日付と人数を選ぶと、割引適用後の総額が表示されます。決済は安全な予約システム（Beds24/Stripe）経由。</p>
     </aside>
   </div>
 </section>
@@ -459,7 +476,18 @@ body.lb-open{overflow:hidden}
 <section class="section" id="villas">
   <div class="label"><span class="num">03</span>物件</div>
   <h2 class="display">二つの<em>泊まり方</em>。</h2>
-  <p class="lede">それぞれ異なる個性を持つ、二棟の住まい。人数や雰囲気でお選びください。</p>
+
+  <!-- 2棟の違い（予約導線の正本） -->
+  <div class="villa-distinguish">
+    <div class="vd-item">
+      <div class="vd-label">野町邸</div>
+      <div class="vd-value">公式サイトで<strong>直接予約OK</strong>（最安）</div>
+    </div>
+    <div class="vd-item">
+      <div class="vd-label">白菊町邸</div>
+      <div class="vd-value">現在は<strong>Airbnbのみ</strong>で予約受付</div>
+    </div>
+  </div>
 
   <!-- Nomachi -->
   <article class="villa">
@@ -475,6 +503,8 @@ body.lb-open{overflow:hidden}
         <div><strong>2</strong>寝室</div>
         <div><strong>2泊〜</strong>最低宿泊</div>
         <div><strong>無料</strong>駐車場 徒歩2分</div>
+        <div><strong>15:00〜</strong>チェックイン</div>
+        <div><strong>〜11:00</strong>チェックアウト</div>
       </div>
       <div class="status ok">公式サイトから直接予約できます — 最低料金</div>
       <div class="act">
@@ -500,6 +530,8 @@ body.lb-open{overflow:hidden}
         <div><strong>庭園</strong>日本庭園つき</div>
         <div><strong>2泊〜</strong>最低宿泊</div>
         <div><strong>徒歩1分</strong>駐車場 コインパーキング</div>
+        <div><strong>15:00〜</strong>チェックイン</div>
+        <div><strong>〜11:00</strong>チェックアウト</div>
       </div>
       <div class="status">現在は Airbnb からのご予約 — 直接予約は準備中</div>
       <div class="act">
@@ -533,20 +565,14 @@ body.lb-open{overflow:hidden}
   <p class="review-src">レビューはすべて <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> に寄せられた実際のゲストの声を抜粋・翻訳したものです。Airbnbでの平均評価 4.96（レビュー250件・2026年6月時点）。Googleのクチコミは <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">Googleで「Nomachi」を見る</a> からご覧いただけます。</p>
 </div></section>
 
-<!-- ============ FACTS（AI検索・新設） ============ -->
+<!-- ============ FACTS（運営情報のみ・簡素化） ============ -->
 <section class="section facts" id="facts">
-  <div class="label"><span class="num">05</span>基本情報</div>
-  <h2 class="display">数字で見る、<em>金沢ヴィラズ</em>。</h2>
+  <div class="label"><span class="num">05</span>運営情報</div>
+  <h2 class="display">合同会社IMK が、<em>許可を受けて</em>運営しています。</h2>
   <dl>
-    <dt>運営</dt><dd>合同会社IMK（旅館業法に基づく簡易宿所営業）</dd>
+    <dt>運営</dt><dd>合同会社IMK</dd>
     <dt>許可番号</dt><dd>野町邸: 金沢市保健所 衛指第24250020号 ／ 白菊町邸: 衛指第25250003号</dd>
-    <dt>物件</dt><dd>野町邸（76㎡・6名・金沢市野町）／ 白菊町邸（56㎡・5名・金沢市白菊町）</dd>
-    <dt>チェックイン</dt><dd>15:00〜（チェックアウト 11:00）。予約後に届く専用マイページで本人確認・名簿提出を行うと、チェックイン情報が開示されます</dd>
-    <dt>最低宿泊</dt><dd>全棟2泊から</dd>
-    <dt>直接予約割引</dt><dd>3泊以上10% ／ 4泊以上15% ／ 7泊以上18%（公式サイト限定）</dd>
-    <dt>キャンセル</dt><dd>5日前まで無料 ／ 4日前以降100%</dd>
-    <dt>言語</dt><dd>日本語（翻訳ツール経由で英語ほか多言語に対応、多くは1時間以内に返信）</dd>
-    <dt>アクセス</dt><dd>金沢駅から路線バス20分・タクシー15分 ／ 小松空港から金沢駅まで直行バス40分 ／ 東京駅から金沢駅まで新幹線約2時間30分</dd>
+    <dt>適用法令</dt><dd>旅館業法に基づく簡易宿所営業</dd>
   </dl>
 </section>
 
@@ -565,19 +591,19 @@ body.lb-open{overflow:hidden}
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.03</span>直接予約とAirbnbの違いは？</summary>
-      <div class="a">直接予約（野町邸）は、OTA手数料がかからないため最も低い料金です。3泊以上10%・4泊以上15%・7泊以上18%の長期割引は直接予約限定。白菊町邸は現在Airbnbのみのご予約です。</div>
+      <div class="a">野町邸の直接予約が最も低い料金で、連泊割引もあります。詳しくは <a href="#direct" style="text-decoration:underline;text-underline-offset:3px">02 直接予約の理由</a> をご覧ください。白菊町邸は現在Airbnbのみのご予約です。</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.04</span>最低宿泊日数はありますか？</summary>
-      <div class="a">はい、すべての物件で2泊以上のご予約をお願いしています。</div>
+      <div class="a">全棟2泊以上から。</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.05</span>ホストはどの言語に対応していますか？</summary>
-      <div class="a">ホストは日本語のみですが、リアルタイム翻訳ツールを介してあらゆる言語のゲストに対応しています。1時間以内にご返信することが多いです。</div>
+      <div class="a">日本語に加え、リアルタイム翻訳でほぼあらゆる言語に対応。多くは1時間以内に返信しています。</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.06</span>駐車場はありますか？</summary>
-      <div class="a">野町邸は、徒歩2分の場所に無料駐車場をご用意しています。白菊町邸は専用駐車場はありませんが、徒歩1分の場所にコインパーキングがございます。</div>
+      <div class="a">野町邸：徒歩2分に無料駐車場。白菊町邸：徒歩1分にコインパーキング。</div>
     </details>
     <details class="faq">
       <summary><span class="q-no">Q.07</span>小さなお子様連れでも滞在できますか？</summary>
