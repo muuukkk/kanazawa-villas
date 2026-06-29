@@ -191,8 +191,10 @@ body.mn-open{overflow:hidden}
 .hero .btn{border-color:rgba(255,255,255,.7);color:#fff}
 .hero .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}
 .hero .btn.primary:hover{background:var(--paper-warm)}
-.hero-secondary{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.08em;padding:13px 4px;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
-.hero-secondary:hover{opacity:.7}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;font-size:13px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);transition:all .3s;font-family:var(--sans)}
+.btn-hero-ghost:hover{border-color:#fff;background:rgba(255,255,255,.18)}
+.btn-hero-ghost .arrow{font-family:var(--serif);transition:transform .3s;display:inline-block}
+.btn-hero-ghost:hover .arrow{transform:translateX(4px)}
 
 .trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trust .row{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr)}
@@ -300,6 +302,9 @@ details.faq .a{padding:0 4px 24px 64px;font-size:13.5px;color:var(--ink-soft)}
 .site-footer .inner{max-width:1120px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;font-size:12.5px;color:var(--ink-soft)}
 @media(max-width:760px){.site-footer .inner{grid-template-columns:1fr}}
 .site-footer h5{font-size:11px;letter-spacing:.2em;color:var(--ink-faint);margin-bottom:14px;font-weight:400}
+.footer-facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin-top:8px;font-size:11px;line-height:1.7}
+.footer-facts dt{color:var(--ink-faint);letter-spacing:.06em}
+.footer-facts dd{color:var(--ink-soft)}
 .site-footer a{display:block;padding:4px 0}
 .site-footer a:hover{color:var(--ink)}
 .copyright{border-top:1px solid var(--line);padding:18px 24px;text-align:center;font-size:11px;color:var(--ink-faint);letter-spacing:.1em}
@@ -411,8 +416,7 @@ body.lb-open{overflow:hidden}
     <h1>Slow days among tatami and shoji.</h1>
     <p class="sub">For families and small groups.</p>
     <div class="hero-actions">
-      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
-      <a class="hero-secondary" href="#villas">See both houses →</a>
+      <a class="btn-hero-ghost" href="#villas">See both houses <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -479,10 +483,9 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.01 — opened November 2024</div>
       <h3>Nomachi Villa</h3>
       <div class="en">野町邸 / Nomachi, Kanazawa</div>
-      <p class="desc">A quietly restored two-storey townhouse. Soft light through shōji, the warm calm of wood and tatami.</p>
       <details class="desc-fold">
-        <summary>Read more</summary>
-        <p>Two bedrooms — one Japanese, one Western — sleeping up to 6. Ten minutes' walk from the Katamachi nightlife, far enough that the city's hum doesn't reach you.</p>
+        <summary>Read description</summary>
+        <p>A quietly restored two-storey townhouse. Soft light through shōji, the warm calm of wood and tatami. Two bedrooms — one Japanese, one Western — sleeping up to 6. Ten minutes' walk from the Katamachi nightlife, far enough that the city's hum doesn't reach you.</p>
       </details>
       <div class="specs">
         <div><strong>76 m²</strong>Size</div>
@@ -509,10 +512,9 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.02 — opened August 2025</div>
       <h3>Shiragiku Villa</h3>
       <div class="en">白菊町邸 / Shiragiku, Kanazawa</div>
-      <p class="desc">Antique furniture and lighting bring Taishō-era atmosphere to the interior. The living room overlooks a small Japanese garden of maple, pine, and nandina.</p>
       <details class="desc-fold">
-        <summary>Read more</summary>
-        <p>Two upstairs bedrooms (one Western, one Japanese-style) sleep up to 5. The Nishi Chaya teahouse district is 200 metres away.</p>
+        <summary>Read description</summary>
+        <p>Antique furniture and lighting bring Taishō-era atmosphere to the interior. The living room overlooks a small Japanese garden of maple, pine, and nandina. Two upstairs bedrooms (one Western, one Japanese-style) sleep up to 5. The Nishi Chaya teahouse district is 200 metres away.</p>
       </details>
       <div class="specs">
         <div><strong>56 m²</strong>Size</div>
@@ -555,20 +557,9 @@ body.lb-open{overflow:hidden}
   <p class="review-src">All reviews are real excerpts from <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> guests. Google reviews are available at <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">"Nomachi" on Google</a>.</p>
 </div></section>
 
-<!-- ============ FACTS (05) — operator info only ============ -->
-<section class="section facts" id="facts">
-  <div class="label"><span class="num">05</span>Operator</div>
-  <h2 class="display">Operated by IMK LLC, <em>under license</em>.</h2>
-  <dl>
-    <dt>Operator</dt><dd>IMK LLC</dd>
-    <dt>Permit numbers</dt><dd>Nomachi: Kanazawa City Health Office No. 24250020 / Shiragiku: No. 25250003</dd>
-    <dt>Regulation</dt><dd>Licensed under Japan's Inn and Hotel Business Act (simple-lodging category)</dd>
-  </dl>
-</section>
-
-<!-- ============ FAQ (06) ============ -->
+<!-- ============ FAQ (05) ============ -->
 <section class="section" id="faq">
-  <div class="label"><span class="num">06</span>FAQ</div>
+  <div class="label"><span class="num">05</span>FAQ</div>
   <h2 class="display">Frequently asked <em>questions</em>.</h2>
   <div class="faq-list">
     <details class="faq">
@@ -602,10 +593,9 @@ body.lb-open{overflow:hidden}
   </div>
 </section>
 
-<!-- ============ ACCESS (07) ============ -->
+<!-- ============ ACCESS (06) ============ -->
 <section class="section" id="access" style="padding-top:0">
-  <div class="label"><span class="num">07</span>Access</div>
-  <h2 class="display">Two addresses, <em>one city</em>.</h2>
+  <div class="label"><span class="num">06</span>Access</div>
   <figure class="access-map">
     <img src="https://kanazawa-villas.com/images/location.png" alt="Map of Kanazawa Villas — Nomachi and Shiragiku locations relative to Kenroku-en, the teahouse districts, Omicho Market, and other landmarks" loading="lazy"/>
     <figcaption class="cap">Two villas and major Kanazawa landmarks — full directions sent after booking via the private guest page</figcaption>
@@ -647,7 +637,11 @@ body.lb-open{overflow:hidden}
   <div class="inner">
     <div>
       <div class="brand" style="margin-bottom:12px">Kanazawa Villas<small>KANAZAWA VILLAS</small></div>
-      <p>Operated by IMK LLC. Privately operated whole-house stays in Kanazawa.<br/>Licensed under Japan's Inn and Hotel Business Act (simple-lodging category).</p>
+      <dl class="footer-facts">
+        <dt>Operator</dt><dd>IMK LLC</dd>
+        <dt>Permits</dt><dd>Nomachi: Kanazawa City Health Office No. 24250020 / Shiragiku: No. 25250003</dd>
+        <dt>Regulation</dt><dd>Inn and Hotel Business Act (simple-lodging category)</dd>
+      </dl>
     </div>
     <div>
       <h5>Booking</h5>
