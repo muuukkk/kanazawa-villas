@@ -200,8 +200,10 @@ body.mn-open{overflow:hidden}
 .hero .btn{border-color:rgba(255,255,255,.7);color:#fff}
 .hero .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}
 .hero .btn.primary:hover{background:var(--paper-warm)}
-.hero-secondary{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.08em;padding:13px 4px;text-decoration:underline;text-underline-offset:4px;transition:opacity .2s}
-.hero-secondary:hover{opacity:.7}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;font-size:13px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);transition:all .3s;font-family:var(--sans)}
+.btn-hero-ghost:hover{border-color:#fff;background:rgba(255,255,255,.18)}
+.btn-hero-ghost .arrow{font-family:var(--serif);transition:transform .3s;display:inline-block}
+.btn-hero-ghost:hover .arrow{transform:translateX(4px)}
 
 /* ---- trust strip（軽量版・引き算優先） ---- */
 .trust{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -317,6 +319,9 @@ details.faq .a{padding:0 4px 24px 64px;font-size:13.5px;color:var(--ink-soft)}
 .site-footer .inner{max-width:1120px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;font-size:12.5px;color:var(--ink-soft)}
 @media(max-width:760px){.site-footer .inner{grid-template-columns:1fr}}
 .site-footer h5{font-size:11px;letter-spacing:.2em;color:var(--ink-faint);margin-bottom:14px;font-weight:400}
+.footer-facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin-top:8px;font-size:11px;line-height:1.7}
+.footer-facts dt{color:var(--ink-faint);letter-spacing:.06em}
+.footer-facts dd{color:var(--ink-soft)}
 .site-footer a{display:block;padding:4px 0}
 .site-footer a:hover{color:var(--ink)}
 .copyright{border-top:1px solid var(--line);padding:18px 24px;text-align:center;font-size:11px;color:var(--ink-faint);letter-spacing:.1em}
@@ -430,8 +435,7 @@ body.lb-open{overflow:hidden}
     <h1>和に触れる、金沢の滞在。</h1>
     <p class="sub">家族と小さなグループのために。</p>
     <div class="hero-actions">
-      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る</a>
-      <a class="hero-secondary" href="#villas">二つの家を見る →</a>
+      <a class="btn-hero-ghost" href="#villas">二つの家を見る <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -498,10 +502,9 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.01 — 2024年11月開業</div>
       <h3>野町邸</h3>
       <div class="en">NOMACHI VILLA ／ 金沢市野町</div>
-      <p class="desc">静かに整えられた二階建ての町家。障子越しのやわらかな光、木と畳の落ち着いた佇まい。</p>
       <details class="desc-fold">
-        <summary>続きを読む</summary>
-        <p>和室と洋室の二寝室で最大6名様。片町の繁華街から徒歩10分、それでいて喧騒は届かない距離感。</p>
+        <summary>説明文を読む</summary>
+        <p>静かに整えられた二階建ての町家。障子越しのやわらかな光、木と畳の落ち着いた佇まい。和室と洋室の二寝室で最大6名様。片町の繁華街から徒歩10分、それでいて喧騒は届かない距離感。</p>
       </details>
       <div class="specs">
         <div><strong>76 m²</strong>広さ</div>
@@ -528,10 +531,9 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.02 — 2025年8月開業</div>
       <h3>白菊町邸</h3>
       <div class="en">SHIRAGIKU VILLA ／ 金沢市白菊町</div>
-      <p class="desc">アンティークの家具と照明で、大正の趣をインテリアに織り込んだ一棟。リビングからは紅葉・松・南天の小さな日本庭園を望みます。</p>
       <details class="desc-fold">
-        <summary>続きを読む</summary>
-        <p>二階に和洋の二寝室、最大5名様。にし茶屋街まで200メートル。</p>
+        <summary>説明文を読む</summary>
+        <p>アンティークの家具と照明で、大正の趣をインテリアに織り込んだ一棟。リビングからは紅葉・松・南天の小さな日本庭園を望みます。二階に和洋の二寝室、最大5名様。にし茶屋街まで200メートル。</p>
       </details>
       <div class="specs">
         <div><strong>56 m²</strong>広さ</div>
@@ -574,20 +576,9 @@ body.lb-open{overflow:hidden}
   <p class="review-src">レビューはすべて <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> に寄せられた実際のゲストの声を抜粋・翻訳したものです。Googleのクチコミは <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">Googleで「Nomachi」を見る</a> からご覧いただけます。</p>
 </div></section>
 
-<!-- ============ FACTS（運営情報のみ・簡素化） ============ -->
-<section class="section facts" id="facts">
-  <div class="label"><span class="num">05</span>運営情報</div>
-  <h2 class="display">合同会社IMK が、<em>許可を受けて</em>運営しています。</h2>
-  <dl>
-    <dt>運営</dt><dd>合同会社IMK</dd>
-    <dt>許可番号</dt><dd>野町邸: 金沢市保健所 衛指第24250020号 ／ 白菊町邸: 衛指第25250003号</dd>
-    <dt>適用法令</dt><dd>旅館業法に基づく簡易宿所営業</dd>
-  </dl>
-</section>
-
 <!-- ============ FAQ（details型＝JSなしで全文クロール可能） ============ -->
 <section class="section" id="faq">
-  <div class="label"><span class="num">06</span>FAQ</div>
+  <div class="label"><span class="num">05</span>FAQ</div>
   <h2 class="display">よくある<em>ご質問</em>。</h2>
   <div class="faq-list">
     <details class="faq">
@@ -623,8 +614,7 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ ACCESS ============ -->
 <section class="section" id="access" style="padding-top:0">
-  <div class="label"><span class="num">07</span>アクセス</div>
-  <h2 class="display">二つの住所、<em>ひとつの街</em>。</h2>
+  <div class="label"><span class="num">06</span>アクセス</div>
   <figure class="access-map">
     <img src="https://kanazawa-villas.com/images/location.png" alt="金沢ヴィラズ2物件（野町邸・白菊町邸）と兼六園・茶屋街・近江町市場など主要観光地の位置関係を示す地図" loading="lazy"/>
     <figcaption class="cap">二棟と金沢の主要スポットの位置関係 — 詳しい道順はご予約後のマイページでご案内します</figcaption>
@@ -676,7 +666,11 @@ body.lb-open{overflow:hidden}
   <div class="inner">
     <div>
       <div class="brand" style="margin-bottom:12px">金沢ヴィラズ<small>KANAZAWA VILLAS</small></div>
-      <p>合同会社IMK が運営する、金沢の一棟貸しの宿。<br/>旅館業法（簡易宿所営業）の許可を受けて営業しています。</p>
+      <dl class="footer-facts">
+        <dt>運営</dt><dd>合同会社IMK</dd>
+        <dt>許可番号</dt><dd>野町邸: 金沢市保健所 衛指第24250020号 ／ 白菊町邸: 衛指第25250003号</dd>
+        <dt>適用法令</dt><dd>旅館業法に基づく簡易宿所営業</dd>
+      </dl>
     </div>
     <div>
       <h5>予約</h5>
