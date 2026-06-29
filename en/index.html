@@ -227,6 +227,13 @@ body.mn-open{overflow:hidden}
 .villa h3{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.08em;margin-top:10px}
 .villa .en{font-size:12px;color:var(--ink-faint);letter-spacing:.12em;margin-top:2px}
 .villa .desc{font-size:13.5px;color:var(--ink-soft);margin-top:16px}
+.villa .desc-fold{margin-top:6px}
+.villa .desc-fold summary{list-style:none;cursor:pointer;font-size:12px;color:var(--indigo);letter-spacing:.06em;padding:4px 0;display:inline-block;transition:opacity .2s}
+.villa .desc-fold summary::-webkit-details-marker{display:none}
+.villa .desc-fold summary::after{content:" ↓";font-family:var(--serif);margin-left:4px}
+.villa .desc-fold[open] summary::after{content:" ↑"}
+.villa .desc-fold summary:hover{opacity:.7}
+.villa .desc-fold p{font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin-top:6px}
 .specs{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .specs div{font-size:12px;color:var(--ink-faint)}
 .specs strong{display:block;font-size:14px;color:var(--ink);font-weight:500;font-family:var(--serif);letter-spacing:.04em}
@@ -399,10 +406,10 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <img src="../images/nomachi-hero.jpg" alt="Shiragiku Villa — Japanese garden through shōji"/>
+  <img src="../images/nomachi-hero.jpg" alt="Shiragiku Villa — quiet days among tatami and shoji"/>
   <div class="hero-inner">
-    <h1>Two houses, one Kanazawa.<br/>Stay like a local.</h1>
-    <p class="sub">Licensed whole-house stays for families and small groups.<br/>Direct booking on this site is the lowest rate.</p>
+    <h1>Slow days among tatami and shoji.</h1>
+    <p class="sub">For families and small groups.</p>
     <div class="hero-actions">
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
       <a class="hero-secondary" href="#villas">See both houses →</a>
@@ -422,23 +429,19 @@ body.lb-open{overflow:hidden}
 <section class="section" id="concept">
   <div class="label"><span class="num">01</span>Concept</div>
   <h2 class="display">Kanazawa, at a <em>resident's pace</em>.</h2>
-  <p class="lede">Not a hotel. Not a tourist box.<br/>
-  A quietly restored old townhouse, and a home with a small Japanese garden carrying Taishō-era atmosphere.<br/>
-  Two whole-house stays, each offering its own way of inhabiting Kanazawa.</p>
+  <p class="lede">A quietly restored townhouse, and a Taishō-era home with a garden. Two ways to inhabit Kanazawa, both whole-house stays.</p>
 </section>
 
 <!-- ============ WHY DIRECT (02) ============ -->
 <section class="section direct" id="direct">
   <div class="label"><span class="num">02</span>Why book direct</div>
-  <h2 class="display">Same house, <em>best terms</em>.</h2>
-  <p class="lede">We also list on Airbnb. But direct booking returns the platform's cut to you — as a lower rate and better service.</p>
 
   <div class="direct-grid">
     <div>
-      <div class="benefit"><div class="no">1</div><div><h4>The lowest rate, guaranteed</h4><p>Compare any date and house — we'll be cheapest.</p></div></div>
-      <div class="benefit"><div class="no">2</div><div><h4>Long-stay discounts</h4><p>The longer you stay, the more you save. See the rate card for details.</p></div></div>
-      <div class="benefit"><div class="no">3</div><div><h4>Private guest page after booking</h4><p>Everything from booking to check-out, in one place.</p></div></div>
-      <div class="benefit"><div class="no">4</div><div><h4>Direct contact with the host</h4><p>Chat with the host anytime through your guest page.</p></div></div>
+      <div class="benefit"><div class="no">1</div><div><h4>The lowest rate, guaranteed</h4></div></div>
+      <div class="benefit"><div class="no">2</div><div><h4>Save more with longer stays</h4></div></div>
+      <div class="benefit"><div class="no">3</div><div><h4>One guest page from booking to check-out</h4></div></div>
+      <div class="benefit"><div class="no">4</div><div><h4>Message the host anytime via guest page</h4></div></div>
     </div>
     <aside class="ratecard">
       <div class="t">Direct booking rates — Nomachi Villa</div>
@@ -456,7 +459,6 @@ body.lb-open{overflow:hidden}
 <!-- ============ VILLAS (03) ============ -->
 <section class="section" id="villas">
   <div class="label"><span class="num">03</span>Villas</div>
-  <h2 class="display">Two ways <em>to stay</em>.</h2>
 
   <!-- The difference between the two -->
   <div class="villa-distinguish">
@@ -477,7 +479,11 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.01 — opened November 2024</div>
       <h3>Nomachi Villa</h3>
       <div class="en">野町邸 / Nomachi, Kanazawa</div>
-      <p class="desc">A quietly restored two-storey townhouse. Soft light through shōji, the warm calm of wood and tatami. Two bedrooms — one Japanese, one Western — sleeping up to 6. Ten minutes' walk from the Katamachi nightlife, far enough that the city's hum doesn't reach you.</p>
+      <p class="desc">A quietly restored two-storey townhouse. Soft light through shōji, the warm calm of wood and tatami.</p>
+      <details class="desc-fold">
+        <summary>Read more</summary>
+        <p>Two bedrooms — one Japanese, one Western — sleeping up to 6. Ten minutes' walk from the Katamachi nightlife, far enough that the city's hum doesn't reach you.</p>
+      </details>
       <div class="specs">
         <div><strong>76 m²</strong>Size</div>
         <div><strong>6</strong>Guests</div>
@@ -487,7 +493,6 @@ body.lb-open{overflow:hidden}
         <div><strong>From 15:00</strong>Check-in</div>
         <div><strong>By 11:00</strong>Check-out</div>
       </div>
-      <div class="status ok">Bookable on this site — lowest rate</div>
       <div class="act">
         <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-rooms" type="button">See the rooms<span class="ct">(29 photos)</span></button>
@@ -504,7 +509,11 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.02 — opened August 2025</div>
       <h3>Shiragiku Villa</h3>
       <div class="en">白菊町邸 / Shiragiku, Kanazawa</div>
-      <p class="desc">Antique furniture and lighting bring Taishō-era atmosphere to the interior. The living room overlooks a small Japanese garden of maple, pine, and nandina. Two upstairs bedrooms (one Western, one Japanese-style) sleep up to 5. The Nishi Chaya teahouse district is 200 metres away.</p>
+      <p class="desc">Antique furniture and lighting bring Taishō-era atmosphere to the interior. The living room overlooks a small Japanese garden of maple, pine, and nandina.</p>
+      <details class="desc-fold">
+        <summary>Read more</summary>
+        <p>Two upstairs bedrooms (one Western, one Japanese-style) sleep up to 5. The Nishi Chaya teahouse district is 200 metres away.</p>
+      </details>
       <div class="specs">
         <div><strong>56 m²</strong>Size</div>
         <div><strong>5</strong>Guests</div>
@@ -543,7 +552,7 @@ body.lb-open{overflow:hidden}
       <figcaption class="who">Lisa · 1-week stay · Nomachi Villa · Oct 2025</figcaption>
     </figure>
   </div>
-  <p class="review-src">All reviews are real excerpts from <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> guests. Average rating 4.96 across 250 reviews (as of June 2026). Google reviews are available at <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">"Nomachi" on Google</a>.</p>
+  <p class="review-src">All reviews are real excerpts from <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> guests. Google reviews are available at <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">"Nomachi" on Google</a>.</p>
 </div></section>
 
 <!-- ============ FACTS (05) — operator info only ============ -->
@@ -562,36 +571,32 @@ body.lb-open{overflow:hidden}
   <div class="label"><span class="num">06</span>FAQ</div>
   <h2 class="display">Frequently asked <em>questions</em>.</h2>
   <div class="faq-list">
-    <details class="faq" open>
-      <summary><span class="q-no">Q.01</span>When can we check in and out?</summary>
-      <div class="a">Check-in is from 15:00, check-out by 11:00. Earlier check-in or later check-out can sometimes be arranged — please ask.</div>
-    </details>
     <details class="faq">
-      <summary><span class="q-no">Q.02</span>How does check-in work?</summary>
+      <summary><span class="q-no">Q.01</span>How does check-in work?</summary>
       <div class="a">After booking, we send you a link to your private guest page. There you upload a passport photo (non-Japanese guests) and complete a short guest registry for everyone in your party — a step required by Japanese law. Once submitted, your check-in details (address, access, Wi-Fi, entrance keybox PIN) appear on the page. A staff member usually meets you at the villa for in-person ID verification. You can message us anytime through the guest page during your stay.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.03</span>What's the difference between direct booking and Airbnb?</summary>
+      <summary><span class="q-no">Q.02</span>What's the difference between direct booking and Airbnb?</summary>
       <div class="a">Direct booking on Nomachi Villa is the lowest rate, with long-stay discounts. See <a href="#direct" style="text-decoration:underline;text-underline-offset:3px">02 Why book direct</a> for details. Shiragiku is currently bookable on Airbnb only.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.04</span>Is there a minimum stay?</summary>
+      <summary><span class="q-no">Q.03</span>Is there a minimum stay?</summary>
       <div class="a">Two nights minimum at both villas.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.05</span>What languages can the host handle?</summary>
+      <summary><span class="q-no">Q.04</span>What languages can the host handle?</summary>
       <div class="a">Japanese, plus real-time translation for virtually any language. Most replies within an hour.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.06</span>Is there parking?</summary>
+      <summary><span class="q-no">Q.05</span>Is there parking?</summary>
       <div class="a">Nomachi: free parking 2 min on foot. Shiragiku: coin parking 1 min away.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.07</span>Can we stay with young children?</summary>
+      <summary><span class="q-no">Q.06</span>Can we stay with young children?</summary>
       <div class="a">Yes. A high chair is available on request, free of charge — please mention this when booking.</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.08</span>What about long stays and remote work?</summary>
+      <summary><span class="q-no">Q.07</span>What about long stays and remote work?</summary>
       <div class="a">All villas have Wi-Fi suitable for video calls. Discounts apply from 3 nights onward, with the deepest direct-booking discount at 7+ nights.</div>
     </details>
   </div>
