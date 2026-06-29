@@ -155,6 +155,7 @@ a{color:inherit;text-decoration:none}
 h2.display{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.5;letter-spacing:.04em}
 h2.display em{font-style:normal;color:var(--indigo)}
 h2.h2-fact{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.06em;color:var(--ink);margin-top:2px;margin-bottom:22px;line-height:1.5}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .lede{color:var(--ink-soft);margin-top:16px;max-width:38em}
 
 /* ---- header ---- */
@@ -452,14 +453,14 @@ body.lb-open{overflow:hidden}
 <!-- ============ CONCEPT（01・引き算で復活） ============ -->
 <section class="section" id="concept">
   <div class="label"><span class="num">01</span>コンセプト</div>
-  <h2 class="display">素朴で、<em>どこか懐かしい</em>滞在を。</h2>
+  <h2 class="display">素朴で、<em>どこか懐かしい</em>時間</h2>
   <p class="lede">畳の感触、障子越しの光。その心地よさを感じながら、ごゆっくりお過ごしください。</p>
 </section>
 
 <!-- ============ WHY DIRECT（前方へ移動・拡充） ============ -->
 <section class="section direct" id="direct">
   <div class="label"><span class="num">02</span>直接予約の理由</div>
-  <h2 class="h2-fact">直接予約が最安。</h2>
+  <h2 class="sr-only">直接予約が最安。</h2>
 
   <div class="direct-grid">
     <div>
@@ -484,7 +485,7 @@ body.lb-open{overflow:hidden}
 <!-- ============ VILLAS ============ -->
 <section class="section" id="villas">
   <div class="label"><span class="num">03</span>物件</div>
-  <h2 class="h2-fact">二つの一棟貸し。</h2>
+  <h2 class="sr-only">二つの一棟貸し宿泊施設</h2>
 
   <!-- 2棟の違い（予約導線の正本） -->
   <div class="villa-distinguish">
@@ -561,7 +562,7 @@ body.lb-open{overflow:hidden}
 <!-- ============ REVIEWS（出典明記） ============ -->
 <section class="section" id="reviews" style="background:var(--white);max-width:none"><div style="max-width:1120px;margin:0 auto">
   <div class="label"><span class="num">04</span>ゲストの声</div>
-  <h2 class="h2-fact">評価4.96・250件のレビュー。</h2>
+  <h2 class="h2-fact">宿泊いただいた方の評価</h2>
   <div class="review-grid">
     <figure class="review">
       <blockquote>「日本で最も美しく穏やかな滞在先。実際に写真とまったく同じです。家は細部まで素晴らしく、すべて手入れが行き届いていました。」</blockquote>
@@ -582,7 +583,7 @@ body.lb-open{overflow:hidden}
 <!-- ============ FAQ（details型＝JSなしで全文クロール可能） ============ -->
 <section class="section" id="faq">
   <div class="label"><span class="num">05</span>FAQ</div>
-  <h2 class="h2-fact">よくあるご質問。</h2>
+  <h2 class="sr-only">よくあるご質問</h2>
   <div class="faq-list">
     <details class="faq">
       <summary><span class="q-no">Q.01</span>駐車場はありますか？</summary>
@@ -618,7 +619,7 @@ body.lb-open{overflow:hidden}
 <!-- ============ ACCESS ============ -->
 <section class="section" id="access" style="padding-top:0">
   <div class="label"><span class="num">06</span>アクセス</div>
-  <h2 class="h2-fact">金沢駅から最短7分。</h2>
+  <h2 class="sr-only">周辺マップ</h2>
   <figure class="access-map">
     <img src="https://kanazawa-villas.com/images/location.png" alt="金沢ヴィラズ2物件（野町邸・白菊町邸）と兼六園・茶屋街・近江町市場など主要観光地の位置関係を示す地図" loading="lazy"/>
     <figcaption class="cap">二棟と金沢の主要スポットの位置関係 — 詳しい道順はご予約後のマイページでご案内します</figcaption>
