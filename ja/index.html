@@ -241,6 +241,13 @@ body.mn-open{overflow:hidden}
 .villa h3{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.08em;margin-top:10px}
 .villa .en{font-size:12px;color:var(--ink-faint);letter-spacing:.12em;margin-top:2px}
 .villa .desc{font-size:13.5px;color:var(--ink-soft);margin-top:16px}
+.villa .desc-fold{margin-top:6px}
+.villa .desc-fold summary{list-style:none;cursor:pointer;font-size:12px;color:var(--indigo);letter-spacing:.06em;padding:4px 0;display:inline-block;transition:opacity .2s}
+.villa .desc-fold summary::-webkit-details-marker{display:none}
+.villa .desc-fold summary::after{content:" ↓";font-family:var(--serif);margin-left:4px}
+.villa .desc-fold[open] summary::after{content:" ↑"}
+.villa .desc-fold summary:hover{opacity:.7}
+.villa .desc-fold p{font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin-top:6px}
 .specs{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .specs div{font-size:12px;color:var(--ink-faint)}
 .specs strong{display:block;font-size:14px;color:var(--ink);font-weight:500;font-family:var(--serif);letter-spacing:.04em}
@@ -418,10 +425,10 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <img src="../images/nomachi-hero.jpg" alt="白菊町邸 — 障子越しに望む日本庭園"/>
+  <img src="../images/nomachi-hero.jpg" alt="白菊町邸 — 障子越しの和の佇まい"/>
   <div class="hero-inner">
-    <h1>二つの家、ひとつの金沢。<br/>暮らすように、泊まる。</h1>
-    <p class="sub">許可済の一棟貸し、家族と小さなグループのために。<br/>公式サイトからの直接予約が最安です。</p>
+    <h1>和に触れる、金沢の滞在。</h1>
+    <p class="sub">家族と小さなグループのために。</p>
     <div class="hero-actions">
       <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る</a>
       <a class="hero-secondary" href="#villas">二つの家を見る →</a>
@@ -441,23 +448,19 @@ body.lb-open{overflow:hidden}
 <section class="section" id="concept">
   <div class="label"><span class="num">01</span>コンセプト</div>
   <h2 class="display">金沢を、<em>住人の歩幅</em>で。</h2>
-  <p class="lede">ホテルではなく、観光のための箱でもない。<br/>
-  静かに整えられた古い町家と、大正の趣をたたえる小さな日本庭園のある家。<br/>
-  二棟、それぞれの「金沢の暮らし」を一棟貸しでご用意しています。</p>
+  <p class="lede">静かに整えられた町家と、庭のある大正の家。二棟の金沢を、一棟貸しで。</p>
 </section>
 
 <!-- ============ WHY DIRECT（前方へ移動・拡充） ============ -->
 <section class="section direct" id="direct">
   <div class="label"><span class="num">02</span>直接予約の理由</div>
-  <h2 class="display">同じ家なら、<em>いちばん良い条件</em>で。</h2>
-  <p class="lede">Airbnbでもご利用いただけますが、直接予約なら手数料分そのまま、料金と対応の質に還元できます。</p>
 
   <div class="direct-grid">
     <div>
-      <div class="benefit"><div class="no">一</div><div><h4>手数料ゼロの最低料金</h4><p>どこよりも低い料金。同じ日程・同じ家で比べてみてください。</p></div></div>
-      <div class="benefit"><div class="no">二</div><div><h4>連泊で広がる割引</h4><p>連泊するほど料金がお得に。詳しい割引率は料金カードをご覧ください。</p></div></div>
-      <div class="benefit"><div class="no">三</div><div><h4>予約後は専用マイページで完結</h4><p>予約からチェックアウトまで、ひとつのページで完結。</p></div></div>
-      <div class="benefit"><div class="no">四</div><div><h4>ホストと直接つながる安心</h4><p>専用マイページのチャットから、いつでもご相談いただけます。</p></div></div>
+      <div class="benefit"><div class="no">一</div><div><h4>どこよりも低い料金</h4></div></div>
+      <div class="benefit"><div class="no">二</div><div><h4>連泊するほど料金がお得に</h4></div></div>
+      <div class="benefit"><div class="no">三</div><div><h4>予約後は専用マイページで完結</h4></div></div>
+      <div class="benefit"><div class="no">四</div><div><h4>専用チャットからいつでも連絡</h4></div></div>
     </div>
     <aside class="ratecard">
       <div class="t">直接予約の料金イメージ — 野町邸</div>
@@ -475,7 +478,6 @@ body.lb-open{overflow:hidden}
 <!-- ============ VILLAS ============ -->
 <section class="section" id="villas">
   <div class="label"><span class="num">03</span>物件</div>
-  <h2 class="display">二つの<em>泊まり方</em>。</h2>
 
   <!-- 2棟の違い（予約導線の正本） -->
   <div class="villa-distinguish">
@@ -496,7 +498,11 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.01 — 2024年11月開業</div>
       <h3>野町邸</h3>
       <div class="en">NOMACHI VILLA ／ 金沢市野町</div>
-      <p class="desc">静かに整えられた二階建ての町家。障子越しのやわらかな光、木と畳の落ち着いた佇まい。和室と洋室の二寝室で最大6名様。片町の繁華街から徒歩10分、それでいて喧騒は届かない距離感。</p>
+      <p class="desc">静かに整えられた二階建ての町家。障子越しのやわらかな光、木と畳の落ち着いた佇まい。</p>
+      <details class="desc-fold">
+        <summary>続きを読む</summary>
+        <p>和室と洋室の二寝室で最大6名様。片町の繁華街から徒歩10分、それでいて喧騒は届かない距離感。</p>
+      </details>
       <div class="specs">
         <div><strong>76 m²</strong>広さ</div>
         <div><strong>6名</strong>定員</div>
@@ -506,7 +512,6 @@ body.lb-open{overflow:hidden}
         <div><strong>15:00〜</strong>チェックイン</div>
         <div><strong>〜11:00</strong>チェックアウト</div>
       </div>
-      <div class="status ok">公式サイトから直接予約できます — 最低料金</div>
       <div class="act">
         <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る</a>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-rooms" type="button">部屋を見る<span class="ct">（29枚）</span></button>
@@ -523,7 +528,11 @@ body.lb-open{overflow:hidden}
       <div class="idx">VILLA No.02 — 2025年8月開業</div>
       <h3>白菊町邸</h3>
       <div class="en">SHIRAGIKU VILLA ／ 金沢市白菊町</div>
-      <p class="desc">アンティークの家具と照明で、大正の趣をインテリアに織り込んだ一棟。リビングからは紅葉・松・南天の小さな日本庭園を望みます。二階に和洋の二寝室、最大5名様。にし茶屋街まで200メートル。</p>
+      <p class="desc">アンティークの家具と照明で、大正の趣をインテリアに織り込んだ一棟。リビングからは紅葉・松・南天の小さな日本庭園を望みます。</p>
+      <details class="desc-fold">
+        <summary>続きを読む</summary>
+        <p>二階に和洋の二寝室、最大5名様。にし茶屋街まで200メートル。</p>
+      </details>
       <div class="specs">
         <div><strong>56 m²</strong>広さ</div>
         <div><strong>5名</strong>定員</div>
@@ -562,7 +571,7 @@ body.lb-open{overflow:hidden}
       <figcaption class="who">Lisa · 1週間滞在 · 野町邸 · 2025年10月</figcaption>
     </figure>
   </div>
-  <p class="review-src">レビューはすべて <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> に寄せられた実際のゲストの声を抜粋・翻訳したものです。Airbnbでの平均評価 4.96（レビュー250件・2026年6月時点）。Googleのクチコミは <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">Googleで「Nomachi」を見る</a> からご覧いただけます。</p>
+  <p class="review-src">レビューはすべて <a href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnb</a> に寄せられた実際のゲストの声を抜粋・翻訳したものです。Googleのクチコミは <a href="https://share.google/chEHrFgmucrqueqgi" target="_blank" rel="noopener">Googleで「Nomachi」を見る</a> からご覧いただけます。</p>
 </div></section>
 
 <!-- ============ FACTS（運営情報のみ・簡素化） ============ -->
@@ -581,36 +590,32 @@ body.lb-open{overflow:hidden}
   <div class="label"><span class="num">06</span>FAQ</div>
   <h2 class="display">よくある<em>ご質問</em>。</h2>
   <div class="faq-list">
-    <details class="faq" open>
-      <summary><span class="q-no">Q.01</span>チェックイン・チェックアウトの時間は？</summary>
-      <div class="a">チェックインは15:00から、チェックアウトは11:00までです。アーリーチェックイン・レイトチェックアウトはご相談ください。</div>
-    </details>
     <details class="faq">
-      <summary><span class="q-no">Q.02</span>チェックインの流れは？</summary>
+      <summary><span class="q-no">Q.01</span>チェックインの流れは？</summary>
       <div class="a">ご予約後、専用のマイページURLをお送りします。マイページ上で、外国籍の方はパスポート画像のアップロード、ご宿泊される全員分の宿泊者名簿のご記入をお願いしています（日本政府の要請による手続きです）。ご提出が完了すると、住所・アクセス・Wi-Fi・玄関の暗証番号などのチェックイン情報がマイページ上で順次ご確認いただけます。当日は、原則としてスタッフが現地でお迎えし、本人確認を行います。ご滞在中もマイページのチャットからご連絡いただけます。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.03</span>直接予約とAirbnbの違いは？</summary>
+      <summary><span class="q-no">Q.02</span>直接予約とAirbnbの違いは？</summary>
       <div class="a">野町邸の直接予約が最も低い料金で、連泊割引もあります。詳しくは <a href="#direct" style="text-decoration:underline;text-underline-offset:3px">02 直接予約の理由</a> をご覧ください。白菊町邸は現在Airbnbのみのご予約です。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.04</span>最低宿泊日数はありますか？</summary>
+      <summary><span class="q-no">Q.03</span>最低宿泊日数はありますか？</summary>
       <div class="a">全棟2泊以上から。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.05</span>ホストはどの言語に対応していますか？</summary>
+      <summary><span class="q-no">Q.04</span>ホストはどの言語に対応していますか？</summary>
       <div class="a">日本語に加え、リアルタイム翻訳でほぼあらゆる言語に対応。多くは1時間以内に返信しています。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.06</span>駐車場はありますか？</summary>
+      <summary><span class="q-no">Q.05</span>駐車場はありますか？</summary>
       <div class="a">野町邸：徒歩2分に無料駐車場。白菊町邸：徒歩1分にコインパーキング。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.07</span>小さなお子様連れでも滞在できますか？</summary>
+      <summary><span class="q-no">Q.06</span>小さなお子様連れでも滞在できますか？</summary>
       <div class="a">はい、ベビーチェアを無料でご用意しています（事前にお知らせください）。</div>
     </details>
     <details class="faq">
-      <summary><span class="q-no">Q.08</span>長期滞在やワーケーションには対応していますか？</summary>
+      <summary><span class="q-no">Q.07</span>長期滞在やワーケーションには対応していますか？</summary>
       <div class="a">全棟でビデオ会議に十分なWi-Fiを完備。3泊以上で割引、7泊以上の直接予約で最も大きな割引が適用されます。</div>
     </details>
   </div>
