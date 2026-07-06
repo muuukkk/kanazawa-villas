@@ -27,15 +27,17 @@
 
   <script>
     // Language detection: ja → /ja/, anything else → /en/
-    // Hash fragments (e.g., #villas) are preserved through redirect.
+    // Query string (e.g., ?utm_source=...) and hash (#villas) are preserved
+    // so that GA4 attribution and section anchors survive the redirect.
     (function () {
       try {
         var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
         var target = lang.indexOf('ja') === 0 ? './ja/' : './en/';
+        var search = window.location.search || '';
         var hash = window.location.hash || '';
-        window.location.replace(target + hash);
+        window.location.replace(target + search + hash);
       } catch (e) {
-        window.location.replace('./en/');
+        window.location.replace('./en/' + (window.location.search || ''));
       }
     })();
   </script>
