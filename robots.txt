@@ -1,0 +1,7 @@
+# Kanazawa Villas — robots directives
+# Allow all major crawlers to index the site
+User-agent: *
+Allow: /
+
+# Sitemap location for search engines
+Sitemap: https://kanazawa-villas.com/sitemap.xml
