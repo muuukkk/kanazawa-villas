@@ -9,7 +9,35 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-66ERFZ5CFB', {
-      'anonymize_ip': true
+      'anonymize_ip': true,
+      linker: { domains: ['kanazawa-villas.com', 'beds24.com'] }
+    });
+
+    // CTA click tracking (Beds24 / Airbnb)
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a || !a.href) return;
+      var p = {
+        villa: a.dataset.villa || '(none)',
+        position: a.dataset.position || '(none)',
+        page_lang: document.documentElement.lang || '(none)'
+      };
+      if (a.href.indexOf('beds24.com') > -1) {
+        gtag('event', 'cta_beds24_click', p);
+      } else if (a.href.indexOf('airbnb') > -1) {
+        gtag('event', 'cta_airbnb_click', p);
+      }
+    });
+
+    // Contact form submit tracking
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.querySelector('form.contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function () {
+        gtag('event', 'contact_submit', {
+          page_lang: document.documentElement.lang || '(none)'
+        });
+      });
     });
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -38,7 +66,7 @@
     </nav>
   </div>
   <div class="header-cta">
-    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book">
+    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="btn-book" data-position="header" data-villa="nomachi">
       <span class="btn-label-full">Book Direct</span>
       <span class="btn-label-short">Book</span>
       <span class="arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -146,8 +174,8 @@
     <li><a href="legal/terms.html">Accommodation Agreement</a></li>
     <li><a href="legal/house-rules.html">House Rules</a></li>
     <li><a href="index.html">Home</a></li>
-    <li><a href="https://beds24.com/booking2.php?propid=261406" rel="noopener">Book Nomachi Villa directly</a></li>
-    <li><a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener">Book Shiragiku Villa on Airbnb</a></li>
+    <li><a href="https://beds24.com/booking2.php?propid=261406" rel="noopener" data-position="fallback" data-villa="nomachi">Book Nomachi Villa directly</a></li>
+    <li><a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener" data-position="fallback" data-villa="shiragiku">Book Shiragiku Villa on Airbnb</a></li>
   </ul>
 </div>
 
