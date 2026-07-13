@@ -8,7 +8,26 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-66ERFZ5CFB', { 'anonymize_ip': true });
+  gtag('config', 'G-66ERFZ5CFB', {
+    'anonymize_ip': true,
+    linker: { domains: ['kanazawa-villas.com', 'beds24.com'] }
+  });
+
+  // CTA click tracking (Beds24 / Airbnb)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || !a.href) return;
+    var p = {
+      villa: a.dataset.villa || '(none)',
+      position: a.dataset.position || '(none)',
+      page_lang: document.documentElement.lang || '(none)'
+    };
+    if (a.href.indexOf('beds24.com') > -1) {
+      gtag('event', 'cta_beds24_click', p);
+    } else if (a.href.indexOf('airbnb') > -1) {
+      gtag('event', 'cta_airbnb_click', p);
+    }
+  });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -391,7 +410,7 @@ body.lb-open{overflow:hidden}
     <a href="#access">Access</a>
     <a href="../ja/" hreflang="ja" lang="ja" style="margin-left:8px">日本語</a>
   </nav>
-  <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check availability</a>
+  <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="header" data-villa="nomachi">Check availability</a>
   <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav" type="button">
     <span></span><span></span><span></span>
   </button>
@@ -407,7 +426,7 @@ body.lb-open{overflow:hidden}
     <a href="#faq">FAQ</a>
     <a href="#access">Access</a>
     <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="cta">Check availability</a>
+    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="cta" data-position="mobile_nav" data-villa="nomachi">Check availability</a>
   </nav>
 </div>
 
@@ -457,7 +476,7 @@ body.lb-open{overflow:hidden}
       <div class="rate-row"><span>4+ nights</span><span>−15%</span></div>
       <div class="rate-row"><span>7+ nights</span><span>−18%</span></div>
       <div class="rate-row cancel-row"><span>Cancellation</span><span>Free until 5 days before check-in; 100% charge within 4 days</span></div>
-      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Pick dates &amp; see rates</a>
+      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="pricing_card" data-villa="nomachi">Pick dates &amp; see rates</a>
       <p class="note">Choose dates and guests to see your total with discounts applied. Payment is processed securely via Beds24/Stripe.</p>
     </aside>
   </div>
@@ -501,7 +520,7 @@ body.lb-open{overflow:hidden}
         <div><strong>By 11:00</strong>Check-out</div>
       </div>
       <div class="act">
-        <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Check rates &amp; availability</a>
+        <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="villa_card_nomachi" data-villa="nomachi">Check rates &amp; availability</a>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-rooms" type="button">See the rooms<span class="ct">(29 photos)</span></button>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-mood" type="button">See the atmosphere<span class="ct">(14 photos)</span></button>
         <button class="btn-gallery facility-trigger" data-villa="nomachi" type="button">Facility info</button>
@@ -531,7 +550,7 @@ body.lb-open{overflow:hidden}
       </div>
       <div class="status">Currently bookable on Airbnb — direct booking coming soon</div>
       <div class="act">
-        <a class="btn" href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Book on Airbnb</a>
+        <a class="btn" href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener" data-position="villa_card_shiragiku" data-villa="shiragiku">Book on Airbnb</a>
         <button class="btn-gallery gallery-trigger" data-villa="shiragiku-rooms" type="button">See the rooms<span class="ct">(12 photos)</span></button>
         <button class="btn-gallery gallery-trigger" data-villa="shiragiku-mood" type="button">See the atmosphere<span class="ct">(8 photos)</span></button>
         <button class="btn-gallery facility-trigger" data-villa="shiragiku" type="button">Facility info</button>
@@ -650,8 +669,8 @@ body.lb-open{overflow:hidden}
     </div>
     <div>
       <h5>Booking</h5>
-      <a href="https://beds24.com/booking2.php?propid=261406" rel="noopener">Book Nomachi Villa directly</a>
-      <a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener">Book Shiragiku Villa on Airbnb</a>
+      <a href="https://beds24.com/booking2.php?propid=261406" rel="noopener" data-position="footer" data-villa="nomachi">Book Nomachi Villa directly</a>
+      <a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener" data-position="footer" data-villa="shiragiku">Book Shiragiku Villa on Airbnb</a>
       <a href="https://kanazawa-villas.com/contact.html?lang=en">Contact</a>
     </div>
     <div>
@@ -667,7 +686,7 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ MOBILE STICKY CTA ============ -->
 <div class="sticky-cta">
-  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">Book direct — lowest rate</a>
+  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="sticky" data-villa="nomachi">Book direct — lowest rate</a>
 </div>
 
 
