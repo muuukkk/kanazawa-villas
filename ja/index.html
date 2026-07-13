@@ -8,7 +8,26 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-66ERFZ5CFB', { 'anonymize_ip': true });
+  gtag('config', 'G-66ERFZ5CFB', {
+    'anonymize_ip': true,
+    linker: { domains: ['kanazawa-villas.com', 'beds24.com'] }
+  });
+
+  // CTA click tracking (Beds24 / Airbnb)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || !a.href) return;
+    var p = {
+      villa: a.dataset.villa || '(none)',
+      position: a.dataset.position || '(none)',
+      page_lang: document.documentElement.lang || '(none)'
+    };
+    if (a.href.indexOf('beds24.com') > -1) {
+      gtag('event', 'cta_beds24_click', p);
+    } else if (a.href.indexOf('airbnb') > -1) {
+      gtag('event', 'cta_airbnb_click', p);
+    }
+  });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -411,7 +430,7 @@ body.lb-open{overflow:hidden}
     <a href="#faq">FAQ</a>
     <a href="#access">アクセス</a>
   </nav>
-  <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室を見る</a>
+  <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="header" data-villa="nomachi">空室を見る</a>
   <button class="menu-toggle" id="menu-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav" type="button">
     <span></span><span></span><span></span>
   </button>
@@ -426,7 +445,7 @@ body.lb-open{overflow:hidden}
     <a href="#reviews">ゲストの声</a>
     <a href="#faq">FAQ</a>
     <a href="#access">アクセス</a>
-    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="cta">空室を見る</a>
+    <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" class="cta" data-position="mobile_nav" data-villa="nomachi">空室を見る</a>
   </nav>
 </div>
 
@@ -476,7 +495,7 @@ body.lb-open{overflow:hidden}
       <div class="rate-row"><span>4泊以上</span><span>−15%</span></div>
       <div class="rate-row"><span>7泊以上</span><span>−18%</span></div>
       <div class="rate-row cancel-row"><span>キャンセル</span><span>5日前まで無料 ／ 4日前以降100%</span></div>
-      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">日程を入れて料金を見る</a>
+      <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="pricing_card" data-villa="nomachi">日程を入れて料金を見る</a>
       <p class="note">日付と人数を選ぶと、割引適用後の総額が表示されます。決済は安全な予約システム（Beds24/Stripe）経由。</p>
     </aside>
   </div>
@@ -520,7 +539,7 @@ body.lb-open{overflow:hidden}
         <div><strong>〜11:00</strong>チェックアウト</div>
       </div>
       <div class="act">
-        <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る</a>
+        <a class="btn primary" href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="villa_card_nomachi" data-villa="nomachi">空室と料金を見る</a>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-rooms" type="button">部屋を見る<span class="ct">（29枚）</span></button>
         <button class="btn-gallery gallery-trigger" data-villa="nomachi-mood" type="button">雰囲気を見る<span class="ct">（14枚）</span></button>
         <button class="btn-gallery facility-trigger" data-villa="nomachi" type="button">施設について</button>
@@ -550,7 +569,7 @@ body.lb-open{overflow:hidden}
       </div>
       <div class="status">現在は Airbnb からのご予約 — 直接予約は準備中</div>
       <div class="act">
-        <a class="btn" href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener">Airbnbで予約する</a>
+        <a class="btn" href="https://airbnb.jp/h/shiragiku-villa" target="_blank" rel="noopener" data-position="villa_card_shiragiku" data-villa="shiragiku">Airbnbで予約する</a>
         <button class="btn-gallery gallery-trigger" data-villa="shiragiku-rooms" type="button">部屋を見る<span class="ct">（12枚）</span></button>
         <button class="btn-gallery gallery-trigger" data-villa="shiragiku-mood" type="button">雰囲気を見る<span class="ct">（8枚）</span></button>
         <button class="btn-gallery facility-trigger" data-villa="shiragiku" type="button">施設について</button>
@@ -679,8 +698,8 @@ body.lb-open{overflow:hidden}
     </div>
     <div>
       <h5>予約</h5>
-      <a href="https://beds24.com/booking2.php?propid=261406" rel="noopener">野町邸を直接予約する</a>
-      <a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener">白菊町邸をAirbnbで予約する</a>
+      <a href="https://beds24.com/booking2.php?propid=261406" rel="noopener" data-position="footer" data-villa="nomachi">野町邸を直接予約する</a>
+      <a href="https://airbnb.jp/h/shiragiku-villa" rel="noopener" data-position="footer" data-villa="shiragiku">白菊町邸をAirbnbで予約する</a>
       <a href="https://kanazawa-villas.com/contact.html?lang=ja">お問い合わせ</a>
     </div>
     <div>
@@ -696,7 +715,7 @@ body.lb-open{overflow:hidden}
 
 <!-- ============ MOBILE STICKY CTA ============ -->
 <div class="sticky-cta">
-  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener">空室と料金を見る — 直接予約が最安</a>
+  <a href="https://beds24.com/booking2.php?propid=261406" target="_blank" rel="noopener" data-position="sticky" data-villa="nomachi">空室と料金を見る — 直接予約が最安</a>
 </div>
 
 
