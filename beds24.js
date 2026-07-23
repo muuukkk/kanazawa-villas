@@ -8,6 +8,7 @@ $(document).ready(function() {
   ========================================== */
   var baseStyle = {
     'font-family': "'Cormorant Garamond', 'Shippori Mincho', Georgia, serif",
+    'font-size': '16px',
     'background-color': '#f4f1ea',
     'color': '#1a1815',
     'letter-spacing': '0.03em',
@@ -84,6 +85,25 @@ $(document).ready(function() {
     'margin-bottom': '16px'
   });
   /* ==========================================
+     7.5 パネル見出し（お客様情報・予約詳細・物件名等）
+  ========================================== */
+  $('.panel-heading, legend').css({
+    'font-family': "'Cormorant Garamond', 'Shippori Mincho', serif",
+    'font-size': '19px',
+    'font-weight': '400',
+    'letter-spacing': '0.1em',
+    'color': '#1a1815',
+    'background-color': 'transparent',
+    'border-bottom': '1px solid rgba(26, 24, 21, 0.15)',
+    'padding': '14px 16px'
+  });
+  /* フォームのラベル・テーブルの文字を読みやすく */
+  $('form td, form th, form label, .control-label').css({
+    'font-size': '15px',
+    'letter-spacing': '0.05em',
+    'line-height': '1.7'
+  });
+  /* ==========================================
      8. 説明文
   ========================================== */
   $('.at_offerdescription1, .at_propertydescription1').css({
@@ -150,6 +170,17 @@ $(document).ready(function() {
     function() { $(this).css({ 'background-color': '#7a5c3a', 'border-color': '#7a5c3a' }); },
     function() { $(this).css({ 'background-color': '#1a1815', 'border-color': '#1a1815' }); }
   );
+  /* 戻る等のサブボタン: 塗りではなく枠線のセカンダリ表現に */
+  $('.btn-default.button').css({
+    'background-color': 'transparent',
+    'border': '1px solid #1a1815',
+    'border-radius': '0',
+    'color': '#1a1815',
+    'font-family': "'Cormorant Garamond', 'Shippori Mincho', serif",
+    'font-size': '14px',
+    'letter-spacing': '0.1em',
+    'padding': '8px 20px'
+  });
   /* Not availableボタンをコンパクトに */
   $('.btn-danger').css({
     'display': 'inline-block',
@@ -290,11 +321,14 @@ $(document).ready(function() {
     var isEn = curLang.toLowerCase().indexOf('english') !== -1;
     var note = isEn ? 'Free cancellation until 5 days before check-in' : 'チェックイン5日前までキャンセル無料';
     $('<div class="b24-reassurance"></div>').text(note).css({
-      'font-size': '12px',
+      'font-size': '13px',
       'color': '#7a756c',
       'letter-spacing': '0.06em',
       'margin-top': '10px',
       'text-align': 'right',
+      'max-width': '220px',
+      'margin-left': 'auto',
+      'line-height': '1.6',
       'clear': 'both'
     }).insertAfter($bookBtn);
   }
