@@ -129,7 +129,8 @@ $(document).ready(function() {
   });
   $('.dateavail').css({ 'background-color': '#ffffff', 'color': '#1a1815' });
   $('.datenotavail, .datenap').css({ 'background-color': '#ebe5d9', 'color': '#a39e92', 'text-decoration': 'none' });
-  $('.datestay').css({ 'background-color': '#1a1815', 'color': '#f4f1ea', 'border': '1px solid #1a1815' });
+  /* 選択中の日程: 黒塗りだと「利用不可」に見えるため、白地+枠線の強調に変更 */
+  $('.datestay').css({ 'background-color': '#ffffff', 'color': '#1a1815', 'border': '2px solid #1a1815', 'font-weight': '600' });
   $('.datepast').css({ 'background-color': '#f4f1ea', 'color': '#c5bfb4' });
   /* ==========================================
      11. ボタン
@@ -234,21 +235,22 @@ $(document).ready(function() {
       $(this).hide();
     }
   });
-  $('.b24fullcontainer-ownerrow1, .b24fullcontainer-ownerrow2, .b24fullcontainer-proprow1, .b24fullcontainer-proprow2, .b24fullcontainer-proprow3, .b24fullcontainer-proprow4').each(function() {
-    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
-      $(this).hide();
-    }
-  });
-  $('.col-xs-12, .col-sm-12').each(function() {
-    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
-      $(this).hide();
-    }
-  });
-  $('.row').each(function() {
-    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
-      $(this).hide();
-    }
-  });
+  /* ownerrow11等の連番違いも拾うため属性セレクタで全行を対象にし、
+     遅延生成に備えて少し遅れてもう一度実行する */
+  function hideEmptyRows() {
+    $('[class*="b24fullcontainer-ownerrow"], [class*="b24fullcontainer-proprow"]').each(function() {
+      if (visibleText(this) === '' && $(this).find('img, iframe, input, select, table').length === 0) {
+        $(this).hide();
+      }
+    });
+    $('.col-xs-12, .col-sm-12, .row').each(function() {
+      if (visibleText(this) === '' && $(this).find('img, iframe, input, select, table').length === 0) {
+        $(this).hide();
+      }
+    });
+  }
+  hideEmptyRows();
+  setTimeout(hideEmptyRows, 500);
   /* ==========================================
      17.5 上部言語バー・料金表の体裁
   ========================================== */
@@ -279,7 +281,41 @@ $(document).ready(function() {
   ========================================== */
   $('a:contains("less details")').text('▲ close');
   $('a:contains("more details")').text('▼ details');
-  /* check availability をボタン風に */
+  /* ==========================================
+     18.5 予約ボタン下に安心材料（キャンセルポリシー要約）を表示
+  ========================================== */
+  var $bookBtn = $('.at_bookingbut').first();
+  if ($bookBtn.length && $('.b24-reassurance').length === 0) {
+    var curLang = $('.b24languagedropdown .dropdown-toggle').text().trim();
+    var isEn = curLang.toLowerCase().indexOf('english') !== -1;
+    var note = isEn ? 'Free cancellation until 5 days before check-in' : 'チェックイン5日前までキャンセル無料';
+    $('<div class="b24-reassurance"></div>').text(note).css({
+      'font-size': '12px',
+      'color': '#7a756c',
+      'letter-spacing': '0.06em',
+      'margin-top': '10px',
+      'text-align': 'right',
+      'clear': 'both'
+    }).insertAfter($bookBtn);
+  }
+  /* ==========================================
+     18.6 フッターをスリム化
+  ========================================== */
+  $('.b24fullcontainer-footer').css({
+    'padding': '16px 24px',
+    'min-height': '0'
+  });
+  /* check availability / 空室状況確認 をボタン風に */
+  $('a:contains("空室状況確認")').css({
+    'display': 'inline-block',
+    'border': '1px solid #1a1815',
+    'padding': '8px 20px',
+    'font-size': '13px',
+    'letter-spacing': '0.1em',
+    'color': '#1a1815',
+    'text-decoration': 'none',
+    'margin-top': '8px'
+  });
   $('a:contains("check availability")').css({
     'display': 'inline-block',
     'border': '1px solid #1a1815',
