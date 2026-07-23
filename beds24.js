@@ -133,8 +133,9 @@ $(document).ready(function() {
   $('.datepast').css({ 'background-color': '#f4f1ea', 'color': '#c5bfb4' });
   /* ==========================================
      11. ボタン
+     ※at_bookingbut（予約ボタン）・input.button・a.buttonを追加
   ========================================== */
-  $('.btn-primary, .btn-info, button[type="submit"], .b24-book-button').css({
+  $('.btn-primary, .btn-info, button[type="submit"], .b24-book-button, .at_bookingbut, input.button, a.button').css({
     'background-color': '#1a1815',
     'border': '1px solid #1a1815',
     'border-radius': '0',
@@ -144,7 +145,7 @@ $(document).ready(function() {
     'padding': '12px 28px',
     'color': '#f4f1ea'
   });
-  $('.btn-primary, .btn-info').hover(
+  $('.btn-primary, .btn-info, .at_bookingbut, input.button').hover(
     function() { $(this).css({ 'background-color': '#7a5c3a', 'border-color': '#7a5c3a' }); },
     function() { $(this).css({ 'background-color': '#1a1815', 'border-color': '#1a1815' }); }
   );
@@ -219,27 +220,59 @@ $(document).ready(function() {
   });
   /* ==========================================
      17. 空コンテナの非表示
+     ※script/style/linkタグしか入っていないコンテナも「空」とみなす
+     （残骸スクリプトによる上部の空白帯対策）
   ========================================== */
+  function visibleText(el) {
+    var clone = $(el).clone();
+    clone.find('script, style, link, noscript').remove();
+    return clone.text().trim();
+  }
   $('.panel').each(function() {
-    if ($(this).text().trim() === '') {
+    if (visibleText(this) === '') {
       $(this).closest('.row').hide();
       $(this).hide();
     }
   });
-  $('.b24fullcontainer-proprow1, .b24fullcontainer-proprow2, .b24fullcontainer-proprow3, .b24fullcontainer-proprow4').each(function() {
-    if ($(this).text().trim() === '') {
+  $('.b24fullcontainer-ownerrow1, .b24fullcontainer-ownerrow2, .b24fullcontainer-proprow1, .b24fullcontainer-proprow2, .b24fullcontainer-proprow3, .b24fullcontainer-proprow4').each(function() {
+    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
       $(this).hide();
     }
   });
   $('.col-xs-12, .col-sm-12').each(function() {
-    if ($(this).text().trim() === '') {
+    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
       $(this).hide();
     }
   });
   $('.row').each(function() {
-    if ($(this).text().trim() === '') {
+    if (visibleText(this) === '' && $(this).find('img, iframe').length === 0) {
       $(this).hide();
     }
+  });
+  /* ==========================================
+     17.5 上部言語バー・料金表の体裁
+  ========================================== */
+  /* 言語バー: グレー帯をベース色に馴染ませる */
+  $('.b24fullcontainer-top, .b24fullcontainer-top .container2').css({
+    'background-color': '#f4f1ea',
+    'border': 'none',
+    'padding': '8px 16px'
+  });
+  /* 料金テーブル（チェックイン/アウト行）を整える */
+  $('.b24room table th').css({
+    'background-color': 'transparent',
+    'color': '#7a756c',
+    'font-family': "'Cormorant Garamond', serif",
+    'font-size': '13px',
+    'font-weight': '400',
+    'letter-spacing': '0.1em',
+    'border-bottom': '1px solid rgba(26, 24, 21, 0.15)',
+    'padding': '8px 10px'
+  });
+  $('.b24room table td').css({
+    'font-size': '14px',
+    'padding': '8px 10px',
+    'letter-spacing': '0.04em'
   });
   /* ==========================================
      18. テキスト改善
