@@ -9,6 +9,7 @@ $(document).ready(function() {
   var baseStyle = {
     'font-family': "'Cormorant Garamond', 'Shippori Mincho', Georgia, serif",
     'font-size': '16px',
+    'font-weight': '500',
     'background-color': '#f4f1ea',
     'color': '#1a1815',
     'letter-spacing': '0.03em',
@@ -26,6 +27,18 @@ $(document).ready(function() {
     'max-width': '1320px',
     'margin': '0 auto'
   });
+  /* ==========================================
+     1.5 動的生成される要素向けのスタイルシート注入
+     （後から表示されるカレンダー・リンクにも確実に効かせる）
+  ========================================== */
+  $('head').append('<style id="b24-custom-dynamic">' +
+    'a:not(.btn):not(.button){color:#7a5c3a !important;}' +
+    'a:not(.btn):not(.button):hover{color:#1a1815 !important;}' +
+    '.dateavail{background-color:#ffffff !important;color:#1a1815 !important;}' +
+    '.datenotavail,.datenap{background-color:#ebe5d9 !important;color:#a39e92 !important;text-decoration:none !important;}' +
+    '.datestay{background-color:#ffffff !important;color:#1a1815 !important;border:2px solid #1a1815 !important;font-weight:600 !important;}' +
+    '.datepast{background-color:#f4f1ea !important;color:#c5bfb4 !important;}' +
+    '</style>');
   /* ==========================================
      2. スマホ背景色を確実に適用
   ========================================== */
@@ -120,12 +133,14 @@ $(document).ready(function() {
   $('.at_offerdescription1, .at_propertydescription1').css({
     'font-family': "'Cormorant Garamond', 'Shippori Mincho', serif",
     'font-size': isMobile ? '16px' : '18px',
+    'font-weight': '500',
     'line-height': '2',
     'color': '#2a2722',
     'letter-spacing': '0.05em',
     'padding': '24px 0',
     'border-top': '1px solid rgba(26, 24, 21, 0.12)',
-    'margin-top': '16px'
+    'margin-top': '16px',
+    'word-break': 'auto-phrase'
   });
   /* ==========================================
      9. アメニティ
@@ -171,11 +186,18 @@ $(document).ready(function() {
     'background-color': '#1a1815',
     'border': '1px solid #1a1815',
     'border-radius': '0',
-    'font-family': "'Cormorant Garamond', serif",
-    'font-size': '15px',
+    'font-family': "'Cormorant Garamond', 'Shippori Mincho', serif",
+    'font-size': '16px',
+    'font-weight': '500',
     'letter-spacing': '0.14em',
     'padding': '12px 28px',
     'color': '#f4f1ea'
+  });
+  /* 予約CTAはページで最も目立つ要素に */
+  $('.at_bookingbut').css({
+    'font-size': '17px',
+    'padding': '14px 48px',
+    'min-width': '200px'
   });
   $('.btn-primary, .btn-info, .at_bookingbut, input.button').hover(
     function() { $(this).css({ 'background-color': '#7a5c3a', 'border-color': '#7a5c3a' }); },
@@ -198,7 +220,7 @@ $(document).ready(function() {
     'width': 'auto',
     'background-color': '#d9d2c2',
     'border-color': '#d9d2c2',
-    'color': '#7a756c',
+    'color': '#57524b',
     'border-radius': '0',
     'font-family': "'Cormorant Garamond', serif",
     'font-size': '13px',
@@ -246,7 +268,7 @@ $(document).ready(function() {
     'margin-top': '48px',
     'padding': '24px',
     'font-size': '13px',
-    'color': '#7a756c',
+    'color': '#57524b',
     'letter-spacing': '0.08em'
   });
   /* ==========================================
@@ -305,7 +327,7 @@ $(document).ready(function() {
   /* 料金テーブル（チェックイン/アウト行）を整える */
   $('.b24room table th').css({
     'background-color': 'transparent',
-    'color': '#7a756c',
+    'color': '#57524b',
     'font-family': "'Cormorant Garamond', serif",
     'font-size': '14px',
     'font-weight': '400',
@@ -341,18 +363,43 @@ $(document).ready(function() {
   if ($bookBtn.length && $('.b24-reassurance').length === 0) {
     var curLang = $('.b24languagedropdown .dropdown-toggle').text().trim();
     var isEn = curLang.toLowerCase().indexOf('english') !== -1;
-    var note = isEn ? 'Free cancellation until 5 days before check-in' : 'チェックイン5日前までキャンセル無料';
-    $('<div class="b24-reassurance"></div>').text(note).css({
+    var note = isEn ? 'Free cancellation<br>until 5 days before check-in' : 'チェックイン5日前まで<br>キャンセル無料';
+    $('<div class="b24-reassurance"></div>').html(note).css({
       'font-size': '13px',
-      'color': '#7a756c',
+      'color': '#57524b',
       'letter-spacing': '0.06em',
       'margin-top': '10px',
       'text-align': 'right',
-      'max-width': '220px',
       'margin-left': 'auto',
-      'line-height': '1.6',
+      'line-height': '1.7',
       'clear': 'both'
     }).insertAfter($bookBtn);
+  }
+  /* ==========================================
+     18.55 合計金額に文脈を与える（ラベル+強調）
+  ========================================== */
+  var $totalCur = $('span.bookingpagecurrency').filter(function() {
+    return parseFloat($(this).css('font-size')) > 20;
+  }).first();
+  if ($totalCur.length) {
+    var $totalBlock = $totalCur.parent();
+    $totalBlock.css({
+      'font-size': '26px',
+      'font-weight': '600',
+      'letter-spacing': '0.04em',
+      'color': '#1a1815'
+    });
+    if ($('.b24-total-label').length === 0) {
+      var curLang2 = $('.b24languagedropdown .dropdown-toggle').text().trim();
+      var totalLabel = curLang2.toLowerCase().indexOf('english') !== -1 ? 'Total for your stay' : 'ご滞在の合計';
+      $('<div class="b24-total-label"></div>').text(totalLabel).css({
+        'font-size': '13px',
+        'font-weight': '400',
+        'color': '#57524b',
+        'letter-spacing': '0.1em',
+        'margin-bottom': '2px'
+      }).insertBefore($totalBlock);
+    }
   }
   /* ==========================================
      18.6 フッターをスリム化
