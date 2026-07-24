@@ -36,7 +36,8 @@ $(document).ready(function() {
     'a:not(.btn):not(.button):hover{color:#1a1815 !important;}' +
     '.dateavail{background-color:#ffffff !important;color:#1a1815 !important;}' +
     '.datenotavail,.datenap{background-color:#ebe5d9 !important;color:#a39e92 !important;text-decoration:none !important;}' +
-    '.datestay{background-color:#ffffff !important;color:#1a1815 !important;border:2px solid #1a1815 !important;font-weight:600 !important;}' +
+    '.at_pricetd.datestay{background-color:#ffffff !important;color:#1a1815 !important;border:2px solid #1a1815 !important;font-weight:600 !important;}' +
+    '.roomoffercalendarmonth td.b24-sel{background-color:#ffffff !important;color:#1a1815 !important;box-shadow:inset 0 0 0 2px #1a1815;font-weight:600;}' +
     '.datepast{background-color:#f4f1ea !important;color:#c5bfb4 !important;}' +
     '</style>');
   /* ==========================================
@@ -175,8 +176,61 @@ $(document).ready(function() {
   });
   $('.dateavail').css({ 'background-color': '#ffffff', 'color': '#1a1815' });
   $('.datenotavail, .datenap').css({ 'background-color': '#ebe5d9', 'color': '#a39e92', 'text-decoration': 'none' });
-  /* 選択中の日程: 黒塗りだと「利用不可」に見えるため、白地+枠線の強調に変更 */
-  $('.datestay').css({ 'background-color': '#ffffff', 'color': '#1a1815', 'border': '2px solid #1a1815', 'font-weight': '600' });
+  /* 選択中の日程の強調は、Beds24のdatestayクラス（消し残りバグあり）に頼らず、
+     チェックイン日+泊数から自前で計算してミニカレンダーにマークする */
+  function monthIdx(s) {
+    return {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11}[String(s).slice(0,3).toLowerCase()];
+  }
+  function markSelection() {
+    try {
+      $('.roomoffercalendarmonth td.b24-sel').removeClass('b24-sel');
+      var val = $('#inputcheckin, input[name*="checkin"]').first().val() || '';
+      var d0 = null;
+      var mJa = val.match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
+      if (mJa) {
+        d0 = new Date(+mJa[1], +mJa[2] - 1, +mJa[3]);
+      } else {
+        var mEn = val.match(/(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})/);
+        if (mEn && monthIdx(mEn[2]) !== undefined) {
+          d0 = new Date(+mEn[3], monthIdx(mEn[2]), +mEn[1]);
+        }
+      }
+      if (!d0 || isNaN(d0.getTime())) return;
+      var nightsVal = $('select[name="numnight"]').val() || $('.b24-selector-row select').first().val();
+      var nights = parseInt(nightsVal, 10) || 1;
+      var days = [];
+      for (var i = 0; i < nights; i++) {
+        var d = new Date(d0.getTime());
+        d.setDate(d0.getDate() + i);
+        days.push(d);
+      }
+      $('.roomoffercalendarmonth').each(function() {
+        var cap = $(this).find('caption').text();
+        var my = null;
+        var cJa = cap.match(/(\d{1,2})月\s*(\d{4})/);
+        if (cJa) {
+          my = { m: +cJa[1] - 1, y: +cJa[2] };
+        } else {
+          var cEn = cap.match(/([A-Za-z]{3,})\s+(\d{4})/);
+          if (cEn && monthIdx(cEn[1]) !== undefined) my = { m: monthIdx(cEn[1]), y: +cEn[2] };
+        }
+        if (!my) return;
+        var $tbl = $(this);
+        days.forEach(function(d) {
+          if (d.getMonth() === my.m && d.getFullYear() === my.y) {
+            $tbl.find('td').filter(function() {
+              return $(this).text().trim() === String(d.getDate()) && /day/.test(this.className);
+            }).addClass('b24-sel');
+          }
+        });
+      });
+    } catch (e) { /* 解析失敗時はマークなし（誤表示より安全） */ }
+  }
+  markSelection();
+  setTimeout(markSelection, 600);
+  $(document).on('change', '.b24-selector-row input, .b24-selector-row select', function() {
+    setTimeout(markSelection, 300);
+  });
   $('.datepast').css({ 'background-color': '#f4f1ea', 'color': '#c5bfb4' });
   /* ==========================================
      11. ボタン
