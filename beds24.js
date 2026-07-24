@@ -15,6 +15,17 @@ $(document).ready(function() {
     'line-height': '1.8'
   };
   $('html, body, .container-fluid, .b24fullcontainer, #b24bookingpage').css(baseStyle);
+  /* 数字を高さの揃ったライニング数字に（オールドスタイル数字の沈み込み対策） */
+  $('body').css({
+    'font-feature-settings': '"lnum" 1',
+    'font-variant-numeric': 'lining-nums'
+  });
+  /* コンテンツ幅を広げて左右の余白を緩和（Bootstrap固定幅の上書き） */
+  $('.container, .container2').css({
+    'width': '100%',
+    'max-width': '1320px',
+    'margin': '0 auto'
+  });
   /* ==========================================
      2. スマホ背景色を確実に適用
   ========================================== */
