@@ -296,17 +296,28 @@ $(document).ready(function() {
     'background-color': 'transparent',
     'color': '#7a756c',
     'font-family': "'Cormorant Garamond', serif",
-    'font-size': '13px',
+    'font-size': '14px',
     'font-weight': '400',
     'letter-spacing': '0.1em',
     'border-bottom': '1px solid rgba(26, 24, 21, 0.15)',
-    'padding': '8px 10px'
+    'padding': '9px 10px'
   });
   $('.b24room table td').css({
-    'font-size': '14px',
-    'padding': '8px 10px',
+    'font-size': '16px',
+    'padding': '9px 10px',
     'letter-spacing': '0.04em'
   });
+  /* 検索バー（チェックイン/アウト・泊・人）の文字を大きく */
+  $('.b24-selector-row label, .b24-selector-row th, .b24-selector-row .control-label').css({
+    'font-size': '15px',
+    'letter-spacing': '0.08em'
+  });
+  $('.b24-selector-row input, .b24-selector-row select').css({
+    'font-size': '16px'
+  });
+  /* ミニカレンダー・キャンセルポリシー等の細部 */
+  $('.roomoffercalendarmonth td').css('font-size', '14px');
+  $('[class*="b24fullcontainer-proprow1"] p, [class*="b24fullcontainer-proprow1"] li, [class*="b24fullcontainer-proprow1"] div:not(:has(*))').css('font-size', '15px');
   /* ==========================================
      18. テキスト改善
   ========================================== */
