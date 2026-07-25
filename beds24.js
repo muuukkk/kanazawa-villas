@@ -34,11 +34,20 @@ $(document).ready(function() {
   $('head').append('<style id="b24-custom-dynamic">' +
     'a:not(.btn):not(.button){color:#7a5c3a !important;}' +
     'a:not(.btn):not(.button):hover{color:#1a1815 !important;}' +
+    /* 面の階層: 地=ベージュ、情報が載る面=白カード */
+    '.panel .row, .panel [class^="col-"], .panel [class*=" col-"]{background-color:#ffffff !important;}' +
+    '.b24-selector-row{background-color:#ffffff !important;border:1px solid rgba(26,24,21,0.15) !important;}' +
+    /* ミニカレンダー: 白カード化+セル罫線で地と分離 */
+    '.roomoffercalendarmonth{background-color:#ffffff;border:1px solid rgba(26,24,21,0.15);border-collapse:collapse;}' +
+    '.roomoffercalendarmonth td{border:1px solid rgba(26,24,21,0.12) !important;}' +
+    /* 空室=白 / 満室=濃ベージュ / 過去=淡色 / 選択中=墨色 の3値+αで即判別 */
     '.dateavail{background-color:#ffffff !important;color:#1a1815 !important;}' +
-    '.datenotavail,.datenap{background-color:#ebe5d9 !important;color:#a39e92 !important;text-decoration:none !important;}' +
+    '.datenotavail,.datenap{background-color:#e3dbc8 !important;color:#98917f !important;text-decoration:none !important;}' +
+    '.datepast{background-color:#f7f4ee !important;color:#c8c2b6 !important;}' +
+    '.roomoffercalendarmonth td.b24-sel{background-color:#1a1815 !important;color:#f4f1ea !important;font-weight:600;}' +
+    /* 料金表: セル罫線と満室セルの明確化 */
+    '.b24room table td, .b24room table th{border:1px solid rgba(26,24,21,0.12) !important;}' +
     '.at_pricetd.datestay{background-color:#ffffff !important;color:#1a1815 !important;border:2px solid #1a1815 !important;font-weight:600 !important;}' +
-    '.roomoffercalendarmonth td.b24-sel{background-color:#ffffff !important;color:#1a1815 !important;box-shadow:inset 0 0 0 2px #1a1815;font-weight:600;}' +
-    '.datepast{background-color:#f4f1ea !important;color:#c5bfb4 !important;}' +
     '</style>');
   /* ==========================================
      2. スマホ背景色を確実に適用
@@ -84,8 +93,7 @@ $(document).ready(function() {
     'margin': '0',
     'padding': isMobile ? '12px 16px' : '16px 40px',
     'box-sizing': 'border-box',
-    'background-color': 'rgba(244, 241, 234, 0.97)',
-    'border': 'none',
+    'background-color': '#ffffff',
     'z-index': '10',
     'position': 'relative'
   });
@@ -175,7 +183,7 @@ $(document).ready(function() {
     'font-weight': '500'
   });
   $('.dateavail').css({ 'background-color': '#ffffff', 'color': '#1a1815' });
-  $('.datenotavail, .datenap').css({ 'background-color': '#ebe5d9', 'color': '#a39e92', 'text-decoration': 'none' });
+  $('.datenotavail, .datenap').css({ 'background-color': '#e3dbc8', 'color': '#98917f', 'text-decoration': 'none' });
   /* 選択中の日程の強調は、Beds24のdatestayクラス（消し残りバグあり）に頼らず、
      チェックイン日+泊数から自前で計算してミニカレンダーにマークする */
   function monthIdx(s) {
@@ -231,6 +239,24 @@ $(document).ready(function() {
   $(document).on('change', '.b24-selector-row input, .b24-selector-row select', function() {
     setTimeout(markSelection, 300);
   });
+  /* カレンダーの凡例（初見での判別性向上） */
+  function addCalendarLegend() {
+    if ($('.roomoffercalendarmonth').length === 0 || $('.b24-cal-legend').length > 0) return;
+    var lang = $('.b24languagedropdown .dropdown-toggle').text().trim().toLowerCase();
+    var en = lang.indexOf('english') !== -1;
+    var chip = function(bg, border, label, color) {
+      return '<span style="display:inline-block;width:14px;height:14px;background:' + bg + ';border:' + border + ';vertical-align:-2px;margin:0 6px 0 14px;"></span>' +
+             '<span style="color:' + (color || '#57524b') + ';">' + label + '</span>';
+    };
+    var html = '<div class="b24-cal-legend" style="font-size:13px;letter-spacing:0.05em;color:#57524b;margin:10px 0 0 0;">' +
+      chip('#ffffff', '1px solid rgba(26,24,21,0.3)', en ? 'Available' : '空室') +
+      chip('#e3dbc8', '1px solid rgba(26,24,21,0.12)', en ? 'Booked' : '満室') +
+      chip('#1a1815', '1px solid #1a1815', en ? 'Selected' : '選択中') +
+      '</div>';
+    $('.roomoffercalendarmonth').last().closest('div').append(html);
+  }
+  addCalendarLegend();
+  setTimeout(addCalendarLegend, 700);
   $('.datepast').css({ 'background-color': '#f4f1ea', 'color': '#c5bfb4' });
   /* ==========================================
      11. ボタン
