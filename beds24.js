@@ -45,10 +45,10 @@ $(document).ready(function() {
     '.dateavail{background-color:#ffffff !important;color:#1a1815 !important;}' +
     '.datenotavail,.datenap{background-color:#e7e5e0 !important;color:#a19d96 !important;text-decoration:none !important;}' +
     '.datepast{background-color:#f2f0eb !important;color:#c9c5bd !important;}' +
-    '.roomoffercalendarmonth td.b24-sel{background-color:#7a5c3a !important;color:#ffffff !important;font-weight:600;}' +
+    '.roomoffercalendarmonth td.b24-sel{background-color:#ecdfc9 !important;color:#1a1815 !important;box-shadow:inset 0 0 0 1px #b59a78;font-weight:600;}' +
     /* 料金表: セル罫線と満室セルの明確化 */
     '.b24room table td, .b24room table th{border:1px solid rgba(26,24,21,0.12) !important;}' +
-    '.at_pricetd.datestay{background-color:#7a5c3a !important;color:#ffffff !important;border:1px solid #7a5c3a !important;font-weight:600 !important;}' +
+    '.at_pricetd.datestay{background-color:#ffffff !important;color:#1a1815 !important;border:2px solid #1a1815 !important;font-weight:600 !important;}' +
     '</style>');
   /* ==========================================
      2. スマホ背景色を確実に適用
@@ -252,7 +252,7 @@ $(document).ready(function() {
     var html = '<div class="b24-cal-legend" style="font-size:13px;letter-spacing:0.05em;color:#57524b;margin:10px 0 0 0;">' +
       chip('#ffffff', '1px solid rgba(26,24,21,0.3)', en ? 'Available' : '空室') +
       chip('#e7e5e0', '1px solid rgba(26,24,21,0.12)', en ? 'Booked' : '満室') +
-      chip('#7a5c3a', '1px solid #7a5c3a', en ? 'Selected' : '選択中') +
+      chip('#ecdfc9', '1px solid #b59a78', en ? 'Selected' : '選択中') +
       '</div>';
     $('.roomoffercalendarmonth').last().closest('div').append(html);
   }
