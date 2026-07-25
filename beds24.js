@@ -214,7 +214,7 @@ $(document).ready(function() {
         days.push(d);
       }
       $('.roomoffercalendarmonth').each(function() {
-        var cap = $(this).find('caption').text();
+        var cap = $(this).find('caption').text() || $(this).find('.monthcalendarhead').first().text();
         var my = null;
         var cJa = cap.match(/(\d{1,2})月\s*(\d{4})/);
         if (cJa) {
