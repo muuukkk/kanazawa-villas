@@ -489,26 +489,27 @@ $(document).ready(function() {
     'padding': '16px 24px',
     'min-height': '0'
   });
-  /* check availability / 空室状況確認 をボタン風に */
-  $('a:contains("空室状況確認")').css({
-    'display': 'inline-block',
-    'border': '1px solid #1a1815',
-    'padding': '8px 20px',
-    'font-size': '13px',
-    'letter-spacing': '0.1em',
-    'color': '#1a1815',
-    'text-decoration': 'none',
-    'margin-top': '8px'
-  });
-  $('a:contains("check availability")').css({
-    'display': 'inline-block',
-    'border': '1px solid #1a1815',
-    'padding': '8px 20px',
-    'font-size': '13px',
-    'letter-spacing': '0.1em',
-    'color': '#1a1815',
-    'text-decoration': 'none',
-    'margin-top': '8px'
+  /* check availability / 空室状況確認 をボタン風に
+     ※中に本物のボタン(.btn等)を含む<a>は対象外（統合ページの二重枠対策）
+     ※自身が.btnの場合も対象外（墨色ボタンのスタイルを優先） */
+  $('a:contains("空室状況確認"), a:contains("check availability")')
+    .not('.btn, .button')
+    .not(':has(.btn, button, input, .button)')
+    .css({
+      'display': 'inline-block',
+      'border': '1px solid #1a1815',
+      'padding': '8px 20px',
+      'font-size': '13px',
+      'letter-spacing': '0.1em',
+      'color': '#1a1815',
+      'text-decoration': 'none',
+      'margin-top': '8px'
+    });
+  /* 統合ページ: ボタンを含む<a>ラッパーの余計な装飾を除去 */
+  $('a:has(.btn), a:has(button), a:has(input.button)').css({
+    'border': 'none',
+    'padding': '0',
+    'background': 'transparent'
   });
   /* ==========================================
      19. リサイズ時に再適用
